@@ -14,6 +14,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 /**
  * Component which will display a AppDownloadQR.
+ * 
  */
 const AppDownloadQR: React.FC = ({ match }: any) => {
     const { nextStep } = useStep(match);
