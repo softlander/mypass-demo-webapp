@@ -1,0 +1,29 @@
+@mixin breakPoint($point) {
+    @if $point == large {
+        @media (max-width: 9990px) { @content; }
+    } 
+    @if $point == menucollapse {
+        @media (max-width: 1303px) { @content; }
+    }
+    @if $point == menucollapse2 {
+        @media (max-width: 1160px) { @content; }
+    }
+    @if $point == medium {
+        @media (max-width: 989px) { @content; }
+    } 
+    @if $point == small {
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $point == verysmall {
+        @media (max-width: 350px) { @content; }
+    }
+}
+
+@mixin breakPointHeight($point) {
+    @if $point == long {
+        @media (max-height: 9990px) { @content; }
+    } 
+    @else if $point == short {
+        @media (max-height: 870px) { @content; }
+    }
+}
