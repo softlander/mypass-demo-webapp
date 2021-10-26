@@ -27,7 +27,7 @@ const IncorporatedCompanies: React.FC = ({ history, match, ...props }: any) => {
             <React.Fragment>
                 <div className={`companies-page-wrapper ${drawer}`}>
                     <div className='companies-cta-wrapper'>
-                        <h2>{t("pages.company.incorporatedCompanies.newlyIncorporatedCompanies")}</h2>
+                        {/* <h2>{t("pages.company.incorporatedCompanies.newlyIncorporatedCompanies")}</h2> */}
                         {
                             props?.location?.state?.nextStep ? (
                                 <Link to={props?.location?.state?.nextStep}>
@@ -37,18 +37,18 @@ const IncorporatedCompanies: React.FC = ({ history, match, ...props }: any) => {
                                 </Link>
                             ) : (
                                 <Link to={nextStep}>
-                                    <Button>
-                                        {t("actions.registerNewCompany")}
+                                    <Button style={{marginTop: '80%'}}>
+                                        Apply at AwesomeTech
                                     </Button>
                                 </Link>
                             )
                         }
                     </div>
-                    <Table
+                    {/* <Table
                         data={response && response.data}
                         onRowClick={onRowClick}
                         loading={loading}
-                    />
+                    /> */}
                 </div>
                 <NextStepDrawer link={props?.location?.state?.nextStep} />
             </React.Fragment>

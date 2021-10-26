@@ -32,7 +32,7 @@ const SidebarInstance = ({ children }: {
             <Sidenav activeKey='0'>
                 <Sidenav.Body>
                     <h2 className='todo-list'>
-                        {t("components.sideBar.yourTodoList")}
+                        Your To-Do List
                     </h2>
                     { children }
                 </Sidenav.Body>

@@ -15,17 +15,21 @@ const prefilledFields = [
 ];
 
 const emptyFields = [
-    'CompanyName',
-    'CompanyAddress',
-    'CompanyType',
-    'CompanyBusiness'
+    'CollegeName',
+    'RegistrationNumber',
+    'ProgramEnrolled',
+    'EnrollingYear',
+    'GraduationYear',
+    'Branch'
 ];
 
 const labels = {
-    CompanyName: 'pages.company.companyData.companyName',
-    CompanyAddress: 'pages.company.companyData.companyAddress',
-    CompanyType: 'pages.company.companyData.companyType',
-    CompanyBusiness: 'pages.company.companyData.companyBusiness'
+    CollegeName: 'College Name',
+    RegistrationNumber: 'Registration Number',
+    ProgramEnrolled: 'Program Enrolled',
+    EnrollingYear: 'Enrolling Year',
+    GraduationYear: 'Graduation Year',
+    Branch: 'Branch'
 };
 
 const messages = {
@@ -86,14 +90,14 @@ const CompanyData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t("pages.company.companyData.setUpPrivateCompany")}</h2>
-                <h3 className='section-header'>{t("pages.insurance.insuranceData.businessOwner")}</h3>
+                <h2>Set up your College Degree</h2>
+                <h3 className='section-header'>Employee Details</h3>
                 {
                     Object.keys(prefilledFormData.dataFields).length &&
                     <PrefilledForm {...prefilledFormData} />
                 }
 
-                <h3 className='section-header'>{t("pages.insurance.insuranceData.companyDetails")}</h3>
+                <h3 className='section-header'>College Details</h3>
                 <Form {...emptyFormData} />
                 {
                     status && (

@@ -44,7 +44,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
                         htmlType='submit'
                         disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        {t("actions.registerNewCompany")}
+                        Add College Degree
                     </Button>
                 </Form.Item>
             </Form>

@@ -37,13 +37,13 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                 <div className='demo-intro app' id='app'>
                     <div className='app-content-wrapper'>
                         <h2>{t("pages.demo.introShowMobile.looksLikeWork")}</h2>
-                        <Trans i18nKey="pages.demo.introShowMobile.advantage">
-                            <h3>But using IOTA’s Unified Identity Protocol and the Selv app, it will be <strong>​quick and easy​.</strong></h3>
+                        <Trans>
+                            <h3>But using IOTA’s Unified Identity Protocol and the myPass.ID app, it will be <strong>​quick and easy​.</strong></h3>
                         </Trans>
                         <p className='note'>{t("pages.demo.introShowMobile.noteDesktop")}</p>
                         <Link to={nextStep}>
                             <Button className='cta'>
-                                {t("actions.letsDoIt")}
+                                Let's Do It
                             </Button>
                         </Link>
                     </div>
