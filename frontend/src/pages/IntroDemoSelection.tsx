@@ -46,27 +46,27 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                         <div className='demo-card-wrapper'>
                             <img src={selv} alt="Selv demo" />
                             <div className="demo-card-content">
-                                <h3>{t("general.digitalIdentityManagement")}</h3>
+                                <h3>Apply for Job at AwesomeTech</h3>
                                 <p>{t("general.claimControlReuse")}</p>
 
-                                <div><i>{t("pages.demo.introDemoSelection.collab")}</i></div>
-                                <div className="partners">
+                                {/* <div><i>{t("pages.demo.introDemoSelection.collab")}</i></div> */}
+                                {/* <div className="partners">
                                     <a href={`https://www.devolksbank.nl/`}>
                                         <img src={VB} alt='Volksbank'></img>
                                     </a>
-                                </div>
+                                </div> */}
                                 <div>
                                     <div className="bottom">
                                         <Link to={nextStep}>
                                             <Button className='cta'>
-                                                {t("actions.tryTheDemo")}
+                                                Try the Demo
                                             </Button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='demo-card-wrapper'>
+                        {/* <div className='demo-card-wrapper'>
                             <img src={covid} alt="Covid-19 demo" />
                             <div className="demo-card-content">
                                 <h3>{t("pages.demo.introDemoSelection.healthStatusManagement")}</h3>
@@ -85,8 +85,8 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <div className='demo-card-wrapper'>
+                        </div> */}
+                        {/* <div className='demo-card-wrapper'>
                             <img src={persistent_selv} alt="Persistent Selv" />
                             <div className="demo-card-content">
                                 <h3>{t("pages.demo.introDemoSelection.longtermIdentityManagement")}</h3>
@@ -109,7 +109,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                                 </div>
 
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <img src={dots} alt='' className='dots-top' />
                     <img src={dots} alt='' className='dots-bottom' />

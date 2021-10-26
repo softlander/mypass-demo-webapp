@@ -95,7 +95,7 @@ const BankData: React.FC = ({ history, match }: any) => {
 
     async function continueNextStep(params: any) {
         if (accountStep < 4) {
-            setAccountStep(accountStep => accountStep + 1);
+            setAccountStep((accountStep: number) => accountStep + 1);
             if (params.accountType) {
                 setAccountType(params.accountType);
             }

@@ -3,6 +3,7 @@ import QRCode from 'qrcode.react';
 
 export default ({ text, size }: { text: string; size?: number; }) => (
     <div className='qr-code'>
+        {console.log(text)}
         { text && (
             <QRCode
                 value={text}
