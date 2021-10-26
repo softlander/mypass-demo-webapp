@@ -42,8 +42,8 @@ export const routes = [
 
 //These are now just the keys for the translation that get dynamically loaded
 export const mainSteps = [
-    { title: "actions.setUpCompany" },
-    { title: "actions.getBankAccount" },
-    { title: "actions.liabilityInsurance"},
-    { title: "actions.readyForBusiness"},
+    { title: "Add your College Degree" },
+    { title: "Add your First Employer Details" },
+    { title: "Fill your Application"},
+    { title: "Ready to Apply"},
 ];
