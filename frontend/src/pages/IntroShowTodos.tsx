@@ -45,9 +45,10 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                             <h3>Here is <strong>your to-do list</strong> for today:</h3>
                         </Trans>
                         <ul className='todos'>
+                            <li>Start your Application</li>
                             <li>Add your College Degree</li>
                             <li>Add your First Employer Details</li>
-                            <li>Send your Application</li>
+                            <li>Ready to Apply! Now Send your Application</li>
                         </ul>
                         <Link to={nextStep}>
                             <Button className='cta'>

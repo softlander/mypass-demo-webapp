@@ -44,7 +44,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
                         htmlType='submit'
                         disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        Add College Degree
+                        Add Application Details
                     </Button>
                 </Form.Item>
             </Form>

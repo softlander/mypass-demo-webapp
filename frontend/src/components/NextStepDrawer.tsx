@@ -32,7 +32,7 @@ export default ({ link }: { link: string }) => {
         case 'completed':
             return (
                 <div className='next-step-drawer completed'>
-                    <h3>{t("components.nextStepDrawer.companyNowActive")}</h3>
+                    <h3>Your Application is Not Ready Yet</h3>
                     <p>
                         {t("components.nextStepDrawer.businessSetUp")}
                     </p>
@@ -46,7 +46,7 @@ export default ({ link }: { link: string }) => {
         case 'insurance':
             return (
                 <div className='next-step-drawer'>
-                    <h3>{t("components.nextStepDrawer.companyNotActive")}</h3>
+                    <h3>Your Application is Not Ready Yet</h3>
                     <p>
                         {t("components.nextStepDrawer.needLiabilityInsurance")}
                     </p>
@@ -60,13 +60,13 @@ export default ({ link }: { link: string }) => {
         case 'bank':
             return (
                 <div className='next-step-drawer'>
-                    <h3>{t("components.nextStepDrawer.companyNotActive")}</h3>
+                    <h3>Your Application is Not Ready Yet</h3>
                     <p>
-                        {t("components.nextStepDrawer.needBankAndInsurance")}
+                        You need to add your College Degree and First Employer Details to finish this application process.
                     </p>
                     <Link to={link}>
                         <Button>
-                        {t("actions.openBankAccount")}
+                            Add College Degree
                         </Button>
                     </Link>
                 </div>

@@ -15,21 +15,13 @@ const prefilledFields = [
 ];
 
 const emptyFields = [
-    'CollegeName',
-    'RegistrationNumber',
-    'ProgramEnrolled',
-    'EnrollingYear',
-    'GraduationYear',
-    'Branch'
+    'RoleApplyingFor',
+    'ExpectedCTC',
 ];
 
 const labels = {
-    CollegeName: 'College Name',
-    RegistrationNumber: 'Registration Number',
-    ProgramEnrolled: 'Program Enrolled',
-    EnrollingYear: 'Enrolling Year',
-    GraduationYear: 'Graduation Year',
-    Branch: 'Branch'
+    RoleApplyingFor: 'Role Applying For',
+    ExpectedCTC: 'Expected CTC'
 };
 
 const messages = {
@@ -90,14 +82,14 @@ const CompanyData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>Set up your College Degree</h2>
-                <h3 className='section-header'>Employee Details</h3>
+                <h2>Application for AwesomeTech</h2>
+                <h3 className='section-header'>Candidate Details</h3>
                 {
                     Object.keys(prefilledFormData.dataFields).length &&
                     <PrefilledForm {...prefilledFormData} />
                 }
 
-                <h3 className='section-header'>College Details</h3>
+                <h3 className='section-header'>Application Details</h3>
                 <Form {...emptyFormData} />
                 {
                     status && (

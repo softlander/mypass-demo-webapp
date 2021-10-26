@@ -47,7 +47,7 @@ const CompanyData: React.FC = ({ match }: any) => {
                                 </Link>
                                 <h2>{response?.data?.CompanyName}</h2>
                                 <p className='company-number-wrapper'>
-                                    {t("pages.general.companyDetails.companyNumber")} <span className='company-number'>{response?.data?.CompanyNumber}</span>
+                                    Application Number <span className='company-number'>{response?.data?.CompanyNumber}</span>
                                 </p>
                                 <div className='company-details'>
                                     <CompanyDetails details={response?.data} />
@@ -69,27 +69,29 @@ const CompanyDetails = ({ details }: { details: CompanyData | undefined }) => {
     return (
         <React.Fragment>
             <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.officeAddress")}</p>
-                <p className='bold'>{details?.CompanyAddress}</p>
-            </div>
-            <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.companyType")}</p>
-                <p className='bold'>{details?.CompanyType}</p>
-            </div>
-            <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.incorporatedOn")}</p>
-                <p className='bold'>{details?.CompanyCreationDate}</p>
-            </div>
-            <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.companyOwner")}</p>
+                <p>Candidate Name</p>
                 <p className='bold'>{details?.CompanyOwner}</p>
             </div>
             <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.natureOfBusiness")}</p>
+                <p>Company Name</p>
+                <p className='bold'>AwesomeTech</p>
+            </div>
+            <div className='company-details-item'>
+                <p>Role Applying for</p>
+                <p className='bold'>{details?.CompanyType}</p>
+            </div>
+            
+            <div className='company-details-item'>
+                <p>Expected CTC</p>
                 <p className='bold'>{details?.CompanyBusiness}</p>
             </div>
             <div className='company-details-item'>
-                <p>{t("pages.general.companyDetails.companyStatus")}</p>
+                <p>Date of Application</p>
+                <p className='bold'>{details?.CompanyCreationDate}</p>
+            </div>
+
+            <div className='company-details-item'>
+                <p>Application Status</p>
                 <p className={`status ${details?.CompanyStatus.toLowerCase()}`}>{t("general." + details?.CompanyStatus.toLocaleLowerCase())}</p>
             </div>
         </React.Fragment>
