@@ -176,8 +176,8 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
                         await localStorage.setItem('bankDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
                     case 'Company':
-                        await localStorage.setItem('companyHouse', 'completed');
-                        await localStorage.setItem('companyDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                        await localStorage.setItem('applicationDetails', 'completed');
+                        await localStorage.setItem('applicationDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
                     default:
                         break;

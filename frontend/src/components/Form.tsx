@@ -16,7 +16,9 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
 
     function handleSubmit(e: any) {
         e.preventDefault();
+       
         validateFields((err: any, values: string[]) => {
+            console.log(values)
             if (!err) {
                 processValues(values);
             }
