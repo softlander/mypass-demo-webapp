@@ -1,24 +1,15 @@
 {
-  "name": "DINaaS",
+  "name": "myPass.ID server",
   "version": "1.0.0",
   "description": "Digital Identity Narratives as a Service PoC",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iotaledger/poc-dinaas.git"
-  },
-  "author": "IOTA Foundation",
-  "engines": {
-    "node": ">=10.0"
-  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "identity_ts": "iotaledger/identity.ts",
     "randomstring": "^1.1.5",
     "socket.io": "^2.4.1",
     "sqlite3": "^5.0.2"
@@ -34,5 +25,5 @@
     "ini": "^1.3.6",
     "minimist": "^1.2.5",
     "node-fetch": "^2.6.1"
-}
+  }
 }
