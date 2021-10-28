@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { notification } from 'antd';
+import { Button, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
 import { Layout, Loading, Form, PrefilledForm, WebSocket } from '../components';
 import { useTranslation } from 'react-i18next';
@@ -64,7 +64,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
 
             setPrefilledData({ ...result, ...address });
         }
-        getData();
+        // getData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function processValues(fields: object) {
@@ -89,8 +89,9 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                     <PrefilledForm {...prefilledFormData} />
                 }
 
-                <h3 className='section-header'>Application Details</h3>
-                <Form {...emptyFormData} />
+                {/* <h3 className='section-header'>Application Details</h3> */}
+                {/* <Form {...emptyFormData} /> */}
+                <Button htmlType="button" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
                 {
                     status && (
                         <div className='loading'>
@@ -101,7 +102,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                         </div>
                     )
                 }
-                {
+                {/* {
                     webSocket && <WebSocket
                         history={history}
                         match={match}
@@ -110,7 +111,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                         fields={fields}
                         messages={messages}
                     />
-                }
+                } */}
             </div>
         </Layout>
     );

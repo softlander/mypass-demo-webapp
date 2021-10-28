@@ -16,13 +16,14 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
 
     function handleSubmit(e: any) {
         e.preventDefault();
+        window.location.href = "http://localhost:3000/en/company/data/1"
        
-        validateFields((err: any, values: string[]) => {
-            console.log(values)
-            if (!err) {
-                processValues(values);
-            }
-        });
+        // validateFields((err: any, values: string[]) => {
+        //     console.log(values)
+        //     if (!err) {
+        //         processValues(values);
+        //     }
+        // });
     }
 
     function hasErrors(fieldsError: any) {
@@ -32,7 +33,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
     return (
         <div className='empty-form'>
             <Form layout='vertical' onSubmit={handleSubmit}>
-                {
+                {/* {
                     dataFields.map((field: string) => (
                         <Form.Item label={t(labels[field])} key={field}>
                             { getFieldDecorator(field, {
@@ -40,13 +41,12 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
                             })(<Input />)}
                         </Form.Item>
                     ))
-                }
+                } */}
                 <Form.Item>
                     <Button
                         htmlType='submit'
-                        disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        Add Application Details
+                        Continue
                     </Button>
                 </Form.Item>
             </Form>

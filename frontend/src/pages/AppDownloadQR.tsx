@@ -65,7 +65,7 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                 </div>
                     <div className="cta-section" id='app-download'>
                         <p className='subtitle'>{t("pages.demo.appDownloadQR.onceDownloaded")}</p>
-                        <Link to={nextStep} className='cta'>
+                        <Link to="/application/prove" className='cta'>
                             <Button>
                                 {t("actions.continue")}
                             </Button>

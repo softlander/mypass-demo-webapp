@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import WebFontLoader from 'webfontloader';
 import AOS from 'aos';
-import { Landing, IncorporatedCompanies, CompanyDetails } from './pages'
+import { Landing, IncorporatedCompanies, CompanyDetails, IntroDemoSelection, IntroShowTodos, IntroShowMobile, AppDownloadQR, ProveIdentity, CompanyData } from './pages'
 import GlobalState from './context/globalState'
 import 'aos/dist/aos.css';
 import 'antd/dist/antd.css';
@@ -31,13 +31,21 @@ const App: React.FC = () => {
       <GlobalState>
         <BrowserRouter>
           <Switch>
-            {
+          {/* {
               routes.map(({ path, page }: { path: string; page: any; }) =>
                 <Route exact key={path} path={path} component={page} />
               )
-            }
-            <Route path={'/:lng?/company/details/:step/:companyId'} component={CompanyDetails} />
-            <Route path={'/:lng?/company/list/:step'} component={IncorporatedCompanies} />
+            } */}
+            <Route path={'/demo/select'} component={IntroDemoSelection} />
+            <Route path={'/demo/todos'} component={IntroShowTodos} />
+            <Route path={'/demo/app'} component={IntroShowMobile} />
+            <Route path={'/application/start'} component={IncorporatedCompanies} />
+            <Route path={'/demo/download'} component={AppDownloadQR} />
+            <Route path={'/application/prove'} component={ProveIdentity} />
+            <Route path={'/application/step1'} component={CompanyData} />
+            {/* <Route path={'/company/details/:step/:companyId'} component={CompanyDetails} /> */}
+            <Route path={'/company/details/:step/:companyId'} component={CompanyDetails} />
+            <Route path={'/company/list/:step'} component={IncorporatedCompanies} />
             <Route component={Landing} />
           </Switch>
         </BrowserRouter>

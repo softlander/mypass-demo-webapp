@@ -57,7 +57,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                                 </div> */}
                                 <div>
                                     <div className="bottom">
-                                        <Link to={nextStep}>
+                                        <Link to="/demo/todos">
                                             <Button className='cta'>
                                                 Try the Demo
                                             </Button>
