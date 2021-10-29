@@ -6,12 +6,12 @@ import AppDownloadQR from './AppDownloadQR';
 import CompanyIntro from './CompanyIntro';
 import ProveIdentity from './ProveIdentity';
 import SingInConfirmation from './SingInConfirmation';
-import CompanyData from './CompanyData';
-import CompanyDetails from './CompanyDetails';
+import ApplicationStart from './ApplicationStart';
+import ApplicationDetails from './ApplicationDetails';
 import Confirmation from './Confirmation';
-import BankData from './BankData';
+import CollegeData from './CollegeData';
 import InsuranceData from './InsuranceData';
-import IncorporatedCompanies from './IncorporatedCompaniesList';
+import Apply from './Apply';
 import GreatSuccess from './GreatSuccess';
 import ThankYou from './ThankYou';
 
@@ -24,12 +24,12 @@ export {
     ProveIdentity,
     SingInConfirmation,
     CompanyIntro,
-    CompanyData,
-    CompanyDetails,
+    ApplicationStart,
+    ApplicationDetails,
     Confirmation,
-    BankData,
+    CollegeData,
     InsuranceData,
-    IncorporatedCompanies,
+    Apply,
     GreatSuccess,
     ThankYou
 };

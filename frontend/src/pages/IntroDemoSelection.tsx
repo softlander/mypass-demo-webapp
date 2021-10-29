@@ -43,7 +43,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                                 <p>{t("general.claimControlReuse")}</p>
                                 <div>
                                     <div className="bottom">
-                                        <Link to="/demo/todos">
+                                        <Link to={nextStep}>
                                             <Button className='cta'>
                                                 Try the Demo
                                             </Button>

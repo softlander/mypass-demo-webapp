@@ -7,7 +7,7 @@ import back from '../assets/back.svg';
 import { serverAPI } from '../config.json';
 import { useTranslation } from 'react-i18next';
 
-interface CompanyData {
+interface ApplicationData {
     'CompanyNumber': string;
     'CompanyName': string;
     'CompanyCreationDate': string;
@@ -22,7 +22,7 @@ interface CompanyData {
 /**
  * Component which will display a CompanyData.
  */
-const CompanyData: React.FC = ({ match }: any) => {
+const ApplicationData: React.FC = ({ match }: any) => {
     const companyId = match?.params?.companyId;
     const { nextStep } = useStep(match);
     const { response, loading } = useFetch(`${serverAPI}/company?company=${companyId}`);
@@ -50,7 +50,7 @@ const CompanyData: React.FC = ({ match }: any) => {
                                     Application Number <span className='company-number'>{response?.data?.CompanyNumber}</span>
                                 </p>
                                 <div className='company-details'>
-                                    <CompanyDetails details={response?.data} />
+                                    <ApplicationDetails details={response?.data} />
                                 </div>
                             </React.Fragment>
                         )
@@ -62,7 +62,7 @@ const CompanyData: React.FC = ({ match }: any) => {
     );
 };
 
-const CompanyDetails = ({ details }: { details: CompanyData | undefined }) => {
+const ApplicationDetails = ({ details }: { details: ApplicationData | undefined }) => {
 
     const { t } = useTranslation();
 
@@ -98,4 +98,4 @@ const CompanyDetails = ({ details }: { details: CompanyData | undefined }) => {
     );
 };
 
-export default CompanyData;
+export default ApplicationData;

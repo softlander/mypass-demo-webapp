@@ -50,7 +50,7 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                             <li>Add your First Employer Details</li>
                             <li>Ready to Apply! Now Send your Application</li>
                         </ul>
-                        <Link to="/demo/app">
+                        <Link to={nextStep}>
                             <Button className='cta'>
                                 {t("actions.continue")}
                             </Button>

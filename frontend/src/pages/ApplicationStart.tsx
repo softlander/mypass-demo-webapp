@@ -30,7 +30,7 @@ const notify = (type: string, message: string, description: string) => {
 /**
  * Component which will display a CompanyData.
  */
-const CompanyData: React.FC = ({ history, match }: any) => {
+const ApplicationData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
     const [status, setStatus] = useState('');
@@ -117,4 +117,4 @@ const CompanyData: React.FC = ({ history, match }: any) => {
     );
 };
 
-export default CompanyData;
+export default ApplicationData;

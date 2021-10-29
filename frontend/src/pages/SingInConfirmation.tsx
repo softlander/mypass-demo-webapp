@@ -19,9 +19,9 @@ const SingInConfirmation: React.FC = ({ history, match }: any) => {
             const credentialsString: string | null = await localStorage.getItem('credentials');
             const credentials = credentialsString && await JSON.parse(credentialsString);
             const status = credentials?.status;
-            if (!status || Number(status) !== 2) {
-                history.goBack();
-            }
+            // if (!status || Number(status) !== 2) {
+            //     history.goBack();
+            // }
         }
         getData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -36,7 +36,7 @@ const SingInConfirmation: React.FC = ({ history, match }: any) => {
                         {t("pages.company.signInConfirmation.signInSuccess")}
                     </p>
                     <Link to={nextStep}>
-                        <Button>
+                        <Button style={{backgroundColor: 'darkblue'}}>
                             {t("actions.continue")}
                         </Button>
                     </Link>

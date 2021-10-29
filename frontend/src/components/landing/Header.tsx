@@ -50,10 +50,6 @@ export default () => {
         <div className="header-section">
             <img src={logo} alt="Selv logo" className="logo" />
             <div className="menu-links">
-
-                {/* <img className="cta" alt="USA" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" onClick={() => setLanguage('en')} style={{ borderWidth: 100, borderColor: '#FFF' }} /> */}
-                {/* <Button className='cta' onClick={}>
-                </Button> */}
                 {
                     links.map(link => (
                         <Link to={link.anchor} key={link.title} className="menu-link" onClick={() => onAnchorClick(link.anchor)}>

@@ -41,7 +41,7 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                             <h3>But using IOTA’s Unified Identity Protocol and the myPass.ID app, it will be <strong>​quick and easy​.</strong></h3>
                         </Trans>
                         <p className='note'>{t("pages.demo.introShowMobile.noteDesktop")}</p>
-                        <Link to="/application/demo">
+                        <Link to={nextStep}>
                             <Button className='cta'>
                                 Let's Do It
                             </Button>

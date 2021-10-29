@@ -48,7 +48,7 @@ const labels = {
 /**
  * Component which will display a BankData.
  */
-const BankData: React.FC = ({ history, match }: any) => {
+const CollegeData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
     const [accountType, setAccountType] = useState();
@@ -124,4 +124,4 @@ const BankData: React.FC = ({ history, match }: any) => {
     );
 };
 
-export default BankData;
+export default CollegeData;
