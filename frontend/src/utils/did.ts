@@ -1,6 +1,6 @@
 import { provider } from '../config.json';
 import Address from '../schemas/Address.json';
-import BankAccount from '../schemas/BankAccount.json';
+import College from '../schemas/CollegeDegree.json';
 import Company from '../schemas/Company.json';
 import ContactDetails from '../schemas/ContactDetails.json';
 import Insurance from '../schemas/Insurance.json';
@@ -10,7 +10,7 @@ import * as identity from '@iota/identity-wasm/web';
 
 const schemas: any = {
     Address,
-    BankAccount,
+    College,
     Company,
     ContactDetails,
     Insurance,
@@ -35,16 +35,16 @@ const verificationType = {
     trusted: 'success'
 };
 
-export default async (presentationData: {proof: any, verifiableCredential: {credentialSubject: any}[]}, requestedCredentials: string[], challengeNonce: string) => {
+export default async (presentationData: { proof: any, verifiableCredential: { credentialSubject: any }[] }, requestedCredentials: string[], challengeNonce: string) => {
     return new Promise(async resolve => {
         try {
-        // Check if the credential fits to the request
+            // Check if the credential fits to the request
             if (presentationData?.proof && presentationData?.verifiableCredential.length > 1) {
-                
+
                 await identity.init('/identity_wasm_bg.wasm');
 
                 const mainNet = identity.Network.mainnet();
-                    
+
                 // Create a default client configuration from the parent config network.
                 const config = identity.Config.fromNetwork(mainNet);
                 config.setPermanode('https://chrysalis-chronicle.iota.org/api/mainnet/');
@@ -69,7 +69,7 @@ export default async (presentationData: {proof: any, verifiableCredential: {cred
                                 verificationLevel = VERIFICATION_LEVEL.DID_OWNER;
                             }
                         });
-                        
+
                         const subjects = presentationData.verifiableCredential.map(credential => credential?.credentialSubject);
                         resolve({
                             status: verificationLevel,

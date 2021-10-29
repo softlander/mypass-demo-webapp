@@ -39,10 +39,10 @@ const App: React.FC = () => {
             <Route path={'/demo/select'} component={IntroDemoSelection} />
             <Route path={'/demo/todos'} component={IntroShowTodos} />
             <Route path={'/demo/app'} component={IntroShowMobile} />
-            <Route path={'/application/start'} component={IncorporatedCompanies} />
+            <Route path={'/application/demo'} component={IncorporatedCompanies} />
             <Route path={'/demo/download'} component={AppDownloadQR} />
             <Route path={'/application/prove'} component={ProveIdentity} />
-            <Route path={'/application/step1'} component={CompanyData} />
+            <Route path={'/application/start'} component={CompanyData} />
             <Route path={'/application/details/:step/:companyId'} component={CompanyDetails} />
             <Route path={'/application/college'} component={BankData} />
             <Route component={Landing} />
