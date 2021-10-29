@@ -83,8 +83,8 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                 }
             }
             await localStorage.setItem('credentials', JSON.stringify(credentials));
-            
-            const status = credentials?.status;
+            // In this now we will get data from the web socket and it will be stored in the local storage we just need to just the credentials from the local storage
+            // const status = credentials?.status;
             // if (!status || Number(status) !== 2) {
             //     notify('error', 'Error', t(messages.connectionError));
             //     history.goBack();
@@ -93,8 +93,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };
             const result = prefilledFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
-            console.log(result)
-            console.log(address)
+
             setPrefilledData({ ...result, ...address });
             
         }
@@ -111,7 +110,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledFormData: any = { dataFields: prefilledData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages };
+    // const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages };
 
     return (
         <Layout match={match}>
@@ -123,7 +122,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
 
                 {/* <h3 className='section-header'>Application Details</h3> */}
                 {/* <Form {...emptyFormData} /> */}
-                <Button htmlType="button" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
+                <Button htmlType="button" href="/application/details/1/32sdnsjnd" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
                 {
                     status && (
                         <div className='loading'>

@@ -10,23 +10,24 @@ export default ({ link }: { link: string }) => {
 
     useEffect(() => {
         async function setInfo() {
-            const companyHouse = await localStorage.getItem('companyHouse');
-            const bank = await localStorage.getItem('bank');
-            const insurance = await localStorage.getItem('insurance');
-            if (insurance && insurance === 'completed') {
-                setNextStep('completed');
-            } else if (bank && bank === 'completed') {
-                setNextStep('insurance');
-            } else if (companyHouse && companyHouse === 'completed') {
-                setNextStep('bank');
-            }
+            // const companyHouse = await localStorage.getItem('companyHouse');
+            // const bank = await localStorage.getItem('bank');
+            // const insurance = await localStorage.getItem('insurance');
+            // if (insurance && insurance === 'completed') {
+            //     setNextStep('completed');
+            // } else if (bank && bank === 'completed') {
+            //     setNextStep('insurance');
+            // } else if (companyHouse && companyHouse === 'completed') {
+            //     setNextStep('bank');
+            // }
+            setNextStep('college')
         }
         setInfo();
     }, []);
 
-    if (!link) {
-        return <React.Fragment />;
-    }
+    // if (!link) {
+    //     return <React.Fragment />;
+    // }
 
     switch (nextStep) {
         case 'completed':
@@ -57,14 +58,14 @@ export default ({ link }: { link: string }) => {
                     </Link>
                 </div>
             );
-        case 'bank':
+        case 'college':
             return (
                 <div className='next-step-drawer'>
                     <h3>Your Application is Not Ready Yet</h3>
                     <p>
                         You need to add your College Degree and First Employer Details to finish this application process.
                     </p>
-                    <Link to={link}>
+                    <Link to={"/application/college"}>
                         <Button>
                             Add College Degree
                         </Button>

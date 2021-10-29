@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import WebFontLoader from 'webfontloader';
 import AOS from 'aos';
-import { Landing, IncorporatedCompanies, CompanyDetails, IntroDemoSelection, IntroShowTodos, IntroShowMobile, AppDownloadQR, ProveIdentity, CompanyData } from './pages'
+import { Landing, IncorporatedCompanies, CompanyDetails, IntroDemoSelection, IntroShowTodos, IntroShowMobile, AppDownloadQR, ProveIdentity, CompanyData, BankData } from './pages'
 import GlobalState from './context/globalState'
 import 'aos/dist/aos.css';
 import 'antd/dist/antd.css';
@@ -43,7 +43,8 @@ const App: React.FC = () => {
             <Route path={'/demo/download'} component={AppDownloadQR} />
             <Route path={'/application/prove'} component={ProveIdentity} />
             <Route path={'/application/step1'} component={CompanyData} />
-            <Route path={'/company/details/:step/:companyId'} component={CompanyDetails} />
+            <Route path={'/application/details/:step/:companyId'} component={CompanyDetails} />
+            <Route path={'/application/college'} component={BankData} />
             <Route component={Landing} />
           </Switch>
         </BrowserRouter>

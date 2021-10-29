@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Collapse, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket } from '../components';
+import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket, Form } from '../components';
 import checkmark from '../assets/bankCheckmark.svg';
 import { useTranslation } from 'react-i18next';
 
@@ -48,6 +48,24 @@ const notify = (type: string, message: string, description: string) => {
         : notification.warning({ message, description });
 };
 
+const emptyFields = [
+    'CollegeName',
+    'RegistrationNumber',
+    'ProgramEnrolled',
+    'EnrollingYear',
+    'GradutionYear',
+    'Branch'
+];
+
+const labels = {
+    CollegeName: 'College Name', 
+    RegistrationNumber: 'Registration Number',
+    ProgramEnrolled: 'Program Enrolled',
+    EnrollingYear: 'Enrolling Year',
+    GradutionYear: 'Graduation Year',
+    Branch: 'Branch'
+};
+
 /**
  * Component which will display a BankData.
  */
@@ -77,9 +95,9 @@ const BankData: React.FC = ({ history, match }: any) => {
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
 
-            const companyData = companyFields.reduce((acc: any, entry: string) =>
-                ({ ...acc, [entry]: flattenData[entry] }), {});
-            setPrefilledCompanyData({ ...companyData });
+            // const companyData = companyFields.reduce((acc: any, entry: string) =>
+            //     ({ ...acc, [entry]: flattenData[entry] }), {});
+            // setPrefilledCompanyData({ ...companyData });
         }
         getData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -114,11 +132,42 @@ const BankData: React.FC = ({ history, match }: any) => {
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
     const prefilledCompanyFormData: any = { dataFields: prefilledCompanyData };
-    const formData: any = { onSubmit: continueNextStep, status, messages, accountTypes, buttonText: t("pages.demo.introShowTodos.getBankAccount") };
+    // const formData: any = { onSubmit: continueNextStep, status, messages, accountTypes, buttonText: t("pages.demo.introShowTodos.getBankAccount") };
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages };
 
     return (
         <Layout match={match}>
-            <div className='bank-data-page-wrapper'>
+            <div className='company-data-page-wrapper'>
+                <h2>Delhi University Official Website</h2>
+                <h3 className='section-header'>Candidate Details</h3>
+                <PrefilledForm {...prefilledPersonalFormData} />
+
+
+                <h3 className='section-header'>Degree Details</h3>
+                {console.log(emptyFormData)}
+                <Form {...emptyFormData} />
+                {/* <Button htmlType="button" href="/application/details/1/32sdnsjnd" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button> */}
+                {/* {
+                    status && (
+                        <div className='loading'>
+                            <p className='bold'>{t(status)}</p>
+                            {
+                                status === messages.waiting && <Loading />
+                            }
+                        </div>
+                    )
+                } */}
+                {/* {
+                    webSocket && <WebSocket
+                        history={history}
+                        match={match}
+                        schemaName='Company'
+                        setStatus={setStatusMessage}
+                        fields={fields}
+                        messages={messages}
+                    />
+                } */}
+                {/* <div className='bank-data-page-wrapper'>
                 <h1>{t("pages.insurance.insuranceData.openAnAccount")}</h1>
                 <Collapse
                     onChange={onChange}
@@ -217,7 +266,9 @@ const BankData: React.FC = ({ history, match }: any) => {
                         messages={messages}
                     />
                 }
+            </div> */}
             </div>
+            
         </Layout>
     );
 };
