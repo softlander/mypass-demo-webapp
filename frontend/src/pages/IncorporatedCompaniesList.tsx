@@ -1,11 +1,7 @@
 import React from 'react';
-// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import useStep from '../utils/useStep';
-import useFetch from '../utils/useFetch';
-import { Layout, Table, NextStepDrawer } from '../components';
-import { serverAPI } from '../config.json';
+import { Layout } from '../components';
 import { useTranslation } from 'react-i18next';
 
 /**

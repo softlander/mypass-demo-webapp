@@ -14,16 +14,6 @@ const prefilledFields = [
     'Phone'
 ];
 
-const emptyFields = [
-    'RoleApplyingFor',
-    'ExpectedCTC',
-];
-
-const labels = {
-    RoleApplyingFor: 'Role Applying For',
-    ExpectedCTC: 'Expected CTC'
-};
-
 const messages = {
     waiting: 'general.messages.waiting',
     connectionError: 'general.messages.connectionError',
@@ -83,12 +73,6 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                 }
             }
             await localStorage.setItem('credentials', JSON.stringify(credentials));
-            // In this now we will get data from the web socket and it will be stored in the local storage we just need to just the credentials from the local storage
-            // const status = credentials?.status;
-            // if (!status || Number(status) !== 2) {
-            //     notify('error', 'Error', t(messages.connectionError));
-            //     history.goBack();
-            // }
             const flattenData = flattenObject(credentials?.data);
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };
             const result = prefilledFields.reduce((acc: any, entry: string) =>
@@ -98,7 +82,7 @@ const CompanyData: React.FC = ({ history, match }: any) => {
             
         }
         getData();
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     async function processValues(fields: object) {
         setFields(fields);
@@ -110,7 +94,6 @@ const CompanyData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledFormData: any = { dataFields: prefilledData };
-    // const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages };
 
     return (
         <Layout match={match}>
@@ -118,10 +101,6 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                 <h2>Application for AwesomeTech</h2>
                 <h3 className='section-header'>Candidate Details</h3>
                 <PrefilledForm {...prefilledFormData} />
-
-
-                {/* <h3 className='section-header'>Application Details</h3> */}
-                {/* <Form {...emptyFormData} /> */}
                 <Button htmlType="button" href="/application/details/1/32sdnsjnd" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
                 {
                     status && (
@@ -133,16 +112,6 @@ const CompanyData: React.FC = ({ history, match }: any) => {
                         </div>
                     )
                 }
-                {/* {
-                    webSocket && <WebSocket
-                        history={history}
-                        match={match}
-                        schemaName='Company'
-                        setStatus={setStatusMessage}
-                        fields={fields}
-                        messages={messages}
-                    />
-                } */}
             </div>
         </Layout>
     );
