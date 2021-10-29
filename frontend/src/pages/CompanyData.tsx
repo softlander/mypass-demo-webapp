@@ -50,21 +50,55 @@ const CompanyData: React.FC = ({ history, match }: any) => {
 
     useEffect(() => {
         async function getData() {
-            const credentialsString: string | null = await localStorage.getItem('credentials');
-            const credentials = credentialsString && await JSON.parse(credentialsString);
-            const status = credentials?.status;
-            if (!status || Number(status) !== 2) {
-                notify('error', 'Error', t(messages.connectionError));
-                history.goBack();
+            const credentials = {
+                "status": 2,
+                "message": "Credentials successfully verified",
+                "type": "success",
+                "data": {
+                    "UserAddress": {
+                        "City": "Mikkeli",
+                        "Country": "Finland",
+                        "House": "Hatanpään Valtatie",
+                        "Postcode": "73447",
+                        "State": "Ostrobothnia",
+                        "Street": "4996"
+                    },
+                    "UserPersonalData": {
+                        "Birthplace": "Mikkeli",
+                        "IdentityCardNumber": "I4033VG3",
+                        "Nationality": "Finland",
+                        "PassportNumber": "E8UG3A",
+                        "UserDOB": {
+                            "Date": "Thu Sep 15 1955"
+                        },
+                        "UserName": {
+                            "FirstName": "Anurag ",
+                            "LastName": "Lauri"
+                        }
+                    },
+                    "UserContacts": {
+                        "Email": "ellen.lauri@example.com",
+                        "Phone": "04-522-300"
+                    }
+                }
             }
+            await localStorage.setItem('credentials', JSON.stringify(credentials));
+            
+            const status = credentials?.status;
+            // if (!status || Number(status) !== 2) {
+            //     notify('error', 'Error', t(messages.connectionError));
+            //     history.goBack();
+            // }
             const flattenData = flattenObject(credentials?.data);
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };
             const result = prefilledFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
-
+            console.log(result)
+            console.log(address)
             setPrefilledData({ ...result, ...address });
+            
         }
-        // getData();
+        getData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function processValues(fields: object) {
@@ -84,10 +118,8 @@ const CompanyData: React.FC = ({ history, match }: any) => {
             <div className='company-data-page-wrapper'>
                 <h2>Application for AwesomeTech</h2>
                 <h3 className='section-header'>Candidate Details</h3>
-                {
-                    Object.keys(prefilledFormData.dataFields).length &&
-                    <PrefilledForm {...prefilledFormData} />
-                }
+                <PrefilledForm {...prefilledFormData} />
+
 
                 {/* <h3 className='section-header'>Application Details</h3> */}
                 {/* <Form {...emptyFormData} /> */}

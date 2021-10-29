@@ -43,9 +43,7 @@ const App: React.FC = () => {
             <Route path={'/demo/download'} component={AppDownloadQR} />
             <Route path={'/application/prove'} component={ProveIdentity} />
             <Route path={'/application/step1'} component={CompanyData} />
-            {/* <Route path={'/company/details/:step/:companyId'} component={CompanyDetails} /> */}
             <Route path={'/company/details/:step/:companyId'} component={CompanyDetails} />
-            <Route path={'/company/list/:step'} component={IncorporatedCompanies} />
             <Route component={Landing} />
           </Switch>
         </BrowserRouter>

@@ -48,9 +48,7 @@ const PrefilledForm = ({ form, dataFields }: {
                             key={field}
                             className={shortFields.includes(field) ? 'short-field' : ''}
                         >
-                            { form.getFieldDecorator(field, {})(
-                                <Input disabled suffix={<Icon />} />
-                            )}
+                            <Input disabled suffix={<Icon />} value={dataFields[field]}/>
                         </Form.Item>
                     ))
                 }
