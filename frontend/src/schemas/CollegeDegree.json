@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "required": ["DID"],
+  "properties": {
+    "DID": {
+      "type": "string"
+    },
+    "Language": {
+      "type": "string"
+    },
+    "Locale": {
+      "type": "string"
+    },
+    "College": {
+      "type": "object",
+      "properties": {
+        "CollegeName": {
+          "type": "string"
+        },
+        "RegistrationNumber": {
+          "type": "string"
+        },
+        "ProgramEnrolled": {
+          "type": "string"
+        },
+        "EnrollingYear": {
+          "type": "string"
+        },
+        "GraduationYear": {
+          "type": "string"
+        },
+        "Branch": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
