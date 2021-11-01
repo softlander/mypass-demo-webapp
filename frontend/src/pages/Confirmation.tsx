@@ -21,7 +21,7 @@ const Confirmation: React.FC = ({ match }: any) => {
         async function determineCompanyId () {
             setCompanyId(await getCompanyId());
             switch (theme) {
-            case 'bank':
+            case 'application':
                 setTitle("pages.general.confirmation.titleBank");
                 break;
             case 'insurance':
@@ -44,18 +44,16 @@ const Confirmation: React.FC = ({ match }: any) => {
                 <div className='confirmation-page'>
                     <div className='selv-wrapper'>
                         <img src={selv} alt='Selv app logo' />
-                        <h4>{t("pages.general.confirmation.credentialsToSelv")}</h4>
+                        <h4>{t("pages.general.confirmation.credentialsToMyPassID")}</h4>
                     </div>
-                    <h2>{t(title)}</h2>
+                    <h2>{t("pages.general.confirmation.titleApplication")}</h2>
                     {
                         theme === 'company' &&
                             <p>{t("pages.general.confirmation.proudOwnerOfCompany")}</p>
                     }
                     <Link to={nextStep.replace(':companyId', companyId)}>
-                        <Button>
-                            {
-                                theme === 'company' ? t("actions.continue") : t("pages.general.confirmation.returnToCompany") 
-                            }
+                        <Button style={{backgroundColor: 'darkblue', height: '35%'}}>
+                            {t("actions.continue")}
                         </Button>
                     </Link>
                 </div>

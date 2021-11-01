@@ -179,19 +179,17 @@
         "returnHome": "Return Home"
       }
     },
-    "company": {
+    "application": {
       "incorporatedCompanies": {
         "newlyIncorporatedCompanies": "Newly Incorporated Companies"
       },
       "signInConfirmation": {
         "signInSuccess": "You have now signed in without ever creating an account. No more need for endless account and password creations. In addition, you provided trustable information, which businesses can use without an expensive verification process. Verifying your data is nearly instant and completely free."
       },
-      "companyData": {
-        "companyName": "Company Name",
-        "companyAddress": "Company Address",
-        "companyType": "Company Type",
-        "companyBusiness": "Nature of Business",
-        "setUpPrivateCompany": "Set up a Private Limited Company"
+      "applicationStart": {
+        "applyAtAwesomeTech": "Application for AwesomeTech",
+        "candidateDetails": "Candidate Details",
+        "continueButton": "Continue"
       }
     },
     "bank": {
@@ -226,8 +224,8 @@
       "confirmation": {
         "titleBank": "Your Business Bank Account Is Now Set Up!",
         "titleInsurance": "Congratulations, Your Liability Insurance Is Now Set Up!",
-        "titleCompany": "Congratulations, Your Company Is Now Set Up!",
-        "credentialsToSelv": "Your New Business Is Sent to Selv",
+        "titleApplication": "Congratulations, Your Job Application Process Has Started!",
+        "credentialsToMyPassID": "Your Application Process Has Begun!",
         "proudOwnerOfCompany": "You are now the proud owner of your new company. From now on you’ll be able to prove that you have a directorship position at your newly found company. Open up Selv in order to receive a signed credential you can use to act on behalf of your company.",
         "returnToCompany": "Return to Company House"
       },
@@ -236,14 +234,14 @@
         "provideCredentials": "Provide Your Digital Identity Credentials",
         "scanToContinue": "Scan this QR code with <1>Selv App</1> to continue"
       },
-      "companyDetails": {
-        "companyNumber": "Company Number",
-        "officeAddress": "Registered Office Address",
-        "companyType": "Company Type",
-        "incorporatedOn": "Incorporated on",
-        "companyOwner": "Company Owner",
-        "natureOfBusiness": "Nature of Business",
-        "companyStatus": "Company Status"
+      "applicationDetails": {
+        "applicationNumber": "Application Number",
+        "candidateName": "Candidate Name",
+        "companyName": "Company Name",
+        "roleApplyingFor": "Role Applying For",
+        "expectedCTC": "Expected CTC",
+        "dateOfApplication": "Date Of Application",
+        "applicationStatus": "Application Status"
       }
     }
   },
@@ -262,9 +260,9 @@
       "error": "Please provide required information!"
     },
     "nextStepDrawer": {
-      "companyNowActive": "Your Company Is Now Active",
+      "applicationReady": "Your Application Is Now Ready To Be Applied",
       "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
-      "applicationNotComplete": "Your Application Is Not Completed Yet",
+      "applicationNotComplete": "Your Application Is Not Ready Yet",
       "needPreviousEmployer": "You need to add Previous Employer Details to finish this process",
       "needCollegeAndEmployer": "You need to add College Degree and Previous Employer Details to finish this process"
     },

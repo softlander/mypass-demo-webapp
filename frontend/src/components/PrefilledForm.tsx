@@ -5,27 +5,6 @@ import { useTranslation } from 'react-i18next';
 
 const shortFields: string[] = ['Date', 'Nationality'];
 
-// const labels: { [key: string]: string; } = {
-//     FirstName: 'First Name',
-//     LastName: 'Last Name',
-//     Date: 'Date of birth',
-//     Nationality: 'Nationality',
-//     Gender: 'Gender',
-//     Birthplace: 'Birthplace',
-//     Country: 'Country of residence',
-//     Phone: 'Phone number',
-//     Address: 'Address',
-//     CompanyName: 'Company name',
-//     CompanyAddress: 'Company address',
-//     CompanyType: 'Company type',
-//     CompanyBusiness: 'Nature of business',
-//     CompanyCreationDate: 'Company creation date',
-//     CompanyNumber: 'Company number',
-//     CompanyOwner: 'Managing director',
-//     BankName: 'Name of the bank',
-//     AccountType: 'Bank account type'
-// };
-
 const Icon = () => <img src={icon} alt='' width={18} />;
 
 const PrefilledForm = ({ form, dataFields }: {
@@ -34,7 +13,7 @@ const PrefilledForm = ({ form, dataFields }: {
 }) => {
     useEffect(() => {
         form.setFieldsValue(dataFields);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
     
     const { t } = useTranslation();
     
