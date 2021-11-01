@@ -3,6 +3,7 @@ import { Button, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
 import { Layout, Loading, Form, PrefilledForm, WebSocket } from '../components';
 import { useTranslation } from 'react-i18next';
+import useStep from '../utils/useStep';
 
 const prefilledFields = [
     'FirstName',
@@ -37,6 +38,7 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
     const [prefilledData, setPrefilledData] = useState({});
 
     const { t } = useTranslation();
+    const { nextStep } = useStep(match);
 
     useEffect(() => {
         async function getData() {
@@ -101,7 +103,7 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
                 <h2>Application for AwesomeTech</h2>
                 <h3 className='section-header'>Candidate Details</h3>
                 <PrefilledForm {...prefilledFormData} />
-                <Button htmlType="button" href="/application/details/1/32sdnsjnd" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
+                <Button htmlType="button" href={nextStep} style={{marginTop: '10%', backgroundColor: 'darkblue', height: '35px', color: 'white'}} >Continue</Button>
                 {
                     status && (
                         <div className='loading'>

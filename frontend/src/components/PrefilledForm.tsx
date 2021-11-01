@@ -53,7 +53,7 @@ const PrefilledForm = ({ form, dataFields }: {
                     ))
                 }
             </Form>
-            <p className='notice bold small'>{t("components.prefilledForm.credentialsBySelv")}</p>
+            <p className='notice bold small'>{t("components.prefilledForm.credentialsByMyPassID")}</p>
         </div>
     );
 };

@@ -192,7 +192,6 @@
         "companyType": "Company Type",
         "companyBusiness": "Nature of Business",
         "setUpPrivateCompany": "Set up a Private Limited Company"
-
       }
     },
     "bank": {
@@ -264,10 +263,10 @@
     },
     "nextStepDrawer": {
       "companyNowActive": "Your Company Is Now Active",
-      "businessSetUp": "You have successfully set up your entire business. This is the end of this demo and we thank you for participating. Selv will be updated with more demonstrations and will be updated with more features",
-      "companyNotActive": "Your Company Is Not Active Yet",
-      "needLiabilityInsurance": "You need to add Liability Insurance to finish this process",
-      "needBankAndInsurance": "You need to add Bank Account and Liability Insurance to finish this process"
+      "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
+      "applicationNotComplete": "Your Application Is Not Completed Yet",
+      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process",
+      "needCollegeAndEmployer": "You need to add College Degree and Previous Employer Details to finish this process"
     },
     "prefilledForm": {
       "FirstName": "First Name",
@@ -279,16 +278,13 @@
       "Country": "Country of Residence",
       "Phone": "Phone Number",
       "Address": "Address",
-      "CompanyName": "Company Name",
-      "CompanyAddress": "Company Address",
-      "CompanyType": "Company Type",
-      "CompanyBusiness": "Nature of Business",
-      "CompanyCreationDate": "Company Creation Date",
-      "CompanyNumber": "Company Number",
-      "CompanyOwner": "Managing Director",
-      "BankName": "Name of the Bank",
-      "AccountType": "Bank Account Type",
-      "credentialsBySelv": "Credentials Provided by Selv ID"
+      "CollegeName": "College Name",
+      "RegistrationNumber": "Registration Number",
+      "ProgramEnrolled": "Program Enrolled",
+      "EnrollingYear": "Enrolling Year",
+      "Graduation Year": "GraduationYear",
+      "Branch": "Branch",
+      "credentialsByMyPassID": "Credentials Provided by myPass.ID"
     },
     "sideBar": {
       "yourTodoList": "Your To-Do List"
