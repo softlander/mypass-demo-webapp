@@ -7,22 +7,20 @@ import back from '../assets/back.svg';
 import { serverAPI } from '../config.json';
 import { useTranslation } from 'react-i18next';
 
-interface CompanyData {
-    'CompanyNumber': string;
+interface ApplicationData {
+    'ApplicationNumber': string;
+    'CandidateName': string;
     'CompanyName': string;
-    'CompanyCreationDate': string;
-    'CompanyType': string;
-    'CompanyStatus': string;
-    'CompanyOwner': string;
-    'CompanyAddress': string;
-    'CompanyBusiness': string;
-    'CompanyOwners': string[];
+    'RoleApplyingFor': string;
+    'ExpectedCTC': string;
+    'DateOfApplication': string;
+    'ApplicationStatus': string;
 }
 
 /**
- * Component which will display a CompanyData.
+ * Component which will display a ApplicationData.
  */
-const CompanyData: React.FC = ({ match }: any) => {
+const ApplicationData: React.FC = ({ match }: any) => {
     const companyId = match?.params?.companyId;
     const { nextStep } = useStep(match);
     const { response, loading } = useFetch(`${serverAPI}/company?company=${companyId}`);
@@ -47,10 +45,10 @@ const CompanyData: React.FC = ({ match }: any) => {
                                 </Link>
                                 <h2>{response?.data?.CompanyName}</h2>
                                 <p className='company-number-wrapper'>
-                                    Application Number <span className='company-number'>{response?.data?.CompanyNumber}</span>
+                                    {t("pages.general.applicationDetails.applicationNumber")} <span className='company-number'>{response?.data?.ApplicationNumber}</span>
                                 </p>
                                 <div className='company-details'>
-                                    <CompanyDetails details={response?.data} />
+                                    <ApplicationDetails details={response?.data} />
                                 </div>
                             </React.Fragment>
                         )
@@ -62,40 +60,40 @@ const CompanyData: React.FC = ({ match }: any) => {
     );
 };
 
-const CompanyDetails = ({ details }: { details: CompanyData | undefined }) => {
+const ApplicationDetails = ({ details }: { details: ApplicationData | undefined }) => {
 
     const { t } = useTranslation();
 
     return (
         <React.Fragment>
             <div className='company-details-item'>
-                <p>Candidate Name</p>
-                <p className='bold'>{details?.CompanyOwner}</p>
+                <p>{t("pages.general.applicationDetails.candidateName")}</p>
+                <p className='bold'>{details?.CandidateName}</p>
             </div>
             <div className='company-details-item'>
-                <p>Company Name</p>
+                <p>{t("pages.general.applicationDetails.companyName")}</p>
                 <p className='bold'>AwesomeTech</p>
             </div>
             <div className='company-details-item'>
-                <p>Role Applying for</p>
-                <p className='bold'>{details?.CompanyType}</p>
+                <p>{t("pages.general.applicationDetails.roleApplyingFor")}</p>
+                <p className='bold'>{details?.RoleApplyingFor}</p>
             </div>
             
             <div className='company-details-item'>
-                <p>Expected CTC</p>
-                <p className='bold'>{details?.CompanyBusiness}</p>
+                <p>{t("pages.general.applicationDetails.expectedCTC")}</p>
+                <p className='bold'>{details?.ExpectedCTC}</p>
             </div>
             <div className='company-details-item'>
-                <p>Date of Application</p>
-                <p className='bold'>{details?.CompanyCreationDate}</p>
+                <p>{t("pages.general.applicationDetails.dateOfApplication")}</p>
+                <p className='bold'>{details?.DateOfApplication}</p>
             </div>
 
             <div className='company-details-item'>
-                <p>Application Status</p>
-                <p className={`status ${details?.CompanyStatus.toLowerCase()}`}>{t("general." + details?.CompanyStatus.toLocaleLowerCase())}</p>
+                <p>{t("pages.general.applicationDetails.applicationStatus")}</p>
+                <p className={`status ${details?.ApplicationStatus.toLowerCase()}`}>{t("general." + details?.ApplicationStatus.toLocaleLowerCase())}</p>
             </div>
         </React.Fragment>
     );
 };
 
-export default CompanyData;
+export default ApplicationData;

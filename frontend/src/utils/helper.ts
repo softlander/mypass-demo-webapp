@@ -22,7 +22,7 @@ export const encrypt = async (key: string, payload: string) => {
     return `${iv.toString('hex')}:${encrypted.toString('hex')}`;
 };
 
-export const flattenObject = (obj: {[key: string]: any;}, prefix = '') =>
+export const flattenObject = (obj: { [key: string]: any; }, prefix = '') =>
     Object.keys(obj).reduce((acc: any, k: any) => {
         const pre = prefix.length ? prefix + '.' : '';
         if (obj[k] && typeof obj[k] === 'object') {

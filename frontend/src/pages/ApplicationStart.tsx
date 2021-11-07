@@ -3,6 +3,7 @@ import { Button, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
 import { Layout, Loading, Form, PrefilledForm, WebSocket } from '../components';
 import { useTranslation } from 'react-i18next';
+import useStep from '../utils/useStep';
 
 const prefilledFields = [
     'FirstName',
@@ -14,29 +15,16 @@ const prefilledFields = [
     'Phone'
 ];
 
-const messages = {
-    waiting: 'general.messages.waiting',
-    connectionError: 'general.messages.connectionError',
-    missing: 'general.messages.missing',
-    verifying: 'general.messages.verifying'
-};
-
-const notify = (type: string, message: string, description: string) => {
-    return type === 'error'
-        ? notification.error({ message, description })
-        : notification.warning({ message, description });
-};
-
 /**
- * Component which will display a CompanyData.
+ * Component which will display a ApplicationData.
  */
-const CompanyData: React.FC = ({ history, match }: any) => {
+const ApplicationData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
-    const [status, setStatus] = useState('');
     const [prefilledData, setPrefilledData] = useState({});
 
     const { t } = useTranslation();
+    const { nextStep } = useStep(match);
 
     useEffect(() => {
         async function getData() {
@@ -89,32 +77,18 @@ const CompanyData: React.FC = ({ history, match }: any) => {
         setWebSocket(true);
     }
 
-    function setStatusMessage(message: string) {
-        setStatus(message);
-    }
-
     const prefilledFormData: any = { dataFields: prefilledData };
 
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>Application for AwesomeTech</h2>
-                <h3 className='section-header'>Candidate Details</h3>
+                <h2>{t("pages.application.applicationStart.applyAtAwesomeTech")}</h2>
+                <h3 className='section-header'>{t("pages.application.applicationStart.candidateDetails")}</h3>
                 <PrefilledForm {...prefilledFormData} />
-                <Button htmlType="button" href="/application/details/1/32sdnsjnd" style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}} >Continue</Button>
-                {
-                    status && (
-                        <div className='loading'>
-                            <p className='bold'>{t(status)}</p>
-                            {
-                                status === messages.waiting && <Loading />
-                            }
-                        </div>
-                    )
-                }
+                <Button htmlType="button" href={nextStep} style={{marginTop: '10%', backgroundColor: 'darkblue', height: '35px', color: 'white'}} >{t("pages.application.applicationStart.continueButton")}</Button>
             </div>
         </Layout>
     );
 };
 
-export default CompanyData;
+export default ApplicationData;

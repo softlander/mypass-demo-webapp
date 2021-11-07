@@ -80,6 +80,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
         }
         if (nextStep) {
             setQR();
+            // window.location.href = nextStep;
         }
     }, [nextStep]); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -65,8 +65,8 @@ export default ({ link }: { link: string }) => {
                     <p>
                         You need to add your College Degree and First Employer Details to finish this application process.
                     </p>
-                    <Link to={"/application/college"}>
-                        <Button>
+                    <Link to={link}>
+                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
                             Add College Degree
                         </Button>
                     </Link>

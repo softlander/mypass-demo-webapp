@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import WebFontLoader from 'webfontloader';
 import AOS from 'aos';
-import { Landing, IncorporatedCompanies, CompanyDetails, IntroDemoSelection, IntroShowTodos, IntroShowMobile, AppDownloadQR, ProveIdentity, CompanyData, BankData } from './pages'
+import { Landing, Apply, ApplicationDetails, IntroDemoSelection, IntroShowTodos, IntroShowMobile, AppDownloadQR, ProveIdentity, CollegeData, ApplicationStart } from './pages'
 import GlobalState from './context/globalState'
 import 'aos/dist/aos.css';
 import 'antd/dist/antd.css';
@@ -31,20 +31,20 @@ const App: React.FC = () => {
       <GlobalState>
         <BrowserRouter>
           <Switch>
-          {/* {
+          {
               routes.map(({ path, page }: { path: string; page: any; }) =>
                 <Route exact key={path} path={path} component={page} />
               )
-            } */}
-            <Route path={'/demo/select'} component={IntroDemoSelection} />
+            }
+            {/* <Route path={'/demo/select'} component={IntroDemoSelection} />
             <Route path={'/demo/todos'} component={IntroShowTodos} />
             <Route path={'/demo/app'} component={IntroShowMobile} />
-            <Route path={'/application/demo'} component={IncorporatedCompanies} />
+            <Route path={'/application/demo'} component={Apply} />
             <Route path={'/demo/download'} component={AppDownloadQR} />
             <Route path={'/application/prove'} component={ProveIdentity} />
-            <Route path={'/application/start'} component={CompanyData} />
-            <Route path={'/application/details/:step/:companyId'} component={CompanyDetails} />
-            <Route path={'/application/college'} component={BankData} />
+            <Route path={'/application/start'} component={ApplicationStart} /> */}
+            <Route path={'/application/details/:step/:companyId'} component={ApplicationDetails} />
+            {/* <Route path={'/application/college'} component={CollegeData} /> */}
             <Route component={Landing} />
           </Switch>
         </BrowserRouter>
