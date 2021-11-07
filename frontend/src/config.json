@@ -1,8 +1,6 @@
 {
-    "websocketURL": "https://selv01.iota.cafe:8888",
-    "serverAPI": "https://selv01.iota.cafe",
+    "websocketURL": "http://localhost:4000:8888",
+    "serverAPI": "http://localhost:4000",
     "provider": "https://nodes.devnet.iota.org:443",
-    "keyId": "selv",
-    "covidDemo": "https://health-selv.iota.org",
-    "persistentSelvDemo": "https://persistent-selv.iota.org"
+    "keyId": "demo-myPassID"
 }

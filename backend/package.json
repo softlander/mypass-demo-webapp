@@ -1,7 +1,12 @@
 {
-  "name": "myPass.ID server",
+  "name": "mypass.id-web-server",
   "version": "1.0.0",
-  "description": "Digital Identity Narratives as a Service PoC",
+  "description": "myPassID server demo",
+  "author": "myPassID Team, IOTA Team(iota.org)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfbydx-com/mypass-demo-web.git"
+  },
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"

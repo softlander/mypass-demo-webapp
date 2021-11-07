@@ -1,13 +1,14 @@
 {
-  "name": "selv",
-  "version": "1.1.0",
+  "name": "mypass.id-web-app",
+  "version": "0.1.0",
   "private": true,
-  "description": "Selv - A digital Selv, under your control.",
-  "author": "Alexey Sobolev <alexey@iota.org>",
+  "description": "myPass.ID - Truly owned digital identity.",
+  "author": "myPassID Team, IOTA Team(iota.org)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iotaledger/selv-web.git"
+    "url": "https://github.com/dfbydx-com/mypass-demo-web.git"
   },
+  "proxy": "http://api:4000/",
   "dependencies": {
     "@iota/identity-wasm": "^0.3.5",
     "@types/classnames": "^2.2.11",
