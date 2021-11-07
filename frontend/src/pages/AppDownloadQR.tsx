@@ -9,7 +9,6 @@ import avatar1 from '../assets/avatar1.png';
 import avatar2 from '../assets/avatar2.png';
 import dots from '../assets/backgrounds/dots.png';
 import circle from '../assets/backgrounds/circleFrame6.svg';
-import { covidDemo } from '../config.json';
 import { useTranslation, Trans } from 'react-i18next';
 
 /**
@@ -51,9 +50,6 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                                             Or scan this QR code<br />to download
                                         </Trans>
                                     </p>
-                                    <div className='qr-wrapper'>
-                                        <QRCode text={`${covidDemo}//qr-redirect`} size={200} />
-                                    </div>
                                 </div>
                                 <img src={avatar1} alt='' className='avatar1' />
                                 <img src={avatar2} alt='' className='avatar2' />
@@ -63,16 +59,16 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                     <img src={dots} alt='' className='dots' />
                     <img src={circle} alt='' className='circle' />
                 </div>
-                    <div className="cta-section" id='app-download'>
-                        <p className='subtitle'>{t("pages.demo.appDownloadQR.onceDownloaded")}</p>
-                        <Link to={nextStep}>
-                            <Button style={{ backgroundColor: 'darkblue'}}>
-                                {t("actions.continue")}
-                            </Button>
-                        </Link>
-                    </div>
+                <div className="cta-section" id='app-download'>
+                    <p className='subtitle'>{t("pages.demo.appDownloadQR.onceDownloaded")}</p>
+                    <Link to={nextStep}>
+                        <Button style={{ backgroundColor: 'darkblue' }}>
+                            {t("actions.continue")}
+                        </Button>
+                    </Link>
+                </div>
             </React.Fragment>
-        </Layout>
+        </Layout >
     );
 };
 
