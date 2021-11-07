@@ -1,0 +1,29 @@
+#the docker compose file version
+version: "3.7"
+# you can run multiple services inside one docker compose file
+# define them with their dependencies one after the other
+services:
+  ##############################
+  # Frontend Container
+  ##############################
+  frontend-dev:
+    # container name
+    container_name: frontend-dev
+    build:
+      # the context (working directory) is the current directory
+      # change this to the directory containing the dockerfile if in a different place
+      context: frontend
+      # the dockerfile to be run
+      dockerfile: Dockerfile
+    # map the exposed port from the underlying service to a port exposed to the outside
+    # in this case  map port 3000 exposed by create react app to port 3000 on the outside
+    # to be used to access the container from the outside
+    ports:
+      - "3000:3000"
+    # the mounted volumes (folders which are outside docker but being used by docker)
+    volumes:
+      - "./frontend:/app"
+      - "/app/node_modules"
+    # set the environment to development
+    environment:
+      - NODE_ENV=development
