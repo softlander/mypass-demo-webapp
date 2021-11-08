@@ -15,23 +15,11 @@ const {
   removeData,
 } = require("./database");
 
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("../swagger.json");
-const config = require("../config");
-const customCss = fs.readFileSync(process.cwd() + "/swagger.css", "utf8");
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const whitelist = [
   "http://localhost:3000",
-  "http://localhost:3003",
-  "https://selv.iota.org",
-  "https://health-selv.iota.org",
-  "https://persistent-selv.iota.org",
-  "https://selv.vercel.app",
-  "https://selv.iota1.vercel.app",
-  "https://covid-19.iota1.vercel.app",
-  "https://persistent-selves.vercel.app",
 ];
 const corsOptions = {
   // methods: ["GET, POST, OPTIONS"],
@@ -52,11 +40,6 @@ const app = express();
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(bodyParser.json());
-app.use(
-  "/api",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument, { customCss })
-);
 
 console.log("Websocket server starting", websocketPort);
 
@@ -261,7 +244,7 @@ try {
 /*
 Check the status of server.
 */
-app.get('/api/status', (req, res) => res.send({ status: "I'm alive!" }));
+app.get('/status', (req, res) => res.send({ status: "I'm alive!" }));
 
 /*
 Check if mobile client is connected
