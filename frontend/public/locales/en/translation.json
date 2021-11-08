@@ -282,7 +282,12 @@
       "EnrollingYear": "Enrolling Year",
       "Graduation Year": "GraduationYear",
       "Branch": "Branch",
-      "credentialsByMyPassID": "Credentials Provided by myPass.ID"
+      "credentialsByMyPassID": "Credentials Provided by myPass.ID",
+      "CompanyName": "Company Name",
+      "Designation": "Designation",
+      "EmployeeID": "Employee ID",
+      "EndDate": "EndDate",
+      "StartDate": "StartDate"
     },
     "sideBar": {
       "yourTodoList": "Your To-Do List"

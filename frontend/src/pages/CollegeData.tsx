@@ -52,9 +52,7 @@ const labels = {
 const CollegeData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
-    const [accountType, setAccountType] = useState();
     const [status, setStatus] = useState('');
-    const [accountStep, setAccountStep] = useState(1);
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
     const { nextStep } = useStep(match);
 
@@ -81,29 +79,6 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     async function processValues(fields: object) {
         setFields(fields);
         setWebSocket(true);
-    }
-
-    function setStatusMessage(message: string) {
-        setStatus(message);
-    }
-
-    async function continueNextStep(params: any) {
-        if (accountStep < 4) {
-            setAccountStep((accountStep: number) => accountStep + 1);
-            if (params.accountType) {
-                setAccountType(params.accountType);
-            }
-        } else {
-            const fields = {
-                AccountType: accountType,
-                BankName: 'SNS Bank'
-            };
-            await processValues(fields);
-        }
-    }
-
-    function onChange(step: any) {
-        accountStep > step && setAccountStep(Number(step));
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };

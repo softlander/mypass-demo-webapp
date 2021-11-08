@@ -19,8 +19,14 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         e.preventDefault();
         validateFields((err: any, values: any) => {
             if (!err) {
-                localStorage.setItem('previousDegree', JSON.stringify(values));
-                window.location.href = nextStep;
+                const highestDegree = localStorage.getItem('highestDegree');
+                if(highestDegree){
+                    localStorage.setItem('previousEmployer', JSON.stringify(values));
+                    window.location.href = nextStep;
+                }else{
+                    localStorage.setItem('highestDegree', JSON.stringify(values));
+                    window.location.href = nextStep;
+                }
             }
         });
     }

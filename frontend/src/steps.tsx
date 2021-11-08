@@ -10,7 +10,7 @@ import {
     ApplicationDetails,
     Confirmation,
     CollegeData,
-    InsuranceData,
+    EmployerData,
     Apply,
     GreatSuccess,
     ThankYou
@@ -34,7 +34,7 @@ export const routes = [
     { path: '/college/confirm/2', page: Confirmation },
     { path: '/application/details/2/:applicationId', page: ApplicationDetails },
     { path: '/employer/prove/2', page: ProveIdentity },
-    { path: '/employer/data/2', page: InsuranceData },
+    { path: '/employer/data/2', page: EmployerData },
     { path: '/employer/confirm/3', page: Confirmation },
     { path: '/application/details/3/:applicationId', page: ApplicationDetails },
     { path: '/demo/thankyou', page: ThankYou }

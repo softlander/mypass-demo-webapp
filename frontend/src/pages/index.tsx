@@ -10,7 +10,7 @@ import ApplicationStart from './ApplicationStart';
 import ApplicationDetails from './ApplicationDetails';
 import Confirmation from './Confirmation';
 import CollegeData from './CollegeData';
-import InsuranceData from './EmployerData';
+import EmployerData from './EmployerData';
 import Apply from './Apply';
 import GreatSuccess from './GreatSuccess';
 import ThankYou from './ThankYou';
@@ -28,7 +28,7 @@ export {
     ApplicationDetails,
     Confirmation,
     CollegeData,
-    InsuranceData,
+    EmployerData,
     Apply,
     GreatSuccess,
     ThankYou

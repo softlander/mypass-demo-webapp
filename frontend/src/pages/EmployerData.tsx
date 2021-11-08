@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Collapse, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket } from '../components';
-import checkmark from '../assets/bankCheckmark.svg';
+import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket, Form } from '../components';
 import { useTranslation } from 'react-i18next';
+import useStep from '../utils/useStep';
 
 const personalDataFields = [
     'FirstName',
@@ -22,23 +22,37 @@ const messages = {
     verifying: 'general.messages.verifying'
 };
 
-
 const notify = (type: string, message: string, description: string) => {
     return type === 'error'
         ? notification.error({ message, description })
         : notification.warning({ message, description });
 };
 
-/**
- * Component which will display a InsuranceData.
- */
+const emptyFields = [
+    'CompanyName',
+    'Designation',
+    'StartDate',
+    'EndDate',
+    'EmployeeID'
+];
+
+const labels = {
+    CompanyName: 'Company Name', 
+    Designation: 'Designation',
+    StartDate: 'Start Date',
+    EndDate: 'End Date',
+    EmployeeID: 'Employee ID'
+};
+
 const EmployerData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
-    const [accountType, setAccountType] = useState();
     const [status, setStatus] = useState('');
-    const [accountStep, setAccountStep] = useState(1);
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
+    const [prefilledCollegeData, setPrefilledCollegeData] = useState({});
+    const { nextStep } = useStep(match);
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         async function getData() {
@@ -54,171 +68,46 @@ const EmployerData: React.FC = ({ history, match }: any) => {
             const personalData = personalDataFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
+
+            
+            const collegeDegreeString: string | null = await localStorage.getItem('highestDegree');
+            const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
+            const flattenCollegeDetails = flattenObject(collegeDegree);
+
+            setPrefilledCollegeData(flattenCollegeDetails)
+
         }
         getData();
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     async function processValues(fields: object) {
         setFields(fields);
         setWebSocket(true);
     }
 
-    function setStatusMessage(message: string) {
-        setStatus(message);
-    }
-
-    async function continueNextStep(params: any) {
-        if (accountStep < 5) {
-            setAccountStep(accountStep => accountStep + 1);
-            if (params.accountType) {
-                setAccountType(params.accountType);
-            }
-        } else {
-            const fields = {
-                InsuranceType: accountType
-            };
-            await processValues(fields);
-        }
-    }
-
-    function onChange(step: any) {
-        accountStep > step && setAccountStep(Number(step));
-    }
-
-    const { t } = useTranslation();
-
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    // const prefilledCompanyFormData: any = { dataFields: prefilledCompanyData };
-    // const prefilledBankFormData: any = { dataFields: prefilledBankData };
-    // const formData: any = { onSubmit: continueNextStep, status, messages, accountTypes, buttonText: t("pages.demo.introShowTodos.getLiabilityInsurance") };
-
+    const prefilledCollegeFormData: any = { dataFields: prefilledCollegeData };
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
 
     return (
         <Layout match={match}>
-            <div className='insurance-data-page-wrapper'>
-                <h1>{t("pages.insurance.insuranceData.openAnAccount")}</h1>
-                <Collapse
-                    onChange={onChange}
-                    bordered={false}
-                    defaultActiveKey={[1]}
-                    activeKey={accountStep}
-                    accordion
-                >
-                    <Collapse.Panel
-                        header={(
-                            <div className='section-header'>
-                                {
-                                    accountStep > 1 ? <img src={checkmark} alt='' /> : <span>1</span>
-                                }
-                                <h3>{t("pages.insurance.insuranceData.accountType")}</h3>
-                            </div>
-                        )}
-                        showArrow={false}
-                        key={1}
-                    >
-                        {/* <AccountType {...formData} /> */}
-                    </Collapse.Panel>
-                    <Collapse.Panel
-                        header={(
-                            <div className='section-header'>
-                                {
-                                    accountStep > 2 ? <img src={checkmark} alt='' /> : <span>2</span>
-                                }
-                                <h3>{t("pages.insurance.insuranceData.businessOwner")}</h3>
-                            </div>
-                        )}
-                        showArrow={false}
-                        disabled={accountStep < 2}
-                        key={2}
-                    >
-                        {
-                            Object.keys(prefilledPersonalFormData.dataFields).length &&
-                            <PrefilledForm {...prefilledPersonalFormData} />
-                        }
-                        <Button onClick={continueNextStep}>
-                            {t("actions.continue")}
-                        </Button>
-                    </Collapse.Panel>
-                    <Collapse.Panel
-                        header={(
-                            <div className='section-header'>
-                                {
-                                    accountStep > 3 ? <img src={checkmark} alt='' /> : <span>3</span>
-                                }
-                                <h3>{t("pages.insurance.insuranceData.companyDetails")}</h3>
-                            </div>
-                        )}
-                        showArrow={false}
-                        disabled={accountStep < 3}
-                        key={3}
-                    >
-                        {/* {
-                            Object.keys(prefilledCompanyFormData.dataFields).length &&
-                            <PrefilledForm {...prefilledCompanyFormData} />
-                        } */}
-                        <Button onClick={continueNextStep}>
-                            {t("actions.continue")}
-                        </Button>
-                    </Collapse.Panel>
-                    <Collapse.Panel
-                        header={(
-                            <div className='section-header'>
-                                {
-                                    accountStep > 4 ? <img src={checkmark} alt='' /> : <span>4</span>
-                                }
-                                <h3>{t("pages.insurance.insuranceData.bankAccountDetails")}</h3>
-                            </div>
-                        )}
-                        showArrow={false}
-                        disabled={accountStep < 4}
-                        key={4}
-                    >
-                        {/* {
-                            Object.keys(prefilledBankFormData.dataFields).length &&
-                            <PrefilledForm {...prefilledBankFormData} />
-                        } */}
-                        <Button onClick={continueNextStep}>
-                            {t("actions.continue")}
-                        </Button>
-                    </Collapse.Panel>
+            <div className='company-data-page-wrapper'>
+                <h2>Previous Employer Website</h2>
+                <h3 className='section-header'>Candidate Details</h3>
+                <PrefilledForm {...prefilledPersonalFormData} />
 
-                    <Collapse.Panel
-                        header={(
-                            <div className='section-header'>
-                                <span>5</span>
-                                <h3>{t("actions.confirm")}</h3>
-                            </div>
-                        )}
-                        showArrow={false}
-                        disabled={accountStep < 5}
-                        key={5}
-                    >
-                        {/* <Checkbox {...formData} /> */}
-                    </Collapse.Panel>
-                </Collapse>
-                {
-                    status && (
-                        <div className='loading'>
-                            <p className='bold'>{t(status)}</p>
-                            {
-                                status === messages.waiting && <Loading />
-                            }
-                        </div>
-                    )
-                }
-                {
-                    webSocket && <WebSocket
-                        history={history}
-                        match={match}
-                        schemaName='Insurance'
-                        setStatus={setStatusMessage}
-                        fields={fields}
-                        messages={messages}
-                    />
-                }
+                <h3 className='section-header'>Highest Degree Details</h3>
+                <PrefilledForm {...prefilledCollegeFormData} />
+
+
+                <h3 className='section-header'>Employer Details</h3>
+                {console.log(emptyFormData)}
+                <Form {...emptyFormData} />
             </div>
+            
         </Layout>
     );
 };
 
 export default EmployerData;
+
