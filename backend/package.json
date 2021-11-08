@@ -1,15 +1,17 @@
 {
   "name": "mypass.id-web-server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "myPassID server demo",
   "author": "myPassID Team, IOTA Team(iota.org)",
   "repository": {
     "type": "git",
     "url": "https://github.com/dfbydx-com/mypass-demo-web.git"
   },
+  "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start:prod": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -20,9 +22,7 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "swagger-jsdoc": "^6.0.8",
-    "swagger-ui-express": "^4.1.6"
+    "nodemon": "^2.0.7"
   },
   "resolutions": {
     "dot-prop": "^4.2.1",
