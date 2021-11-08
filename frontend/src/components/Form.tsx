@@ -44,9 +44,9 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                 <Form.Item>
                     <Button
                         htmlType='submit'
-                        style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%', color: 'white', textDecoration: 'none'}}
+                        disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        Continue
+                        {t("actions.startJobApp")}
                     </Button>
                 </Form.Item>
             </Form>

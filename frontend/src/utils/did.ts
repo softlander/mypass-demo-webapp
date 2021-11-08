@@ -1,6 +1,6 @@
 import { provider } from '../config.json';
 import Address from '../schemas/Address.json';
-import College from '../schemas/CollegeDegree.json';
+import CollegeDegree from '../schemas/CollegeDegree.json';
 import Company from '../schemas/Company.json';
 import ContactDetails from '../schemas/ContactDetails.json';
 import Insurance from '../schemas/Insurance.json';
@@ -10,7 +10,7 @@ import * as identity from '@iota/identity-wasm/web';
 
 const schemas: any = {
     Address,
-    College,
+    CollegeDegree,
     Company,
     ContactDetails,
     Insurance,

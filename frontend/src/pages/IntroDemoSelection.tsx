@@ -39,13 +39,13 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                         <div className='demo-card-wrapper'>
                             <img src={selv} alt="Selv demo" />
                             <div className="demo-card-content">
-                                <h3>Apply for Job at AwesomeTech</h3>
+                                <h3>{t("general.digitalIdentityManagement")}</h3>
                                 <p>{t("general.claimControlReuse")}</p>
                                 <div>
                                     <div className="bottom">
                                         <Link to={nextStep}>
                                             <Button className='cta'>
-                                                Try the Demo
+                                                {t("actions.tryTheDemo")}
                                             </Button>
                                         </Link>
                                     </div>

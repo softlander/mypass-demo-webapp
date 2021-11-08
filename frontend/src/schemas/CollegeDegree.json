@@ -20,16 +20,16 @@
         "RegistrationNumber": {
           "type": "string"
         },
-        "ProgramEnrolled": {
+        "Program": {
+          "type": "string"
+        },
+        "Branch": {
           "type": "string"
         },
         "EnrollingYear": {
           "type": "string"
         },
         "GraduationYear": {
-          "type": "string"
-        },
-        "Branch": {
           "type": "string"
         }
       }
