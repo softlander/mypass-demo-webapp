@@ -15,32 +15,6 @@ const personalDataFields = [
     'Phone'
 ];
 
-const companyFields = [
-    'CompanyName',
-    'CompanyAddress',
-    'CompanyType',
-    'CompanyBusiness',
-    'CompanyCreationDate',
-    'CompanyNumber',
-    'CompanyOwner'
-];
-
-const bankFields = [
-    'BankName',
-    'AccountType'
-];
-
-const accountTypes = {
-    label: 'pages.insurance.insuranceData.accountTypes.label',
-    error: 'pages.insurance.insuranceData.accountTypes.error',
-    accounts: [
-        'pages.insurance.insuranceData.accountTypes.accounts1',
-        'pages.insurance.insuranceData.accountTypes.accounts2',
-        'pages.insurance.insuranceData.accountTypes.accounts3'
-    ],
-    special: 'pages.insurance.insuranceData.accountTypes.special',
-}
-
 const messages = {
     waiting: 'general.messages.waiting',
     connectionError: 'general.messages.connectionError',
@@ -58,15 +32,13 @@ const notify = (type: string, message: string, description: string) => {
 /**
  * Component which will display a InsuranceData.
  */
-const InsuranceData: React.FC = ({ history, match }: any) => {
+const EmployerData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
     const [accountType, setAccountType] = useState();
     const [status, setStatus] = useState('');
     const [accountStep, setAccountStep] = useState(1);
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
-    const [prefilledCompanyData, setPrefilledCompanyData] = useState({});
-    const [prefilledBankData, setPrefilledBankData] = useState({});
 
     useEffect(() => {
         async function getData() {
@@ -82,14 +54,6 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
             const personalData = personalDataFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
-
-            const companyData = companyFields.reduce((acc: any, entry: string) =>
-                ({ ...acc, [entry]: flattenData[entry] }), {});
-            setPrefilledCompanyData({ ...companyData });
-
-            const bankData = bankFields.reduce((acc: any, entry: string) =>
-                ({ ...acc, [entry]: flattenData[entry] }), {});
-            setPrefilledBankData({ ...bankData });
         }
         getData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -124,9 +88,9 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
     const { t } = useTranslation();
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const prefilledCompanyFormData: any = { dataFields: prefilledCompanyData };
-    const prefilledBankFormData: any = { dataFields: prefilledBankData };
-    const formData: any = { onSubmit: continueNextStep, status, messages, accountTypes, buttonText: t("pages.demo.introShowTodos.getLiabilityInsurance") };
+    // const prefilledCompanyFormData: any = { dataFields: prefilledCompanyData };
+    // const prefilledBankFormData: any = { dataFields: prefilledBankData };
+    // const formData: any = { onSubmit: continueNextStep, status, messages, accountTypes, buttonText: t("pages.demo.introShowTodos.getLiabilityInsurance") };
 
 
     return (
@@ -152,7 +116,7 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
                         showArrow={false}
                         key={1}
                     >
-                        <AccountType {...formData} />
+                        {/* <AccountType {...formData} /> */}
                     </Collapse.Panel>
                     <Collapse.Panel
                         header={(
@@ -188,10 +152,10 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
                         disabled={accountStep < 3}
                         key={3}
                     >
-                        {
+                        {/* {
                             Object.keys(prefilledCompanyFormData.dataFields).length &&
                             <PrefilledForm {...prefilledCompanyFormData} />
-                        }
+                        } */}
                         <Button onClick={continueNextStep}>
                             {t("actions.continue")}
                         </Button>
@@ -209,10 +173,10 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
                         disabled={accountStep < 4}
                         key={4}
                     >
-                        {
+                        {/* {
                             Object.keys(prefilledBankFormData.dataFields).length &&
                             <PrefilledForm {...prefilledBankFormData} />
-                        }
+                        } */}
                         <Button onClick={continueNextStep}>
                             {t("actions.continue")}
                         </Button>
@@ -229,7 +193,7 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
                         disabled={accountStep < 5}
                         key={5}
                     >
-                        <Checkbox {...formData} />
+                        {/* <Checkbox {...formData} /> */}
                     </Collapse.Panel>
                 </Collapse>
                 {
@@ -257,4 +221,4 @@ const InsuranceData: React.FC = ({ history, match }: any) => {
     );
 };
 
-export default InsuranceData;
+export default EmployerData;
