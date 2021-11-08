@@ -9,12 +9,6 @@ import { getCompanyId, encrypt, decrypt } from '../utils/helper';
 import { serverAPI, websocketURL } from '../config.json';
 import { useTranslation } from 'react-i18next';
 
-// const messages = {
-//     waiting: 'Waiting for Selv app...',
-//     connectionError: 'Connection error. Please try again!',
-//     missing: 'Credentials missing or not trusted'
-// };
-
 const notify = (type: string, message: string, description: string) => {
     switch (type) {
     case 'success':
@@ -187,8 +181,8 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
         });
     }
 
-    async function checkConnectedStatus (channelId: string) {
-        const response = await axios.get(`${serverAPI}/connection?channelId=${channelId}`);
+    async function checkConnectedStatus(channelId: string) {
+        const response = await axios.get(`${serverAPI}/api/connection?channelId=${channelId}`);
         return response && response?.data?.status === 'success';
     }
 
@@ -210,7 +204,7 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
 
     async function updateCompanyStatus () {
         const companyId = await getCompanyId();
-        await axios.get(`${serverAPI}/activate?company=${companyId}`);
+        await axios.get(`${serverAPI}/api/activate?company=${companyId}`);
     }
 
     useInterval(async () => {

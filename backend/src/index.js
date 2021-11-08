@@ -15,23 +15,11 @@ const {
   removeData,
 } = require("./database");
 
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("../swagger.json");
-const config = require("../config");
-const customCss = fs.readFileSync(process.cwd() + "/swagger.css", "utf8");
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const whitelist = [
   "http://localhost:3000",
-  "http://localhost:3003",
-  "https://selv.iota.org",
-  "https://health-selv.iota.org",
-  "https://persistent-selv.iota.org",
-  "https://selv.vercel.app",
-  "https://selv.iota1.vercel.app",
-  "https://covid-19.iota1.vercel.app",
-  "https://persistent-selves.vercel.app",
 ];
 const corsOptions = {
   // methods: ["GET, POST, OPTIONS"],
@@ -52,11 +40,6 @@ const app = express();
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(bodyParser.json());
-app.use(
-  "/api",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument, { customCss })
-);
 
 console.log("Websocket server starting", websocketPort);
 
@@ -259,9 +242,14 @@ try {
 }
 
 /*
+Check the status of server.
+*/
+app.get('/status', (req, res) => res.send({ status: "I'm alive!" }));
+
+/*
 Check if mobile client is connected
 */
-app.get("/connection", cors(corsOptions), async (req, res) => {
+app.get("/api/connection", cors(corsOptions), async (req, res) => {
   try {
     const mobileClient = mobileClients.has(req.query.channelId);
     console.log("isMobileConnected", req.query.channelId, mobileClient);
@@ -285,9 +273,9 @@ app.get("/connection", cors(corsOptions), async (req, res) => {
 });
 
 /*
-Check if mobile client is connected
+Check if desktop client is connected
 */
-app.get("/connection-app", cors(corsOptions), async (req, res) => {
+app.get("/api/connection-app", cors(corsOptions), async (req, res) => {
   try {
     const desktopClient = desktopClients.has(req.query.channelId);
     console.log("isDesktopConnected", req.query.channelId, desktopClient);
@@ -313,7 +301,7 @@ app.get("/connection-app", cors(corsOptions), async (req, res) => {
 /*
 Get company details
 */
-app.get("/company", cors(corsOptions), async (req, res) => {
+app.get("/api/company", cors(corsOptions), async (req, res) => {
   try {
     const companyNumber = req.query.company;
     await removeData("company", "");
@@ -342,7 +330,7 @@ app.get("/company", cors(corsOptions), async (req, res) => {
 /*
 Get pledge details
 */
-app.get("/commitments", cors(corsOptions), async (req, res) => {
+app.get("/api/commitments", cors(corsOptions), async (req, res) => {
   try {
     const data = await readAllData("commitments");
     res.json({
@@ -361,7 +349,7 @@ app.get("/commitments", cors(corsOptions), async (req, res) => {
 /*
 Activate company
 */
-app.get("/activate", cors(corsOptions), async (req, res) => {
+app.get("/api/activate", cors(corsOptions), async (req, res) => {
   try {
     const companyNumber = req.query.company;
     if (companyNumber) {
@@ -381,7 +369,7 @@ app.get("/activate", cors(corsOptions), async (req, res) => {
   }
 });
 
-app.post("/activate", cors(corsOptions), async (req, res) => {
+app.post("/api/activate", cors(corsOptions), async (req, res) => {
   // res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
   // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   try {
@@ -405,7 +393,7 @@ app.post("/activate", cors(corsOptions), async (req, res) => {
 /*
 Remove company
 */
-app.get("/remove_company", cors(corsOptions), async (req, res) => {
+app.get("/api/remove_company", cors(corsOptions), async (req, res) => {
   try {
     const companyNumber = req.query.company;
     if (companyNumber) {
@@ -429,7 +417,7 @@ app.get("/remove_company", cors(corsOptions), async (req, res) => {
 /*
 Remove commitment
 */
-app.get("/remove_commitment", cors(corsOptions), async (req, res) => {
+app.get("/api/remove_commitment", cors(corsOptions), async (req, res) => {
   try {
     const commitment = req.query.commitment;
     if (commitment) {

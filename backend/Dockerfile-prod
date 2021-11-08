@@ -1,0 +1,19 @@
+FROM node:14-alpine
+
+ENV APP_HOME=/app
+ENV PORT=4000
+
+WORKDIR $APP_HOME
+
+COPY package.json $APP_HOME
+COPY yarn.lock $APP_HOME
+
+RUN yarn install --production
+
+COPY --chown=node:node . .
+
+USER node
+
+EXPOSE $PORT
+
+CMD ["yarn", "start:prod"]
