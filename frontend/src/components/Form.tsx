@@ -20,6 +20,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         validateFields((err: any, values: any) => {
             if (!err) {
                 localStorage.setItem('previousDegree', JSON.stringify(values));
+                window.location.href = nextStep;
             }
         });
     }
@@ -43,8 +44,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                 <Form.Item>
                     <Button
                         htmlType='submit'
-                        style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}}
-                        href={nextStep}
+                        style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%', color: 'white', textDecoration: 'none'}}
                     >
                         Continue
                     </Button>
