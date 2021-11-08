@@ -2,13 +2,14 @@ import React from 'react';
 import { Form, Button, Input } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }: {
+const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, nextStep }: {
     form: any;
     dataFields: string[];
     labels: { [key: string]: string; };
     processValues: (values: object) => void;
     status: string;
     messages: { [key: string]: string; };
+    nextStep: any;
 }) => {
     const { getFieldDecorator, getFieldsError, validateFields } = form;
 
@@ -16,9 +17,9 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
 
     function handleSubmit(e: any) {
         e.preventDefault();
-        validateFields((err: any, values: string[]) => {
+        validateFields((err: any, values: any) => {
             if (!err) {
-                console.log(values)
+                localStorage.setItem('previousDegree', JSON.stringify(values));
             }
         });
     }
@@ -43,6 +44,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
                     <Button
                         htmlType='submit'
                         style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}}
+                        href={nextStep}
                     >
                         Continue
                     </Button>
