@@ -1,14 +1,37 @@
 #the docker compose file version
-version: "3.7"
+version: "3.8"
 # you can run multiple services inside one docker compose file
 # define them with their dependencies one after the other
 services:
+  ##############################
+  # Backend Container
+  ##############################
+  backend-prod:
+    # container name
+    container_name: backend-prod
+    restart: always
+    build:
+      # the context (working directory) is the current directory
+      # change this to the directory containing the dockerfile if in a different place
+      context: backend
+      # the dockerfile to be run
+      dockerfile: Dockerfile-prod
+    # map the exposed port from the underlying service to a port exposed to the outside
+    # in this case  map port 4000 exposed by create react app to port 4000 on the outside
+    # to be used to access the container from the outside
+    ports:
+      - "4000:4000"
+    # set the environment to production
+    environment:
+      - NODE_ENV=production    
   ##############################
   # Frontend Container
   ##############################
   frontend-prod:
     # container name
     container_name: frontend-prod
+    stdin_open: true
+    restart: always
     build:
       # the context (working directory) is the current directory
       # change this to the directory containing the dockerfile if in a different place
@@ -20,3 +43,8 @@ services:
     # to be used to access the container from the outside
     ports:
       - "3000:80"
+    # set the environment to production
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend-prod

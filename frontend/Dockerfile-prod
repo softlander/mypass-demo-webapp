@@ -5,14 +5,17 @@
 # these are what will be served by nginx
 # use alias build to be easier to refer this container elsewhere
 # e.g inside nginx container
-FROM node:14-alpine as build
+FROM node:14-alpine AS builder
+ENV APP_HOME=/app
+ENV PORT=3000
+
 # set working directory
-# this is the working folder in the container
+# this is the working folder in the container 
 # from which the app will be running from
-WORKDIR /app
+WORKDIR $APP_HOME
 # copy everything to /app directory
 # as opposed to on dev, in prod everything is copied to docker
-COPY . /app
+COPY . $APP_HOME
 # add the node_modules folder to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 # install and cache dependencies
@@ -24,7 +27,7 @@ RUN yarn build
 # the base image for this is an alpine based nginx image
 FROM nginx:stable-alpine
 # copy the build folder from react to the root of nginx (www)
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 # --------- only for those using react router ----------
 # if you are using react router 
 # you need to overwrite the default nginx configurations
