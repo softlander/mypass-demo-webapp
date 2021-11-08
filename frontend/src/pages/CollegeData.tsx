@@ -3,6 +3,7 @@ import { Button, Collapse, notification } from 'antd';
 import { flattenObject } from '../utils/helper';
 import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket, Form } from '../components';
 import { useTranslation } from 'react-i18next';
+import useStep from '../utils/useStep';
 
 const personalDataFields = [
     'FirstName',
@@ -55,6 +56,7 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     const [status, setStatus] = useState('');
     const [accountStep, setAccountStep] = useState(1);
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
+    const { nextStep } = useStep(match);
 
     const { t } = useTranslation();
 
@@ -105,7 +107,7 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages };
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
 
     return (
         <Layout match={match}>
