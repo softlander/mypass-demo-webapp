@@ -18,7 +18,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
         e.preventDefault();
         validateFields((err: any, values: string[]) => {
             if (!err) {
-                console.log(values)
+                processValues(values);
             }
         });
     }
@@ -42,9 +42,9 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages }
                 <Form.Item>
                     <Button
                         htmlType='submit'
-                        style={{marginTop: '10%', backgroundColor: 'darkblue', height: '22%'}}
+                        disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        Continue
+                        {t("actions.startJobApp")}
                     </Button>
                 </Form.Item>
             </Form>

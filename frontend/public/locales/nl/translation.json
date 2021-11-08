@@ -104,10 +104,10 @@
     "downloadTheSelvApp": "Download de Selv App",
     "orScanCode": "Of scan deze QR code<1/>om te downloaden",
     "back": "Terug",
-    "setUpCompany": "Registreer nieuw bedrijf",
-    "getBankAccount": "Open een bankrekening",
-    "liabilityInsurance": "Aansprakelijkheidsverzekering",
-    "readyForBusiness": "Actief",
+    "startJobApp": "Start Your Job Application",
+    "provideCollegeDegree": "Provide Highest College Degree",
+    "addEmploymentDetails": "Add Latest Employment Details",
+    "readyForJobApp": "Ready for Job Application",
     "confirm": "Accepteren",
     "learnMore": "Leer meer",
     "dismiss": "Sluiten",
@@ -149,11 +149,12 @@
       },
       "introShowTodos": {
         "welcomeToThe": "Welkom bij de",
-        "selvDemo": "Selv Demo",
+        "myPassIDDemo": "myPass.ID Demo",
         "hereIsTodo": "Dit zijn de taken die we gaan doen:",
-        "setUpCompany": "Een bedrijf registreren bij de Kamer van Koophandel",
-        "getBankAccount": "Een zakelijke bankrekening openen",
-        "getLiabilityInsurance": "Een zakelijke aansprakelijksheidsverzekering afsluiten"
+        "startJobApp": "Start Your Job Application",
+        "provideCollegeDegree": "Provide Highest College Degree",
+        "addEmploymentDetails": "Add Latest Employment Details",
+        "readyForJobApp": "Ready for Job Application"
       },
       "introShowMobile": {
         "looksLikeWork": "Dat is veel werk...",
@@ -179,20 +180,17 @@
         "returnHome": "Terug naar de homepage"
       }
     },
-    "company": {
+    "application": {
       "incorporatedCompanies": {
         "newlyIncorporatedCompanies": "Nieuw opgerichte bedrijven"
       },
       "signInConfirmation": {
         "signInSuccess": "Je hebt je nu aangemeld zonder een account aan te hoeven maken. Niet meer eindeloos veel toegangsnamen en wachtwoorden aanmaken en onthouden. Doordat je gegevens zijn ondertekend door betrouwbare organisaties kunnen bedrijven en instellingen de gegevens vertrouwen en direct gebruiken zonder dure en moeilijke verificatie processen. Dit alles in een oogwenk en zonder kosten."
       },
-      "companyData": {
-        "companyName": "Bedrijfsnaam",
-        "companyAddress": "Adres",
-        "companyType": "Type vennootschap",
-        "companyBusiness": "Aard van het bedrijf",
-        "setUpPrivateCompany": "Registreer een nieuw bedrijf"
-
+      "applicationStart": {
+        "applyAtAwesomeTech": "Application for AwesomeTech",
+        "candidateDetails": "Candidate Details",
+        "continueButton": "Continue"
       }
     },
     "bank": {
@@ -227,8 +225,8 @@
       "confirmation": {
         "titleBank": "Je zakelijke bankrekening is geopend!",
         "titleInsurance": "Gefeliciteerd, je bedrijf is nu verzekerd!",
-        "titleCompany": "Gefeliciteerd, je bedrijf is geregistreerd!",
-        "credentialsToSelv": "Je credential is gestuurd naar Selv",
+        "titleApplication": "Congratulations, Your Job Application Process Has Started!",
+        "credentialsToMyPassID": "Your Application Process Has Begun!",
         "proudOwnerOfCompany": "Je bent nu de trotse eigenaar ven een nieuw bedrijf. Vanaf nu kan je eenvoudig bewijzen dat je de eigenwaan bent met de Selv app. Open de app opnieuw om je geverifieerde bewijs dat je eigenaar bent en je mag handelen uit naam van het bedrijf in te zien.",
         "returnToCompany": "Terug naar de Kamer van Koophandel"
       },
@@ -237,14 +235,14 @@
         "provideCredentials": "Deel je Digital Identiteit",
         "scanToContinue": "Scan de QR-code met de <1>Selv App</1> om door te gaan"
       },
-      "companyDetails": {
-        "companyNumber": "KvK nummer",
-        "officeAddress": "Adres",
-        "companyType": "Type vennootschap",
-        "incorporatedOn": "Oprichtingsdatum",
-        "companyOwner": "Eigenaar",
-        "natureOfBusiness": "Aard van het bedrijf",
-        "companyStatus": "Status van het bedrijf"
+      "applicationDetails": {
+        "applicationNumber": "Application Number",
+        "candidateName": "Candidate Name",
+        "companyName": "Company Name",
+        "roleApplyingFor": "Role Applying For",
+        "expectedCTC": "Expected CTC",
+        "dateOfApplication": "Date Of Application",
+        "applicationStatus": "Application Status"
       }
     }
   },
@@ -263,11 +261,11 @@
       "error": "Vul de benodigde informatie in."
     },
     "nextStepDrawer": {
-      "companyNowActive": "Je bedrijf is nu volledig actief",
-      "businessSetUp": "Je hebt succesvol een volledig nieuw bedrijf opgezet. Dit is het einde van de demo. Dank je voor het uitproberen. We werken er hard aan om Selv voor steeds meer doeleinden geschikt te maken.",
-      "companyNotActive": "Je bedrijf is nog niet volledig",
-      "needLiabilityInsurance": "Je hebt nog een zakelijke aansprakelijkheidsverzekering nodig.",
-      "needBankAndInsurance": "Je bent verplicht een zakelijke bankrekening en aansprakelijkheidsverzekering af te sluiten voor je bedrijf."
+      "applicationReady": "Your Application Is Now Ready To Be Applied",
+      "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
+      "applicationNotComplete": "Your Application Is Not Ready Yet",
+      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process",
+      "needCollegeAndEmployer": "You need to add College Degree and Previous Employer Details to finish this process"
     },
     "prefilledForm": {
       "FirstName": "Voornaam",
@@ -281,14 +279,13 @@
       "Address": "Privé Adres",
       "CompanyName": "Bedrijfsnaam",
       "CompanyAddress": "Adres van je onderneming",
-      "CompanyType": "Type vennootschap",
-      "CompanyBusiness": "Aard van het bedrijf",
-      "CompanyCreationDate": "Oprichtingsdatum",
-      "CompanyNumber": "KvK nummer",
-      "CompanyOwner": "Eigenaar",
-      "BankName": "Naam van de bank",
-      "AccountType": "Bankrekening type",
-      "credentialsBySelv": "Data automatisch ingevuld door Selv"
+      "CollegeName": "College Name",
+      "RegistrationNumber": "Registration Number",
+      "ProgramEnrolled": "Program Enrolled",
+      "EnrollingYear": "Enrolling Year",
+      "Graduation Year": "GraduationYear",
+      "Branch": "Branch",
+      "credentialsByMyPassID": "Credentials Provided by myPass.ID"
     },
     "sideBar": {
       "yourTodoList": "Je takenlijst"
