@@ -22,9 +22,11 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                 const highestDegree = localStorage.getItem('highestDegree');
                 if(highestDegree){
                     localStorage.setItem('previousEmployer', JSON.stringify(values));
+                    localStorage.setItem('previousEmployerStatus', "completed");
                     window.location.href = nextStep;
                 }else{
                     localStorage.setItem('highestDegree', JSON.stringify(values));
+                    localStorage.setItem('highestDegreeStatus', "completed");
                     window.location.href = nextStep;
                 }
             }

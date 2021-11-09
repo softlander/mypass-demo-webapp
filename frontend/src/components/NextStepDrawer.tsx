@@ -10,55 +10,52 @@ export default ({ link }: { link: string }) => {
 
     useEffect(() => {
         async function setInfo() {
-            // const companyHouse = await localStorage.getItem('companyHouse');
-            // const bank = await localStorage.getItem('bank');
+            const highestDegree = await localStorage.getItem('highestDegreeStatus');
+            const previousEmployer = await localStorage.getItem('previousEmployerStatus');
             // const insurance = await localStorage.getItem('insurance');
-            // if (insurance && insurance === 'completed') {
-            //     setNextStep('completed');
-            // } else if (bank && bank === 'completed') {
-            //     setNextStep('insurance');
-            // } else if (companyHouse && companyHouse === 'completed') {
-            //     setNextStep('bank');
-            // }
-            setNextStep('college')
+            if (previousEmployer && previousEmployer === 'completed') {
+                setNextStep('jobApplication');
+            } else if (highestDegree && highestDegree === 'completed') {
+                setNextStep('previousEmployer');
+            }else{
+                setNextStep('collegeDegree')
+            }
+            
         }
         setInfo();
     }, []);
 
-    // if (!link) {
-    //     return <React.Fragment />;
-    // }
-
     switch (nextStep) {
-        case 'completed':
+        case 'jobApplication':
             return (
                 <div className='next-step-drawer completed'>
                     <h3>Your Application is Not Ready Yet</h3>
                     <p>
-                        {t("components.nextStepDrawer.businessSetUp")}
+                        Just One Step Away! Enter Your Job Application Details!
                     </p>
                     <Link to={link}>
                         <Button>
-                            {t("actions.finishDemo")}
+                            Add Your Application Details
                         </Button>
                     </Link>
                 </div>
             );
-        case 'insurance':
+        case 'previousEmployer':
             return (
                 <div className='next-step-drawer'>
                     <h3>Your Application is Not Ready Yet</h3>
                     <p>
-                        {t("components.nextStepDrawer.needLiabilityInsurance")}
+                        {/* {t("components.nextStepDrawer.needLiabilityInsurance")} */}
+                        You need to add your Previous Employer Details to finish this application process.
                     </p>
                     <Link to={link}>
                         <Button>
-                            {t("actions.getInsurance")}
+                            Add Previous Employer
                         </Button>
                     </Link>
                 </div>
             );
-        case 'college':
+        case 'collegeDegree':
             return (
                 <div className='next-step-drawer'>
                     <h3>Your Application is Not Ready Yet</h3>

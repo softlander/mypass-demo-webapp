@@ -60,6 +60,18 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
                     }
                 }
             }
+
+            const applicationDetails = {
+                    ApplicationNumber: "0439483",
+                    CandidateName: "Anurag Lauri",
+                    CompanyName: "AwesomeTech",
+                    RoleApplyingFor: "",
+                    ExpectedCTC: "",
+                    DateOfApplication: Date.now(),
+                    ApplicationStatus: "pending"
+                
+            };
+            await localStorage.setItem('applicationDetails', JSON.stringify(applicationDetails))
             await localStorage.setItem('credentials', JSON.stringify(credentials));
             const flattenData = flattenObject(credentials?.data);
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };

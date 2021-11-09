@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useStep from '../utils/useStep';
-import useFetch from '../utils/useFetch';
-import { Layout, Loading, NextStepDrawer } from '../components';
+import { Layout, NextStepDrawer } from '../components';
 import back from '../assets/back.svg';
-import { serverAPI } from '../config.json';
 import { useTranslation } from 'react-i18next';
 
 interface ApplicationData {
@@ -17,13 +15,12 @@ interface ApplicationData {
     'ApplicationStatus': string;
 }
 
-/**
- * Component which will display a ApplicationData.
- */
+const res = localStorage.getItem('applicationDetails');
+const details = res && JSON.parse(res);
+
 const ApplicationData: React.FC = ({ match }: any) => {
     const companyId = match?.params?.companyId;
     const { nextStep } = useStep(match);
-    const { response, loading } = useFetch(`${serverAPI}/company?company=${companyId}`);
 
     const { t } = useTranslation();
 
@@ -31,28 +28,24 @@ const ApplicationData: React.FC = ({ match }: any) => {
         <Layout match={match}>
             <React.Fragment>
                 <div className='company-details-wrapper'>
-                    {
-                        loading ? <Loading /> : (
-                            <React.Fragment>
-                                <Link
-                                    to={{
-                                        pathname: `${match.url.replace(companyId, '').replace('details', 'list')}`,
-                                        state: { nextStep }
-                                    }}
-                                    className='company-details-back bold'
-                                >
-                                    <img src={back} alt='' />&nbsp;&nbsp;&nbsp;{t("actions.back")} 
-                                </Link>
-                                <h2>{response?.data?.CompanyName}</h2>
-                                <p className='company-number-wrapper'>
-                                    {t("pages.general.applicationDetails.applicationNumber")} <span className='company-number'>{response?.data?.ApplicationNumber}</span>
-                                </p>
-                                <div className='company-details'>
-                                    <ApplicationDetails details={response?.data} />
-                                </div>
-                            </React.Fragment>
-                        )
-                    }
+                    <React.Fragment>
+                        <Link
+                            to={{
+                                pathname: `${match.url.replace(companyId, '').replace('details', 'list')}`,
+                                state: { nextStep }
+                            }}
+                            className='company-details-back bold'
+                        >
+                            <img src={back} alt='' />&nbsp;&nbsp;&nbsp;{t("actions.back")} 
+                        </Link>
+                        <h2>{details.CompanyName}</h2>
+                        <p className='company-number-wrapper'>
+                            {t("pages.general.applicationDetails.applicationNumber")} <span className='company-number'>{details.ApplicationNumber}</span>
+                        </p>
+                        <div className='company-details'>
+                            <ApplicationDetails />
+                        </div>
+                    </React.Fragment>
                 </div>
                 <NextStepDrawer link={nextStep} />
             </React.Fragment>
@@ -60,7 +53,7 @@ const ApplicationData: React.FC = ({ match }: any) => {
     );
 };
 
-const ApplicationDetails = ({ details }: { details: ApplicationData | undefined }) => {
+const ApplicationDetails = () => {
 
     const { t } = useTranslation();
 
@@ -72,7 +65,7 @@ const ApplicationDetails = ({ details }: { details: ApplicationData | undefined 
             </div>
             <div className='company-details-item'>
                 <p>{t("pages.general.applicationDetails.companyName")}</p>
-                <p className='bold'>AwesomeTech</p>
+                <p className='bold'>{details?.CompanyName}</p>
             </div>
             <div className='company-details-item'>
                 <p>{t("pages.general.applicationDetails.roleApplyingFor")}</p>
