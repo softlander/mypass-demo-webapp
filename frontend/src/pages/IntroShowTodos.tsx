@@ -40,15 +40,15 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                 </div>
                 <div className='demo-intro' id='app'>
                     <div className='todos'>
-                        <span className='heading'><h2>Welcome to the demo of</h2>&nbsp;&nbsp;&nbsp;<h2 className='highlight'>myPass.ID</h2></span>
+                        <span className='heading'><h2>{t("pages.demo.introShowTodos.welcomeToThe")}</h2>&nbsp;&nbsp;&nbsp;<h2 className='highlight'>{t("pages.demo.introShowTodos.myPassIDDemo")}</h2></span>
                         <Trans i18nKey="pages.demo.introShowTodos.hereIsTodo">
                             <h3>Here is <strong>your to-do list</strong> for today:</h3>
                         </Trans>
                         <ul className='todos'>
-                            <li>Start your Application</li>
-                            <li>Add your College Degree</li>
-                            <li>Add your First Employer Details</li>
-                            <li>Ready to Apply! Now Send your Application</li>
+                            <li>{t("pages.demo.introShowTodos.startJobApp")}</li>
+                            <li>{t("pages.demo.introShowTodos.provideCollegeDegree")}</li>
+                            <li>{t("pages.demo.introShowTodos.addEmploymentDetails")}</li>
+                            <li>{t("pages.demo.introShowTodos.readyForJobApp")}</li>
                         </ul>
                         <Link to={nextStep}>
                             <Button className='cta'>

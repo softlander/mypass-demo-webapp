@@ -32,9 +32,9 @@ const SidebarInstance = ({ children }: {
             <Sidenav activeKey='0'>
                 <Sidenav.Body>
                     <h2 className='todo-list'>
-                        Your To-Do List
+                        {t("components.sideBar.yourTodoList")}
                     </h2>
-                    { children }
+                    {children}
                 </Sidenav.Body>
             </Sidenav>
             <div className='sidebar-footer'>
