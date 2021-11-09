@@ -113,7 +113,8 @@
     "dismiss": "Dismiss",
     "finishDemo": "Finish Demo",
     "getInsurance": "Get Insurance",
-    "openBankAccount": "Open Bank Account"
+    "openBankAccount": "Open Bank Account",
+    "applyAtAwesomeTech": "Apply At AwesomeTech"
   },
   "general": {
     "Self Sovereign Identity": "Self-Sovereign Identity",
@@ -193,33 +194,10 @@
         "continueButton": "Continue"
       }
     },
-    "bank": {
-      "bankData": {
-        "accountTypes": {
-          "label": "Choose Bank Account Type",
-          "error": "Please choose an account type",
-          "accounts1": "Business Checking Account",
-          "accounts2": "Business Savings Account",
-          "special": "Brokerage Account"
-        }
-      }
-    },
-    "insurance": {
-      "insuranceData": {
-        "openAnAccount": "Open an Account",
-        "accountType": "Account Type",
-        "businessOwner": "Business Owner",
-        "companyDetails": "Company Details",
-        "bankAccountDetails": "Bank Account Details",
-        "accountTypes": {
-          "label": "Choose Liability Insurance Type",
-          "error": "Please choose a type of liability insurance",
-          "accounts1": "General Liability",
-          "accounts2": "Professional Liability",
-          "accounts3": "Employer Liability",
-          "special": "Business Liability"
-        }
-      }
+    "college": {
+      "officialDUWebsite": "Delhi University Official Website",
+      "candidateDetails": "Candidate Details",
+      "degreeDetails": "Degree Details"
     },
     "general": {
       "confirmation": {
@@ -286,7 +264,6 @@
       "Graduation Year": "GraduationYear",
       "Branch": "Branch",
       "credentialsByMyPassID": "Credentials Provided by myPass.ID",
-      "CompanyName": "Company Name",
       "Designation": "Designation",
       "EmployeeID": "Employee ID",
       "EndDate": "EndDate",

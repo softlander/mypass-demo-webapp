@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Collapse, notification } from 'antd';
+import { notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket, Form } from '../components';
+import { Layout, PrefilledForm, WebSocket, Form } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 
@@ -46,9 +46,6 @@ const labels = {
     Branch: 'Branch'
 };
 
-/**
- * Component which will display a BankData.
- */
 const CollegeData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
@@ -87,16 +84,13 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>Delhi University Official Website</h2>
-                <h3 className='section-header'>Candidate Details</h3>
+                <h2>{t('pages.college.officialDUWebsite')}</h2>
+                <h3 className='section-header'>{t('pages.college.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
-
-                <h3 className='section-header'>Degree Details</h3>
-                {console.log(emptyFormData)}
+                <h3 className='section-header'>{t('pages.college.degreeDetails')}</h3>
                 <Form {...emptyFormData} />
             </div>
-            
         </Layout>
     );
 };

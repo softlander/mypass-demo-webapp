@@ -4,9 +4,6 @@ import { Button } from 'antd';
 import useStep from '../utils/useStep';
 import { Steps, Sidebar } from '../components';
 
-/**
- * Component which will display a CompanyIntro.
- */
 const CompanyIntro: React.FC = ({ match }: any) => {
     const { step, nextStep, mainSteps } = useStep(match);
 
