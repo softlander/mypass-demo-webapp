@@ -34,7 +34,7 @@ export default ({ link }: { link: string }) => {
                         Just One Step Away! Enter Your Job Application Details!
                     </p>
                     <Link to={link}>
-                        <Button>
+                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
                             Add Your Application Details
                         </Button>
                     </Link>
@@ -49,7 +49,7 @@ export default ({ link }: { link: string }) => {
                         You need to add your Previous Employer Details to finish this application process.
                     </p>
                     <Link to={link}>
-                        <Button>
+                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
                             Add Previous Employer
                         </Button>
                     </Link>

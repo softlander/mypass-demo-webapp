@@ -52,9 +52,10 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                 <Form.Item>
                     <Button
                         htmlType='submit'
+                        style={{backgroundColor: 'darkblue', height: '30%'}}
                         disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        {t("actions.startJobApp")}
+                        Submit
                     </Button>
                 </Form.Item>
             </Form>

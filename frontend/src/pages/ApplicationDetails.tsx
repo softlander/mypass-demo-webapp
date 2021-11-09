@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useStep from '../utils/useStep';
 import { Layout, NextStepDrawer } from '../components';
-import back from '../assets/back.svg';
 import { useTranslation } from 'react-i18next';
 
 interface ApplicationData {
@@ -19,25 +17,14 @@ const res = localStorage.getItem('applicationDetails');
 const details = res && JSON.parse(res);
 
 const ApplicationData: React.FC = ({ match }: any) => {
-    const companyId = match?.params?.companyId;
     const { nextStep } = useStep(match);
-
     const { t } = useTranslation();
-
+    
     return (
         <Layout match={match}>
             <React.Fragment>
                 <div className='company-details-wrapper'>
                     <React.Fragment>
-                        <Link
-                            to={{
-                                pathname: `${match.url.replace(companyId, '').replace('details', 'list')}`,
-                                state: { nextStep }
-                            }}
-                            className='company-details-back bold'
-                        >
-                            <img src={back} alt='' />&nbsp;&nbsp;&nbsp;{t("actions.back")} 
-                        </Link>
                         <h2>{details.CompanyName}</h2>
                         <p className='company-number-wrapper'>
                             {t("pages.general.applicationDetails.applicationNumber")} <span className='company-number'>{details.ApplicationNumber}</span>
