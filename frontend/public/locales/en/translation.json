@@ -199,6 +199,12 @@
       "candidateDetails": "Candidate Details",
       "degreeDetails": "Degree Details"
     },
+    "employerData": {
+      "previousEmployerWebsite": "Previous Employer Website",
+      "candidateDetails": "Candidate Details",
+      "highestDegreeDetails": "Highest Degree Details",
+      "employerDetails": "Employer Details"
+    },
     "general": {
       "confirmation": {
         "titleBank": "Your Business Bank Account Is Now Set Up!",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Collapse, notification } from 'antd';
+import { notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, Loading, AccountType, PrefilledForm, Checkbox, WebSocket, Form } from '../components';
+import { Layout, PrefilledForm, WebSocket, Form } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 
@@ -92,19 +92,16 @@ const EmployerData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>Previous Employer Website</h2>
-                <h3 className='section-header'>Candidate Details</h3>
+                <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
+                <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
-                <h3 className='section-header'>Highest Degree Details</h3>
+                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
                 <PrefilledForm {...prefilledCollegeFormData} />
 
-
-                <h3 className='section-header'>Employer Details</h3>
-                {console.log(emptyFormData)}
+                <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
                 <Form {...emptyFormData} />
             </div>
-            
         </Layout>
     );
 };
