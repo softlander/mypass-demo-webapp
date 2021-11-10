@@ -3,7 +3,7 @@ import Address from '../schemas/Address.json';
 import CollegeDegree from '../schemas/CollegeDegree.json';
 import Company from '../schemas/Company.json';
 import ContactDetails from '../schemas/ContactDetails.json';
-import Insurance from '../schemas/Insurance.json';
+import PreviousEmployer from '../schemas/PreviousEmployer.json';
 import PersonalData from '../schemas/PersonalData.json';
 
 import * as identity from '@iota/identity-wasm/web';
@@ -13,7 +13,7 @@ const schemas: any = {
     CollegeDegree,
     Company,
     ContactDetails,
-    Insurance,
+    PreviousEmployer,
     PersonalData
 };
 

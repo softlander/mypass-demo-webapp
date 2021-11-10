@@ -171,7 +171,7 @@
         "reusedSelvCredentialsText": "By controlling your personal data, you shared verifiable data without having to type it into a form. You can use these same credentials in other processes. Imagine never having to type in your name, address, email etc..."
       },
       "thankYou": {
-        "thanksForTryingSelv": "Thanks for Trying Selv!",
+        "thanksForTryingMyPass": "Thanks for Trying myPass.ID!",
         "improvedExperience": "Improved Experience",
         "savedTime": "With Selv, powered by IOTA, you managed to set up an entire company, corporate bank account and insurance with very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
         "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the Selv app!",
