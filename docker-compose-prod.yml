@@ -6,9 +6,9 @@ services:
   ##############################
   # Backend Container
   ##############################
-  backend-prod:
+  backend:
     # container name
-    container_name: backend-prod
+    container_name: backend
     image: dfbydx/mypass-backend:latest
     restart: always
     build:
@@ -28,9 +28,9 @@ services:
   ##############################
   # Frontend Container
   ##############################
-  frontend-prod:
+  frontend:
     # container name
-    container_name: frontend-prod
+    container_name: frontend
     image: dfbydx/mypass-frontend:latest
     stdin_open: true
     restart: always
@@ -49,4 +49,4 @@ services:
     environment:
       - NODE_ENV=production
     depends_on:
-      - backend-prod
+      - backend
