@@ -20,7 +20,18 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         validateFields((err: any, values: any) => {
             if (!err) {
                 const highestDegree = localStorage.getItem('highestDegree');
-                if(highestDegree){
+                const previousEmployer = localStorage.getItem('previousEmployer');
+
+                if(highestDegree && previousEmployer){
+                    const applicationDetails = localStorage.getItem('applicationDetails');
+                    const applicationDetailsData = applicationDetails && JSON.parse(applicationDetails);
+                    applicationDetailsData.ExpectedCTC = values.ExpectedCTC;
+                    applicationDetailsData.RoleApplyingFor = values.RoleApplyingFor;
+                    applicationDetailsData.ApplicationStatus = 'active'
+                    localStorage.setItem('applicationStatus', "completed");
+                    localStorage.setItem('applicationDetails', JSON.stringify(applicationDetailsData));
+                    window.location.href = nextStep;
+                }else if(highestDegree){
                     localStorage.setItem('previousEmployer', JSON.stringify(values));
                     localStorage.setItem('previousEmployerStatus', "completed");
                     window.location.href = nextStep;

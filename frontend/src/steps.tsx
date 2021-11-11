@@ -13,7 +13,8 @@ import {
     EmployerData,
     Apply,
     GreatSuccess,
-    ThankYou
+    ThankYou,
+    JobApplicationData
 } from './pages';
 
 export const routes = [
@@ -37,6 +38,10 @@ export const routes = [
     { path: '/employer/data/2', page: EmployerData },
     { path: '/employer/confirm/3', page: Confirmation },
     { path: '/application/details/3/:applicationId', page: ApplicationDetails },
+    { path: '/job/prove/3', page: ProveIdentity },
+    { path: '/job/data/3', page: JobApplicationData },
+    { path: '/job/confirm/4', page: Confirmation },
+    { path: '/application/details/4/:applicationId', page: ApplicationDetails },
     { path: '/demo/thankyou', page: ThankYou }
 ];
 

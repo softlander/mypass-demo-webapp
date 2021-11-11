@@ -29,28 +29,22 @@ const notify = (type: string, message: string, description: string) => {
 };
 
 const emptyFields = [
-    'CollegeName',
-    'RegistrationNumber',
-    'ProgramEnrolled',
-    'EnrollingYear',
-    'GraduationYear',
-    'Branch'
+    'RoleApplyingFor',
+    'ExpectedCTC'
 ];
 
 const labels = {
-    CollegeName: 'College Name', 
-    RegistrationNumber: 'Registration Number',
-    ProgramEnrolled: 'Program Enrolled',
-    EnrollingYear: 'Enrolling Year',
-    GraduationYear: 'Graduation Year',
-    Branch: 'Branch'
+    RoleApplyingFor: 'Role Applying For',
+    ExpectedCTC: 'Expected CTC'
 };
 
-const CollegeData: React.FC = ({ history, match }: any) => {
+const JobApplicationData: React.FC = ({ history, match }: any) => {
     const [webSocket, setWebSocket] = useState(false);
     const [fields, setFields] = useState<object>();
     const [status, setStatus] = useState('');
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
+    const [prefilledCollegeData, setPrefilledCollegeData] = useState({});
+    const [prefilledEmployerData, setPrefilledEmployerData] = useState({});
     const { nextStep } = useStep(match);
 
     const { t } = useTranslation();
@@ -69,6 +63,20 @@ const CollegeData: React.FC = ({ history, match }: any) => {
             const personalData = personalDataFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
+
+            
+            const collegeDegreeString: string | null = await localStorage.getItem('highestDegree');
+            const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
+            const flattenCollegeDetails = flattenObject(collegeDegree);
+
+            setPrefilledCollegeData(flattenCollegeDetails);
+
+            const employerString: string | null = await localStorage.getItem('previousEmployer');
+            const employerData = employerString && await JSON.parse(employerString);
+            const flattenEmployerData = flattenObject(employerData);
+
+            setPrefilledEmployerData(flattenEmployerData);
+
         }
         getData();
     }, []);
@@ -79,20 +87,29 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
+    const prefilledCollegeFormData: any = { dataFields: prefilledCollegeData };
+    const prefilledEmployerFormData: any = { dataFields: prefilledEmployerData };
     const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
 
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t('pages.college.officialDUWebsite')}</h2>
-                <h3 className='section-header'>{t('pages.college.candidateDetails')}</h3>
+                <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
+                <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
-                <h3 className='section-header'>{t('pages.college.degreeDetails')}</h3>
+                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
+                <PrefilledForm {...prefilledCollegeFormData} />
+
+                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
+                <PrefilledForm {...prefilledEmployerFormData} />
+
+                <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
                 <Form {...emptyFormData} />
             </div>
         </Layout>
     );
 };
 
-export default CollegeData;
+export default JobApplicationData;
+

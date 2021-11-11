@@ -10,10 +10,13 @@ export default ({ link }: { link: string }) => {
 
     useEffect(() => {
         async function setInfo() {
-            const highestDegree = await localStorage.getItem('highestDegreeStatus');
-            const previousEmployer = await localStorage.getItem('previousEmployerStatus');
-            // const insurance = await localStorage.getItem('insurance');
-            if (previousEmployer && previousEmployer === 'completed') {
+            const highestDegree = localStorage.getItem('highestDegreeStatus');
+            const previousEmployer = localStorage.getItem('previousEmployerStatus');
+            const applicationStatus = localStorage.getItem('applicationStatus')
+            
+            if(previousEmployer && previousEmployer && applicationStatus){
+                setNextStep('completed');
+            }else if (previousEmployer && previousEmployer) {
                 setNextStep('jobApplication');
             } else if (highestDegree && highestDegree === 'completed') {
                 setNextStep('previousEmployer');
@@ -26,6 +29,20 @@ export default ({ link }: { link: string }) => {
     }, []);
 
     switch (nextStep) {
+        case 'completed':
+            return(
+                <div className='next-step-drawer completed'>
+                    <h3>Your Application is Ready!</h3>
+                    <p>
+                        Click Below To Submit Your Job Application.
+                    </p>
+                    <Link to={link}>
+                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
+                            Send Application
+                        </Button>
+                    </Link>
+                </div>
+            );
         case 'jobApplication':
             return (
                 <div className='next-step-drawer completed'>
