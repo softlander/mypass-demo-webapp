@@ -6,9 +6,10 @@ services:
   ##############################
   # Backend Container
   ##############################
-  backend-prod:
+  backend:
     # container name
-    container_name: backend-prod
+    container_name: backend
+    image: dfbydx/mypass-backend:latest
     restart: always
     build:
       # the context (working directory) is the current directory
@@ -17,7 +18,7 @@ services:
       # the dockerfile to be run
       dockerfile: Dockerfile-prod
     # map the exposed port from the underlying service to a port exposed to the outside
-    # in this case  map port 4000 exposed by create react app to port 4000 on the outside
+    # in this case  map port 4000 exposed by node express app to port 4000 on the outside
     # to be used to access the container from the outside
     ports:
       - "4000:4000"
@@ -27,9 +28,10 @@ services:
   ##############################
   # Frontend Container
   ##############################
-  frontend-prod:
+  frontend:
     # container name
-    container_name: frontend-prod
+    container_name: frontend
+    image: dfbydx/mypass-frontend:latest
     stdin_open: true
     restart: always
     build:
@@ -42,9 +44,9 @@ services:
     # in this case  map port 80 exposed by nginx to port 3000 on the outside
     # to be used to access the container from the outside
     ports:
-      - "3000:80"
+      - "80:80"
     # set the environment to production
     environment:
       - NODE_ENV=production
     depends_on:
-      - backend-prod
+      - backend
