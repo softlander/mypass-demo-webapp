@@ -7,7 +7,6 @@
 # e.g inside nginx container
 FROM node:14-alpine AS builder
 ENV APP_HOME=/app
-ENV PORT=3000
 
 # set working directory
 # this is the working folder in the container 
