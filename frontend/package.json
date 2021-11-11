@@ -16,6 +16,7 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "http-proxy-middleware": "^2.0.1",
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",

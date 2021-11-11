@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import randomstring from 'randomstring';
 import { Layout, Loading, QRCode, RandomGraphicElement, WebSocket } from '../components';
 import useStep from '../utils/useStep';
-import config from '../config.json';
+import Config from '../config';
 import { useTranslation, Trans } from 'react-i18next';
 
 interface IChannelDetails {
@@ -69,7 +69,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
                 password: payloadPassword,
                 requestedCredentials,
                 shareWith,
-                url: config.websocketURL
+                url: Config.backend_ws_url
             };
             setChannelDetails(channelDetails);
 

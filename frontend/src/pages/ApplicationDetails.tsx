@@ -4,8 +4,10 @@ import useStep from '../utils/useStep';
 import useFetch from '../utils/useFetch';
 import { Layout, Loading, NextStepDrawer } from '../components';
 import back from '../assets/back.svg';
-import { serverAPI } from '../config.json';
 import { useTranslation } from 'react-i18next';
+import Config from "../config";
+
+const serverAPI = Config.backend_api_url;
 
 interface ApplicationData {
     'ApplicationNumber': string;
@@ -41,7 +43,7 @@ const ApplicationData: React.FC = ({ match }: any) => {
                                     }}
                                     className='company-details-back bold'
                                 >
-                                    <img src={back} alt='' />&nbsp;&nbsp;&nbsp;{t("actions.back")} 
+                                    <img src={back} alt='' />&nbsp;&nbsp;&nbsp;{t("actions.back")}
                                 </Link>
                                 <h2>{response?.data?.CompanyName}</h2>
                                 <p className='company-number-wrapper'>
@@ -78,7 +80,7 @@ const ApplicationDetails = ({ details }: { details: ApplicationData | undefined 
                 <p>{t("pages.general.applicationDetails.roleApplyingFor")}</p>
                 <p className='bold'>{details?.RoleApplyingFor}</p>
             </div>
-            
+
             <div className='company-details-item'>
                 <p>{t("pages.general.applicationDetails.expectedCTC")}</p>
                 <p className='bold'>{details?.ExpectedCTC}</p>

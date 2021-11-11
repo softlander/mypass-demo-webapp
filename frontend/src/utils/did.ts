@@ -1,4 +1,4 @@
-import { provider } from '../config.json';
+import Config from '../config';
 import Address from '../schemas/Address.json';
 import CollegeDegree from '../schemas/CollegeDegree.json';
 import Company from '../schemas/Company.json';
@@ -7,6 +7,8 @@ import Insurance from '../schemas/Insurance.json';
 import PersonalData from '../schemas/PersonalData.json';
 
 import * as identity from '@iota/identity-wasm/web';
+
+const provider = Config.provider;
 
 const schemas: any = {
     Address,

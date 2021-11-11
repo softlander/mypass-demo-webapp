@@ -20,6 +20,7 @@ services:
     # to be used to access the container from the outside
     ports:
       - "4000:4000"
+      - "8000:8000"
     # the mounted volumes (folders which are outside docker but being used by docker)
     volumes:
       - "./backend:/app"
