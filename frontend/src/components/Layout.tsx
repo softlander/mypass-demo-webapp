@@ -30,16 +30,12 @@ export default ({ children, match, customTheme, customStep, noHeader, noFooter }
                         !noFooter && <Footer theme={theme || customTheme} />
                     }
                 </div>
-                {
-                    customStep || step >= 0 ? (
                         <Sidebar>
                             <Steps
                                 steps={mainSteps}
                                 stepId={customStep || step}
                             />
                         </Sidebar>
-                    ) : null
-                }
                 <Disclaimer />
             </div>
         </div>

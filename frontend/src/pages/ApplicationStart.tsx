@@ -27,19 +27,6 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
 
     useEffect(() => {
         async function getData() {
-            const applicationDetails = {
-                ApplicationNumber: "0439483",
-                CandidateName: "Anurag Lauri",
-                CompanyName: "AwesomeTech",
-                RoleApplyingFor: "",
-                ExpectedCTC: "",
-                DateOfApplication: Date.now(),
-                ApplicationStatus: "pending"
-                
-            };
-            localStorage.setItem('applicationDetails', JSON.stringify(applicationDetails))
-            localStorage.setItem('credentials', JSON.stringify(DUMMY_CREDENTIALS));
-
             const flattenData = flattenObject(DUMMY_CREDENTIALS?.data);
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };
             const result = prefilledFields.reduce((acc: any, entry: string) =>
@@ -58,13 +45,29 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
 
     const prefilledFormData: any = { dataFields: prefilledData };
 
+    const onBtnClick = () => {
+        const applicationDetails = {
+            ApplicationNumber: "0439483",
+            CandidateName: "Anurag Lauri",
+            CompanyName: "AwesomeTech",
+            RoleApplyingFor: "",
+            ExpectedCTC: "",
+            DateOfApplication: Date.now(),
+            ApplicationStatus: "pending"
+            
+        };
+        localStorage.setItem('applicationDetails', JSON.stringify(applicationDetails))
+        localStorage.setItem('credentials', JSON.stringify(DUMMY_CREDENTIALS));
+        localStorage.setItem('currentStep', '1');
+    }
+
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
                 <h2>{t("pages.application.applicationStart.applyAtNewCompany")}</h2>
                 <h3 className='section-header'>{t("pages.application.applicationStart.candidateDetails")}</h3>
                 <PrefilledForm {...prefilledFormData} />
-                <Button htmlType="button" href={nextStep} className="startApplicationBtn" >{t("pages.application.applicationStart.continueButton")}</Button>
+                <Button htmlType="button" href={nextStep} className="startApplicationBtn" onClick={onBtnClick}>{t("pages.application.applicationStart.continueButton")}</Button>
             </div>
         </Layout>
     );
