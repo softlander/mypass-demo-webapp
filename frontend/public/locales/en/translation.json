@@ -106,7 +106,7 @@
     "back": "Back",
     "startJobApp": "Start Your Job Application",
     "provideCollegeDegree": "Provide Highest College Degree",
-    "addEmploymentDetails": "Add Latest Employment Details",
+    "addEmploymentDetails": "Add Previous Job Details",
     "readyForJobApp": "Ready for Job Application",
     "confirm": "Confirm",
     "learnMore": "Learn More",
@@ -149,11 +149,11 @@
       },
       "introShowTodos": {
         "welcomeToThe": "Welcome to the",
-        "myPassIDDemo": "myPass.ID Demo",
+        "myPassIDDemo": "myPass.ID",
         "hereIsTodo": "<0>Here is <1>your to-do list</1> for today:</0>",
         "startJobApp": "Start Your Job Application",
         "provideCollegeDegree": "Provide Highest College Degree",
-        "addEmploymentDetails": "Add Latest Employment Details",
+        "addEmploymentDetails": "Add Previous Job Details",
         "readyForJobApp": "Ready for Job Application"
       },
       "introShowMobile": {
