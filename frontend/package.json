@@ -8,7 +8,6 @@
     "type": "git",
     "url": "https://github.com/dfbydx-com/mypass-demo-web.git"
   },
-  "proxy": "http://api:4000/",
   "dependencies": {
     "@iota/identity-wasm": "^0.3.5",
     "@types/classnames": "^2.2.11",
