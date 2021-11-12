@@ -87,15 +87,7 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
     }, [channelId]); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function connectWebSocket(channelId: string, data: object) {
-        ioClient = SocketIOClient(websocketURL, {
-            autoConnect: true,
-            reconnection: true,
-            reconnectionDelay: 500,
-            jsonp: false,
-            secure: true,
-            reconnectionAttempts: Infinity,
-            transports: ['websocket']
-        });
+        ioClient = SocketIOClient({ path: websocketURL });
 
         ioClient.emit('registerDesktopClient', { channelId });
 
