@@ -22,7 +22,7 @@ const ThankYou: React.FC = () => {
                 <div className='thank-you-page-wrapper'>
                     <Header />
                     <div className='thank-you-wrapper'>
-                        <h2>{t("pages.demo.thankYou.thanksForTryingSelv")}</h2>
+                        <h2>{t("pages.demo.thankYou.thanksForTryingMyPass")}</h2>
                         <div className='great-success-content-wrapper'>
                             <div className='great-success-content'>
                                 <div className='figure-wrapper'>

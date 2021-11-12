@@ -10,10 +10,11 @@ import {
     ApplicationDetails,
     Confirmation,
     CollegeData,
-    InsuranceData,
+    EmployerData,
     Apply,
     GreatSuccess,
-    ThankYou
+    ThankYou,
+    JobApplicationData
 } from './pages';
 
 export const routes = [
@@ -34,9 +35,13 @@ export const routes = [
     { path: '/college/confirm/2', page: Confirmation },
     { path: '/application/details/2/:applicationId', page: ApplicationDetails },
     { path: '/employer/prove/2', page: ProveIdentity },
-    { path: '/employer/data/2', page: InsuranceData },
+    { path: '/employer/data/2', page: EmployerData },
     { path: '/employer/confirm/3', page: Confirmation },
     { path: '/application/details/3/:applicationId', page: ApplicationDetails },
+    { path: '/job/prove/3', page: ProveIdentity },
+    { path: '/job/data/3', page: JobApplicationData },
+    { path: '/job/confirm/4', page: Confirmation },
+    { path: '/application/details/4/:applicationId', page: ApplicationDetails },
     { path: '/demo/thankyou', page: ThankYou }
 ];
 

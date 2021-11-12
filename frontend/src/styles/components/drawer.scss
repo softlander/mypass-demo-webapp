@@ -1,41 +1,50 @@
 .next-step-drawer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    word-break: break-word;
-    background-color: #FFFFFF;
-    min-height: 182px;
-    padding: 30px;
-    z-index: 0;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - 320px);
-    left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  word-break: break-word;
+  background-color: #ffffff;
+  min-height: 182px;
+  padding: 30px;
+  z-index: 0;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 320px);
+  left: 0;
 
-    @include breakPoint(medium) {
-        width: 100%;
-        text-align: center;
-    }
+  @include breakPoint(medium) {
+    width: 100%;
+    text-align: center;
+  }
 
+  h3 {
+    color: #f17105;
+  }
+
+  p {
+    max-width: 570px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  &.completed {
     h3 {
-        color: #F17105;  
+      color: #35c0a1;
     }
 
     p {
-        max-width: 570px;
-        width: 100%;
-        margin: 20px 0;
-        text-align: center;
+      color: #4d4d4d;
     }
+  }
+}
 
-    &.completed {
-        h3 {
-            color: #35C0A1;  
-        }
+.nextStepBtn {
+  background-color: #f17105;
+  height: 30%;
 
-        p {
-            color: #4D4D4D;  
-        }
-    }
+  &:hover {
+    background-color: #f10105;
+  }
 }

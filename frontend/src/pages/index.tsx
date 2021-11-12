@@ -10,10 +10,11 @@ import ApplicationStart from './ApplicationStart';
 import ApplicationDetails from './ApplicationDetails';
 import Confirmation from './Confirmation';
 import CollegeData from './CollegeData';
-import InsuranceData from './InsuranceData';
+import EmployerData from './EmployerData';
 import Apply from './Apply';
 import GreatSuccess from './GreatSuccess';
 import ThankYou from './ThankYou';
+import JobApplicationData from './JobApplicationData';
 
 export {
     Landing,
@@ -28,8 +29,9 @@ export {
     ApplicationDetails,
     Confirmation,
     CollegeData,
-    InsuranceData,
+    EmployerData,
     Apply,
     GreatSuccess,
-    ThankYou
+    ThankYou,
+    JobApplicationData
 };

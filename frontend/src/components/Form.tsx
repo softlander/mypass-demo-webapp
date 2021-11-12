@@ -19,8 +19,27 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         e.preventDefault();
         validateFields((err: any, values: any) => {
             if (!err) {
-                localStorage.setItem('previousDegree', JSON.stringify(values));
-                window.location.href = nextStep;
+                const highestDegree = localStorage.getItem('highestDegree');
+                const previousEmployer = localStorage.getItem('previousEmployer');
+
+                if(highestDegree && previousEmployer){
+                    const applicationDetails = localStorage.getItem('applicationDetails');
+                    const applicationDetailsData = applicationDetails && JSON.parse(applicationDetails);
+                    applicationDetailsData.ExpectedCTC = values.ExpectedCTC;
+                    applicationDetailsData.RoleApplyingFor = values.RoleApplyingFor;
+                    applicationDetailsData.ApplicationStatus = 'active'
+                    localStorage.setItem('applicationStatus', "completed");
+                    localStorage.setItem('applicationDetails', JSON.stringify(applicationDetailsData));
+                    window.location.href = nextStep;
+                }else if(highestDegree){
+                    localStorage.setItem('previousEmployer', JSON.stringify(values));
+                    localStorage.setItem('previousEmployerStatus', "completed");
+                    window.location.href = nextStep;
+                }else{
+                    localStorage.setItem('highestDegree', JSON.stringify(values));
+                    localStorage.setItem('highestDegreeStatus', "completed");
+                    window.location.href = nextStep;
+                }
             }
         });
     }
@@ -44,9 +63,10 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                 <Form.Item>
                     <Button
                         htmlType='submit'
+                        style={{backgroundColor: 'darkblue', height: '30%'}}
                         disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        {t("actions.startJobApp")}
+                        {t('components.form.submit')}
                     </Button>
                 </Form.Item>
             </Form>

@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "required": ["DID"],
+  "properties": {
+    "DID": {
+      "type": "string"
+    },
+    "Language": {
+      "type": "string"
+    },
+    "Locale": {
+      "type": "string"
+    },
+    "TimezoneOffset": {
+      "type": "string"
+    },
+    "PreviousEmployer": {
+      "type": "object",
+      "properties": {
+        "CompanyName": {
+          "type": "string"
+        },
+        "Designation": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        },
+        "EndDate": {
+          "type": "string"
+        },
+        "EmployeeID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

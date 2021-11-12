@@ -113,7 +113,8 @@
     "dismiss": "Dismiss",
     "finishDemo": "Finish Demo",
     "getInsurance": "Get Insurance",
-    "openBankAccount": "Open Bank Account"
+    "openBankAccount": "Open Bank Account",
+    "applyAtNewCompany": "Apply At AwesomeTech"
   },
   "general": {
     "Self Sovereign Identity": "Self-Sovereign Identity",
@@ -170,7 +171,7 @@
         "reusedSelvCredentialsText": "By controlling your personal data, you shared verifiable data without having to type it into a form. You can use these same credentials in other processes. Imagine never having to type in your name, address, email etc..."
       },
       "thankYou": {
-        "thanksForTryingSelv": "Thanks for Trying Selv!",
+        "thanksForTryingMyPass": "Thanks for Trying myPass.ID!",
         "improvedExperience": "Improved Experience",
         "savedTime": "With Selv, powered by IOTA, you managed to set up an entire company, corporate bank account and insurance with very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
         "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the Selv app!",
@@ -188,38 +189,21 @@
         "signInSuccess": "You have now signed in without ever creating an account. No more need for endless account and password creations. In addition, you provided trustable information, which businesses can use without an expensive verification process. Verifying your data is nearly instant and completely free."
       },
       "applicationStart": {
-        "applyAtAwesomeTech": "Application for AwesomeTech",
+        "applyAtNewCompany": "Application for AwesomeTech",
         "candidateDetails": "Candidate Details",
         "continueButton": "Continue"
       }
     },
-    "bank": {
-      "bankData": {
-        "accountTypes": {
-          "label": "Choose Bank Account Type",
-          "error": "Please choose an account type",
-          "accounts1": "Business Checking Account",
-          "accounts2": "Business Savings Account",
-          "special": "Brokerage Account"
-        }
-      }
+    "college": {
+      "collegeHomePageTitle": "Delhi University Official Website",
+      "candidateDetails": "Candidate Details",
+      "degreeDetails": "Degree Details"
     },
-    "insurance": {
-      "insuranceData": {
-        "openAnAccount": "Open an Account",
-        "accountType": "Account Type",
-        "businessOwner": "Business Owner",
-        "companyDetails": "Company Details",
-        "bankAccountDetails": "Bank Account Details",
-        "accountTypes": {
-          "label": "Choose Liability Insurance Type",
-          "error": "Please choose a type of liability insurance",
-          "accounts1": "General Liability",
-          "accounts2": "Professional Liability",
-          "accounts3": "Employer Liability",
-          "special": "Business Liability"
-        }
-      }
+    "employerData": {
+      "previousEmployerWebsite": "Previous Employer Website",
+      "candidateDetails": "Candidate Details",
+      "highestDegreeDetails": "Highest Degree Details",
+      "employerDetails": "Employer Details"
     },
     "general": {
       "confirmation": {
@@ -258,14 +242,21 @@
       "usesCookies": "This website uses cookies to ensure you get the best experience on our website."
     },
     "form": {
-      "error": "Please provide required information!"
+      "error": "Please provide required information!",
+      "submit": "Submit"
     },
     "nextStepDrawer": {
       "applicationReady": "Your Application Is Now Ready To Be Applied",
       "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
       "applicationNotComplete": "Your Application Is Not Ready Yet",
-      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process",
-      "needCollegeAndEmployer": "You need to add College Degree and Previous Employer Details to finish this process"
+      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process.",
+      "needCollegeAndEmployer": "You need to add your College Degree and First Employer Details to finish this process.",
+      "sendApplication": "Send Application",
+      "addJobApplicationDetails": "Add Job Application Details",
+      "addPreviousEmployer": "Add Previous Employer",
+      "addCollegeDegree": "Add College Degree",
+      "oneStepAway": "Just One Step Away! Enter Your Job Application Details!",
+      "clickBelowToSubmit": "Click Below To Submit Your Job Application."
     },
     "prefilledForm": {
       "FirstName": "First Name",
@@ -283,9 +274,13 @@
       "RegistrationNumber": "Registration Number",
       "ProgramEnrolled": "Program Enrolled",
       "EnrollingYear": "Enrolling Year",
-      "Graduation Year": "GraduationYear",
+      "GraduationYear": "Graduation Year",
       "Branch": "Branch",
-      "credentialsByMyPassID": "Credentials Provided by myPass.ID"
+      "credentialsByMyPassID": "Credentials Provided by myPass.ID",
+      "Designation": "Designation",
+      "EmployeeID": "Employee ID",
+      "EndDate": "EndDate",
+      "StartDate": "StartDate"
     },
     "sideBar": {
       "yourTodoList": "Your To-Do List"

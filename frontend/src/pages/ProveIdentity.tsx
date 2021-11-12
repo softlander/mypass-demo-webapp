@@ -45,19 +45,19 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
             const requestedCredentials = ['Address', 'PersonalData', 'ContactDetails'];
             let shareWith = 'company';
 
-            if (companyHouseStatus && companyHouseStatus === 'completed') {
-                if (bankStatus && bankStatus === 'completed') {
-                    await localStorage.setItem('insurance', 'pending');
-                    requestedCredentials.push('Company', 'BankAccount');
-                    shareWith = 'insurance';
-                } else {
-                    await localStorage.setItem('bank', 'pending');
-                    requestedCredentials.push('Company');
-                    shareWith = 'bank';
-                }
-            } else {
-                await localStorage.setItem('companyHouse', 'pending');
-            }
+            // if (companyHouseStatus && companyHouseStatus === 'completed') {
+            //     if (bankStatus && bankStatus === 'completed') {
+            //         await localStorage.setItem('insurance', 'pending');
+            //         requestedCredentials.push('Company', 'BankAccount');
+            //         shareWith = 'insurance';
+            //     } else {
+            //         await localStorage.setItem('bank', 'pending');
+            //         requestedCredentials.push('Company');
+            //         shareWith = 'bank';
+            //     }
+            // } else {
+            //     await localStorage.setItem('companyHouse', 'pending');
+            // }
 
             const channelId = randomstring.generate(7);
             const challenge = randomstring.generate(10);
