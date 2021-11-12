@@ -1,7 +1,12 @@
 import React from 'react';
 import useStep from '../utils/useStep';
-import { Layout, NextStepDrawer } from '../components';
+import useFetch from '../utils/useFetch';
+import { Layout, Loading, NextStepDrawer } from '../components';
+import back from '../assets/back.svg';
 import { useTranslation } from 'react-i18next';
+import Config from "../config";
+
+const serverAPI = Config.backend_api_url;
 
 interface ApplicationData {
     'ApplicationNumber': string;
@@ -58,7 +63,7 @@ const ApplicationDetails = () => {
                 <p>{t("pages.general.applicationDetails.roleApplyingFor")}</p>
                 <p className='bold'>{details?.RoleApplyingFor}</p>
             </div>
-            
+
             <div className='company-details-item'>
                 <p>{t("pages.general.applicationDetails.expectedCTC")}</p>
                 <p className='bold'>{details?.ExpectedCTC}</p>

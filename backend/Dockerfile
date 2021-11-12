@@ -1,7 +1,8 @@
 FROM node:14-alpine
 
 ENV APP_HOME=/app
-ENV PORT=4000
+ENV API_PORT=4000
+ENV WS_PORT=8000
 
 WORKDIR $APP_HOME
 
@@ -13,6 +14,7 @@ RUN yarn global add nodemon
 
 COPY . .
 
-EXPOSE $PORT
+EXPOSE $API_PORT
+EXPOSE $WS_PORT
 
 CMD ["yarn", "start"]

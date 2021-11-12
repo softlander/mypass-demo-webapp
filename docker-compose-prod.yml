@@ -22,6 +22,7 @@ services:
     # to be used to access the container from the outside
     ports:
       - "4000:4000"
+      - "8000:8000"
     # set the environment to production
     environment:
       - NODE_ENV=production    
