@@ -28,6 +28,10 @@ export default ({ link }: { link: string }) => {
         setInfo();
     }, []);
 
+    if (!link) {
+        return <React.Fragment />;
+    }
+
     switch (nextStep) {
         case 'completed':
             return(

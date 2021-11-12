@@ -20,18 +20,19 @@ const Confirmation: React.FC = ({ match }: any) => {
     useEffect(() => {
         async function determineCompanyId () {
             setCompanyId(await getCompanyId());
-            switch (theme) {
-            case 'application':
-                setTitle("pages.general.confirmation.titleBank");
+            const currentStep = localStorage.getItem('currentStep');
+            switch (currentStep) {
+            case '2':
+                setTitle("pages.general.confirmation.titleCollegeDegree");
                 break;
-            case 'insurance':
-                setTitle("pages.general.confirmation.titleInsurance");
+            case '3':
+                setTitle("pages.general.confirmation.titlePreviousEmployer");
                 break;
-            case 'company':
-                setTitle("pages.general.confirmation.titleCompany");
+            case '4':
+                setTitle("pages.general.confirmation.titleFinalApplication");
                 break;
             default:
-                setTitle("pages.general.confirmation.titleCompany");
+                setTitle("pages.general.confirmation.titleJobApplication");
                 break;
             }
         }
@@ -44,15 +45,11 @@ const Confirmation: React.FC = ({ match }: any) => {
                 <div className='confirmation-page'>
                     <div className='selv-wrapper'>
                         <img src={selv} alt='Selv app logo' />
-                        <h4>{t("pages.general.confirmation.credentialsToMyPassID")}</h4>
+                        <h4>{t('pages.general.confirmation.myPass')}</h4>
                     </div>
-                    <h2>{t("pages.general.confirmation.titleApplication")}</h2>
-                    {
-                        theme === 'company' &&
-                            <p>{t("pages.general.confirmation.proudOwnerOfCompany")}</p>
-                    }
-                    <Link to={nextStep.replace(':companyId', companyId)}>
-                        <Button style={{backgroundColor: 'darkblue', height: '35%'}}>
+                    <h2>{t(title)}</h2>
+                    <Link to={nextStep}>
+                        <Button className="continueBtn">
                             {t("actions.continue")}
                         </Button>
                     </Link>

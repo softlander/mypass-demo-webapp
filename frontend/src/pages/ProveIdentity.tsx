@@ -90,7 +90,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
                     <h2>{t("pages.general.proveIdentity.provideCredentials")}</h2>
                     <p>
                         <Trans i18nKey="pages.general.proveIdentity.scanToContinue">
-                            Scan this QR code with <strong>Selv App</strong> to continue
+                            Scan this QR code with <strong>myPass.ID App</strong> to continue
                         </Trans>
                     </p>
                     <div className='qr-wrapper'>

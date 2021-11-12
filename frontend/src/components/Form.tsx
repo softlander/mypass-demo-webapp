@@ -30,14 +30,17 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                     applicationDetailsData.ApplicationStatus = 'active'
                     localStorage.setItem('applicationStatus', "completed");
                     localStorage.setItem('applicationDetails', JSON.stringify(applicationDetailsData));
+                    localStorage.setItem('currentStep', "4");
                     window.location.href = nextStep;
                 }else if(highestDegree){
                     localStorage.setItem('previousEmployer', JSON.stringify(values));
                     localStorage.setItem('previousEmployerStatus', "completed");
+                    localStorage.setItem('currentStep', "3");
                     window.location.href = nextStep;
                 }else{
                     localStorage.setItem('highestDegree', JSON.stringify(values));
                     localStorage.setItem('highestDegreeStatus', "completed");
+                    localStorage.setItem('currentStep', "2");
                     window.location.href = nextStep;
                 }
             }

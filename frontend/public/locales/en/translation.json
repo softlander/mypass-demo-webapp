@@ -209,15 +209,19 @@
       "confirmation": {
         "titleBank": "Your Business Bank Account Is Now Set Up!",
         "titleInsurance": "Congratulations, Your Liability Insurance Is Now Set Up!",
-        "titleApplication": "Congratulations, Your Job Application Process Has Started!",
+        "titleJobApplication": "Congratulations, Your Job Application Process Has Started!",
         "credentialsToMyPassID": "Your Application Process Has Begun!",
         "proudOwnerOfCompany": "You are now the proud owner of your new company. From now on you’ll be able to prove that you have a directorship position at your newly found company. Open up Selv in order to receive a signed credential you can use to act on behalf of your company.",
-        "returnToCompany": "Return to Company House"
+        "returnToCompany": "Return to Company House",
+        "myPass": "myPass.ID",
+        "titleCollegeDegree": "Congratulations, Your College Degree Has Been Added!",
+        "titlePreviousEmployer": "Congratulations, Your Previous Employer Details Has Been Added!",
+        "titleFinalApplication": "Congratulations, Your Job Application is Completed!"
       },
       "proveIdentity": {
         "waitingForLogin": "Waiting for Login",
         "provideCredentials": "Provide Your Digital Identity Credentials",
-        "scanToContinue": "Scan this QR code with <1>Selv App</1> to continue"
+        "scanToContinue": "Scan this QR code with <1>myPass.ID App</1> to continue"
       },
       "applicationDetails": {
         "applicationNumber": "Application Number",
@@ -246,7 +250,7 @@
       "submit": "Submit"
     },
     "nextStepDrawer": {
-      "applicationReady": "Your Application Is Now Ready To Be Applied",
+      "applicationReady": "Your Application Is Now Ready To Be Applied!",
       "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
       "applicationNotComplete": "Your Application Is Not Ready Yet",
       "needPreviousEmployer": "You need to add Previous Employer Details to finish this process.",

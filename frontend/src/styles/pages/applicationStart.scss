@@ -4,4 +4,9 @@
   height: 35px;
   color: white;
   font-size: 0.9rem;
+
+  &:hover {
+    background-color: darkblue;
+    color: white;
+  }
 }
