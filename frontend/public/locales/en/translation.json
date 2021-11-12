@@ -114,7 +114,7 @@
     "finishDemo": "Finish Demo",
     "getInsurance": "Get Insurance",
     "openBankAccount": "Open Bank Account",
-    "applyAtAwesomeTech": "Apply At AwesomeTech"
+    "applyAtNewCompany": "Apply At AwesomeTech"
   },
   "general": {
     "Self Sovereign Identity": "Self-Sovereign Identity",
@@ -189,13 +189,13 @@
         "signInSuccess": "You have now signed in without ever creating an account. No more need for endless account and password creations. In addition, you provided trustable information, which businesses can use without an expensive verification process. Verifying your data is nearly instant and completely free."
       },
       "applicationStart": {
-        "applyAtAwesomeTech": "Application for AwesomeTech",
+        "applyAtNewCompany": "Application for AwesomeTech",
         "candidateDetails": "Candidate Details",
         "continueButton": "Continue"
       }
     },
     "college": {
-      "officialDUWebsite": "Delhi University Official Website",
+      "collegeHomePageTitle": "Delhi University Official Website",
       "candidateDetails": "Candidate Details",
       "degreeDetails": "Degree Details"
     },
@@ -242,14 +242,21 @@
       "usesCookies": "This website uses cookies to ensure you get the best experience on our website."
     },
     "form": {
-      "error": "Please provide required information!"
+      "error": "Please provide required information!",
+      "submit": "Submit"
     },
     "nextStepDrawer": {
       "applicationReady": "Your Application Is Now Ready To Be Applied",
       "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
       "applicationNotComplete": "Your Application Is Not Ready Yet",
-      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process",
-      "needCollegeAndEmployer": "You need to add College Degree and Previous Employer Details to finish this process"
+      "needPreviousEmployer": "You need to add Previous Employer Details to finish this process.",
+      "needCollegeAndEmployer": "You need to add your College Degree and First Employer Details to finish this process.",
+      "sendApplication": "Send Application",
+      "addJobApplicationDetails": "Add Job Application Details",
+      "addPreviousEmployer": "Add Previous Employer",
+      "addCollegeDegree": "Add College Degree",
+      "oneStepAway": "Just One Step Away! Enter Your Job Application Details!",
+      "clickBelowToSubmit": "Click Below To Submit Your Job Application."
     },
     "prefilledForm": {
       "FirstName": "First Name",

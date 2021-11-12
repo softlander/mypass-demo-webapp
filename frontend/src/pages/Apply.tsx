@@ -14,8 +14,8 @@ const Apply: React.FC = ({ history, match, ...props }: any) => {
             <React.Fragment>
                 <div>
                     <Link to={nextStep}>
-                        <button className="applyAwesomeTechBtn">
-                            {t('actions.applyAtAwesomeTech')}
+                        <button className="applyJobBtn">
+                            {t('actions.applyAtNewCompany')}
                         </button>
                     </Link>
                 </div>

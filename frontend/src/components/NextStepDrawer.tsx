@@ -32,13 +32,13 @@ export default ({ link }: { link: string }) => {
         case 'completed':
             return(
                 <div className='next-step-drawer completed'>
-                    <h3>Your Application is Ready!</h3>
+                    <h3>{t('components.nextStepDrawer.applicationReady')}</h3>
                     <p>
-                        Click Below To Submit Your Job Application.
+                        {t('components.nextStepDrawer.clickBelowToSubmit')}
                     </p>
                     <Link to={link}>
-                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
-                            Send Application
+                        <Button className="nextStepBtn">
+                            {t('components.nextStepDrawer.sendApplication')}
                         </Button>
                     </Link>
                 </div>
@@ -46,13 +46,13 @@ export default ({ link }: { link: string }) => {
         case 'jobApplication':
             return (
                 <div className='next-step-drawer completed'>
-                    <h3>Your Application is Not Ready Yet</h3>
+                    <h3>{t('components.nextStepDrawer.applicationNotComplete')}</h3>
                     <p>
-                        Just One Step Away! Enter Your Job Application Details!
+                        {t('components.nextStepDrawer.oneStepAway')}
                     </p>
                     <Link to={link}>
-                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
-                            Add Your Application Details
+                        <Button className="nextStepBtn">
+                            {t('components.nextStepDrawer.addJobApplicationDetails')}
                         </Button>
                     </Link>
                 </div>
@@ -60,14 +60,13 @@ export default ({ link }: { link: string }) => {
         case 'previousEmployer':
             return (
                 <div className='next-step-drawer'>
-                    <h3>Your Application is Not Ready Yet</h3>
+                    <h3>{t('components.nextStepDrawer.applicationNotComplete')}</h3>
                     <p>
-                        {/* {t("components.nextStepDrawer.needLiabilityInsurance")} */}
-                        You need to add your Previous Employer Details to finish this application process.
+                        {t('components.nextStepDrawer.needPreviousEmployer')}
                     </p>
                     <Link to={link}>
-                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
-                            Add Previous Employer
+                        <Button className="nextStepBtn">
+                            {t('components.nextStepDrawer.addPreviousEmployer')}
                         </Button>
                     </Link>
                 </div>
@@ -75,13 +74,13 @@ export default ({ link }: { link: string }) => {
         case 'collegeDegree':
             return (
                 <div className='next-step-drawer'>
-                    <h3>Your Application is Not Ready Yet</h3>
+                    <h3>{t('components.nextStepDrawer.applicationNotComplete')}</h3>
                     <p>
-                        You need to add your College Degree and First Employer Details to finish this application process.
+                        {t('components.nextStepDrawer.needCollegeAndEmployer')}
                     </p>
                     <Link to={link}>
-                        <Button style={{backgroundColor: '#f17105', height: '30%'}}>
-                            Add College Degree
+                        <Button className="nextStepBtn">
+                           {t('components.nextStepDrawer.addCollegeDegree')}
                         </Button>
                     </Link>
                 </div>

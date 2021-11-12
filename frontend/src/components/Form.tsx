@@ -66,7 +66,7 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
                         style={{backgroundColor: 'darkblue', height: '30%'}}
                         disabled={hasErrors(getFieldsError()) || status === messages.waiting}
                     >
-                        Submit
+                        {t('components.form.submit')}
                     </Button>
                 </Form.Item>
             </Form>

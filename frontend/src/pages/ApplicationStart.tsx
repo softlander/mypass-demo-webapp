@@ -61,7 +61,7 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t("pages.application.applicationStart.applyAtAwesomeTech")}</h2>
+                <h2>{t("pages.application.applicationStart.applyAtNewCompany")}</h2>
                 <h3 className='section-header'>{t("pages.application.applicationStart.candidateDetails")}</h3>
                 <PrefilledForm {...prefilledFormData} />
                 <Button htmlType="button" href={nextStep} className="startApplicationBtn" >{t("pages.application.applicationStart.continueButton")}</Button>

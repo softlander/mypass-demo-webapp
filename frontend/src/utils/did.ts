@@ -1,7 +1,7 @@
 import Config from '../config';
 import Address from '../schemas/Address.json';
 import CollegeDegree from '../schemas/CollegeDegree.json';
-import Application from '../schemas/Application.json';
+import JobApplication from '../schemas/JobApplication.json';
 import ContactDetails from '../schemas/ContactDetails.json';
 import PreviousEmployer from '../schemas/PreviousEmployer.json';
 import PersonalData from '../schemas/PersonalData.json';
@@ -13,7 +13,7 @@ const provider = Config.provider;
 const schemas: any = {
     Address,
     CollegeDegree,
-    Application,
+    JobApplication,
     ContactDetails,
     PreviousEmployer,
     PersonalData
