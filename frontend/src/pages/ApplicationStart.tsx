@@ -5,7 +5,6 @@ import { Layout, Loading, Form, PrefilledForm, WebSocket } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 import "../styles/pages/applicationStart.scss"
-import { DUMMY_CREDENTIALS } from '../utils/staticData';
 
 const prefilledFields = [
     'FirstName',
@@ -27,7 +26,9 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
 
     useEffect(() => {
         async function getData() {
-            const flattenData = flattenObject(DUMMY_CREDENTIALS?.data);
+            const credentials = localStorage.getItem('credentials')
+            const credentialsData = credentials && JSON.parse(credentials)
+            const flattenData = flattenObject(credentialsData?.data);
             const address = { Address: `${flattenData.Street} ${flattenData.House}, ${flattenData.City}, ${flattenData.Country}, ${flattenData.Postcode}` };
             const result = prefilledFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
@@ -57,7 +58,6 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
             
         };
         localStorage.setItem('applicationDetails', JSON.stringify(applicationDetails))
-        localStorage.setItem('credentials', JSON.stringify(DUMMY_CREDENTIALS));
         localStorage.setItem('currentStep', '1');
     }
 
