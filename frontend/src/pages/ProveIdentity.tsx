@@ -69,7 +69,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
                 password: payloadPassword,
                 requestedCredentials,
                 shareWith,
-                url: Config.backend_ws_url
+                url: Config.backend_url
             };
             setChannelDetails(channelDetails);
 

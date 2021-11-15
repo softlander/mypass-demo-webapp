@@ -4,9 +4,6 @@ import useFetch from '../utils/useFetch';
 import { Layout, Loading, NextStepDrawer } from '../components';
 import back from '../assets/back.svg';
 import { useTranslation } from 'react-i18next';
-import Config from "../config";
-
-const serverAPI = Config.backend_api_url;
 
 interface ApplicationData {
     'ApplicationNumber': string;
@@ -24,7 +21,7 @@ const details = res && JSON.parse(res);
 const ApplicationData: React.FC = ({ match }: any) => {
     const { nextStep } = useStep(match);
     const { t } = useTranslation();
-    
+
     return (
         <Layout match={match}>
             <React.Fragment>

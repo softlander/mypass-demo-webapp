@@ -9,8 +9,8 @@ import { getCompanyId, encrypt, decrypt } from '../utils/helper';
 import Config from "../config";
 import { useTranslation } from 'react-i18next';
 
-const serverAPI = Config.backend_api_url;
-const websocketURL = Config.backend_ws_url;
+const serverAPI = Config.backend_api_namespace;
+const websocketURL = Config.backend_ws_namespace;
 
 const notify = (type: string, message: string, description: string) => {
     switch (type) {
