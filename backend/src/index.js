@@ -20,6 +20,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const whitelist = [
   "http://localhost:3000",
+  "https://demo.mypass.id"
 ];
 const corsOptions = {
   // methods: ["GET, POST, OPTIONS"],
@@ -27,10 +28,10 @@ const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       console.log("Allowed by CORS", origin);
-      callback(null);
+      callback(null, true);
     } else {
       console.error("Not allowed by CORS", origin);
-      callback(new Error("Not allowed by CORS " + origin));
+      callback(new Error("Not allowed by CORS " + origin), false);
     }
   },
 };
@@ -244,7 +245,7 @@ try {
 /*
 Check the status of server.
 */
-app.get('/status', (req, res) => res.send({ status: "I'm alive!" }));
+app.get('/api/status', (req, res) => res.send({ status: "I'm alive!" }));
 
 /*
 Check if mobile client is connected
