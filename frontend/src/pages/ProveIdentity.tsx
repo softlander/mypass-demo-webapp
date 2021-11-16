@@ -40,10 +40,20 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
 
     useEffect(() => {
         async function setQR() {
-            const companyHouseStatus = await localStorage.getItem('companyHouse');
-            const bankStatus = await localStorage.getItem('bank');
+            const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
+            const previousEmployerStatus = await localStorage.getItem('previousEmployer');
+            const applicationStatus = await localStorage.getItem('applicationDetails');
             const requestedCredentials = ['Address', 'PersonalData', 'ContactDetails'];
             let shareWith = 'company';
+
+            if(collegeDegreeStatus && collegeDegreeStatus === "completed"){
+                await localStorage.setItem('previousEmployerStatus', 'pending');
+                requestedCredentials.push('HighestDegree');
+                shareWith = 'previousEmployer';
+            }else{
+                await localStorage.setItem('collegeDegreeStatus', 'pending');
+                await localStorage.setItem('applicationStatus', 'pending');
+            }
 
             // if (companyHouseStatus && companyHouseStatus === 'completed') {
             //     if (bankStatus && bankStatus === 'completed') {
@@ -94,6 +104,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
                         </Trans>
                     </p>
                     <div className='qr-wrapper'>
+                        {console.log(qrContent)}
                         <QRCode text={qrContent} />
                     </div>
                     <p className='bold'>{t(status)}</p>
