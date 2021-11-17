@@ -71,7 +71,7 @@
       "inBrief": "In Brief",
       "howItWorks": "How It Works",
       "create": "Create",
-      "createText": "Download the Selv app and create a unique identifier, representing you online. This profile remains in your control and doesn’t leave the app without your consent.",
+      "createText": "Download the myPass.ID app and create a unique identifier, representing you online. This profile remains in your control and doesn’t leave the app without your consent.",
       "share": "Share",
       "shareText": "Decide who and what others get to see from your personal profile. You can share your data peer-to-peer or on request. Controlled data flow allows you to always get something in return for your data.",
       "grow": "Grow",
@@ -87,12 +87,12 @@
       "menu": "Menu"
     },
     "main": {
-      "claimControl": "A digital Selv,",
+      "claimControl": "A digital ID,",
       "reuseYourNew": "under your control",
-      "mainText": "Selv is a demo app that showcases how IOTA Identity creates new digital processes and revolutionizes existing ones, with a focus on privacy and control of your own digital Selv."
+      "mainText": "myPass.ID is a demo app that showcases how IOTA Identity creates new digital processes and revolutionizes existing ones, with a focus on privacy and control of your own digital ID."
     },
     "selv": {
-      "selvText": "Your data shouldn’t be locked up, but it can't be public either.<1/>Selv promises a solution that <3>enables data flow</3>, completely under your <5>control</5>."
+      "selvText": "Your data shouldn’t be locked up, but it can't be public either.<1/>myPass.ID promises a solution that <3>enables data flow</3>, completely under your <5>control</5>."
     }
   },
   "actions": {
