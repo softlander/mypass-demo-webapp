@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Button } from 'antd';
 import DropSelector from '../DropSelector';
-import logo from '../../assets/landing/logoHeader.svg'
+import logo from '../../assets/landing/mypass.png'
 import { useTranslation } from 'react-i18next';
 
 
@@ -44,7 +44,7 @@ export default () => {
 
     return (
         <div className="header-section">
-            <img src={logo} alt="Selv logo" className="logo" />
+            <img src={logo} alt="Selv logo" className="logo" height="8%" width="8%"/>
             <div className="menu-links">
                 {
                     links.map(link => (
