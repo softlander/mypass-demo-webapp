@@ -18,11 +18,7 @@ const links = [
     {
         anchor: '#the-app',
         title: 'The App'
-    },
-    {
-        anchor: '#faq',
-        title: 'FAQs'
-    },
+    }
 ]
 export default () => {
     const { t } = useTranslation();
