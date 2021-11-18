@@ -26,7 +26,7 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                 <div className='scan-qr-page-wrapper app-download'>
                     <RandomGraphicElement elements={5}>
                         <React.Fragment>
-                            <h1 className='title'>{t("actions.downloadTheSelvApp")}</h1>
+                            <h1 className='title'>{t("actions.downloadTheMyPassApp")}</h1>
                             <div className='app-cta-wrapper'>
                                 <a
                                     href='https://testflight.apple.com/join/3FCosIcj'

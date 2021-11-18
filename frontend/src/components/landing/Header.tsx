@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Button } from 'antd';
 import DropSelector from '../DropSelector';
-import logo from '../../assets/landing/logoHeader.svg'
+import logo from '../../assets/mypass_logo.svg'
 import { useTranslation } from 'react-i18next';
 
 
@@ -18,11 +18,7 @@ const links = [
     {
         anchor: '#the-app',
         title: 'The App'
-    },
-    {
-        anchor: '#faq',
-        title: 'FAQs'
-    },
+    }
 ]
 export default () => {
     const { t } = useTranslation();
@@ -48,7 +44,7 @@ export default () => {
 
     return (
         <div className="header-section">
-            <img src={logo} alt="Selv logo" className="logo" />
+            <img src={logo} alt="myPass logo" className="logo"/>
             <div className="menu-links">
                 {
                     links.map(link => (
