@@ -1,6 +1,8 @@
 {
   "type": "object",
-  "required": ["DID"],
+  "required": [
+    "DID"
+  ],
   "properties": {
     "DID": {
       "type": "string"
@@ -14,7 +16,10 @@
     "Application": {
       "type": "object",
       "properties": {
-        "RoleApplyingFor": {
+        "CompanyName": {
+          "type": "string"
+        },
+        "JobID": {
           "type": "string"
         },
         "ExpectedCTC": {

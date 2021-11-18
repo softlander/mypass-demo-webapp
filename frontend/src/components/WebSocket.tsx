@@ -160,9 +160,9 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
                         await localStorage.setItem('jobApplicationDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         await updateCompanyStatus();
                         break;
-                    case 'PreviousEmployer':
+                    case 'EmploymentHistory':
                         await localStorage.setItem('previousEmployer', 'completed');
-                        await localStorage.setItem('previousEmployerDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                        await localStorage.setItem('employmentHistoryDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
                     case 'CollegeDegree':
                         await localStorage.setItem('collegeDegree', 'completed');

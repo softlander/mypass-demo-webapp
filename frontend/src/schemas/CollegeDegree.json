@@ -1,6 +1,8 @@
 {
   "type": "object",
-  "required": ["DID"],
+  "required": [
+    "DID"
+  ],
   "properties": {
     "DID": {
       "type": "string"
@@ -11,7 +13,7 @@
     "Locale": {
       "type": "string"
     },
-    "College": {
+    "CollegeDegree": {
       "type": "object",
       "properties": {
         "CollegeName": {
