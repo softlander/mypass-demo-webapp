@@ -7,7 +7,7 @@ import { Disclaimer, RandomGraphicElement } from '../components';
 import DropSelector from '../components/DropSelector';
 import dots from '../assets/backgrounds/dots.png';
 import ellipse from '../assets/backgrounds/ellipse1.svg';
-import logo from '../assets/landing/mypass.png';
+import logo from '../assets/mypass_logo.svg'
 import { useTranslation } from 'react-i18next';
 
 /**
@@ -29,7 +29,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
         <RandomGraphicElement elements={7}>
             <div className='theme-demo'>
                 <Link to={'/'} className="logo demo-page">
-                    <img src={logo} alt="Selv logo" height="35%" width="35%"/>
+                    <img src={logo} alt="myPass logo" />
                 </Link>
                 <div className="demo-select-page-drop-selector">
                     <DropSelector />

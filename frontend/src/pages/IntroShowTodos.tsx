@@ -6,7 +6,7 @@ import DropSelector from '../components/DropSelector';
 import useStep from '../utils/useStep';
 import howItWorks from '../assets/landing/howItWorks1.png';
 import dots from '../assets/backgrounds/dots.png';
-import logo from '../assets/landing/mypass.png';
+import logo from '../assets/mypass_logo.svg';
 import { useTranslation, Trans } from 'react-i18next';
 
 /**
@@ -33,7 +33,7 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
         <RandomGraphicElement elements={7}>
             <div className='theme-demo'>
                 <Link to={'/'} className="logo demo-page">
-                <img src={logo} alt="Selv logo" height="35%" width="35%"/>
+                <img src={logo} alt="myPass logo" />
                 </Link>
                 <div className="demo-drop-selector">
                     <DropSelector />
