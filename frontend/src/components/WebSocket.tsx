@@ -155,13 +155,13 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
             payload = JSON.parse(payload);
             if (payload?.status === 'success') {
                 switch (schemaName) {
-                    case 'JobApplication':
-                        await localStorage.setItem('newEmployer', 'completed');
-                        await localStorage.setItem('jobApplicationDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                    case 'JobOffer':
+                        await localStorage.setItem('jobOffer', 'completed');
+                        await localStorage.setItem('jobOfferDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         await updateCompanyStatus();
                         break;
                     case 'EmploymentHistory':
-                        await localStorage.setItem('previousEmployer', 'completed');
+                        await localStorage.setItem('employmentHistory', 'completed');
                         await localStorage.setItem('employmentHistoryDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
                     case 'CollegeDegree':

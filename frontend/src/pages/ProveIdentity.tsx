@@ -41,14 +41,13 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
     useEffect(() => {
         async function setQR() {
             const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
-            const previousEmployerStatus = await localStorage.getItem('previousEmployer');
+            const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
             const requestedCredentials = ['Address', 'PersonalData', 'ContactDetails'];
             let shareWith = 'university';
 
             if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
-                if (previousEmployerStatus && previousEmployerStatus === 'completed') {
-                    await localStorage.setItem('jobApplication', 'pending');
-                    requestedCredentials.push('CollegeDegree', 'PreviousEmployer');
+                if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
+                    requestedCredentials.push('CollegeDegree', 'EmploymentHistory');
                     shareWith = 'newEmployer';
                 } else {
                     await localStorage.setItem('employmentHistory', 'pending');

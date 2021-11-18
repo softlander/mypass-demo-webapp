@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "DID"
+  ],
+  "properties": {
+    "DID": {
+      "type": "string"
+    },
+    "Language": {
+      "type": "string"
+    },
+    "Locale": {
+      "type": "string"
+    },
+    "Application": {
+      "type": "object",
+      "properties": {
+        "CompanyName": {
+          "type": "string"
+        },
+        "CompanyAddress": {
+          "type": "string"
+        },
+        "Designation": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        },
+        "CTC": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
