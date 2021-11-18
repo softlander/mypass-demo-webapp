@@ -173,11 +173,11 @@
       "thankYou": {
         "thanksForTryingMyPass": "Thanks for Trying myPass.ID!",
         "improvedExperience": "Improved Experience",
-        "savedTime": "With Selv, powered by IOTA, you managed to set up an entire company, corporate bank account and insurance with very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
+        "savedTime": "With myPass.ID, you managed to share college degree and previous employment details, and apply to a new job in very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
         "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the Selv app!",
         "moreTrust": "More Trust",
         "trustText": "The data you shared with the Company House and the SNS Bank was verifiable. This allows to verify your data instantly and freely using IOTA as the trust layer.",
-        "returnCompanyHouse": "Return to Company House",
+        "returnUniversity": "Return to the University",
         "returnHome": "Return Home"
       }
     },
