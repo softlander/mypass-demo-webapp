@@ -1,6 +1,7 @@
 import React from 'react';
-import companyHouse from '../assets/companyHouseCrone.svg'
-import snsBank from '../assets/snsBank.svg'
+import university from '../assets/universityCrone.svg'
+import previousEmployer from '../assets/previousEmployer.svg'
+import newEmployer from '../assets/newEmployer.svg'
 
 const Footer = ({ children, theme }: {
     children?: JSX.Element | null | undefined;
@@ -10,9 +11,9 @@ const Footer = ({ children, theme }: {
         <div className='footer-wrapper' id='footer'>
             {children}
             <div className='logo'>
-                { theme === 'company' && <img src={companyHouse} alt='Company House Logo' /> }
-                { theme === 'bank' && <img src={snsBank} alt='SNS Bank Logo' /> }
-                { theme === 'insurance' && <img src={snsBank} alt='SNS Bank Logo' /> }
+                {theme === 'university' && <img src={university} alt='University Logo' />}
+                {theme === 'previousEmployer' && <img src={previousEmployer} alt='Previous Employer Logo' />}
+                {theme === 'newEmployer' && <img src={newEmployer} alt='New Employer Logo' />}
             </div>
         </div>
     );

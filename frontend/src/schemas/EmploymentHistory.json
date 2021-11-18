@@ -13,16 +13,25 @@
     "Locale": {
       "type": "string"
     },
-    "Application": {
+    "Employer": {
       "type": "object",
       "properties": {
         "CompanyName": {
           "type": "string"
         },
-        "JobID": {
+        "CompanyAddress": {
           "type": "string"
         },
-        "ExpectedCTC": {
+        "EmployeeID": {
+          "type": "string"
+        },
+        "LastDesignation": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        },
+        "EndDate": {
           "type": "string"
         }
       }

@@ -1,6 +1,8 @@
 {
   "type": "object",
-  "required": ["DID"],
+  "required": [
+    "DID"
+  ],
   "properties": {
     "DID": {
       "type": "string"
@@ -11,13 +13,13 @@
     "Locale": {
       "type": "string"
     },
-    "TimezoneOffset": {
-      "type": "string"
-    },
-    "PreviousEmployer": {
+    "Application": {
       "type": "object",
       "properties": {
         "CompanyName": {
+          "type": "string"
+        },
+        "CompanyAddress": {
           "type": "string"
         },
         "Designation": {
@@ -26,10 +28,7 @@
         "StartDate": {
           "type": "string"
         },
-        "EndDate": {
-          "type": "string"
-        },
-        "EmployeeID": {
+        "CTC": {
           "type": "string"
         }
       }

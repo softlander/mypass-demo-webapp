@@ -172,11 +172,11 @@
       "thankYou": {
         "thanksForTryingSelv": "Bedankt voor het uitproberen van Selv!",
         "improvedExperience": "Verbeterde gebruikerservaring",
-        "savedTime": "Met Selv, gebouwd door IOTA, heb je een volledig nieuwe bedrijf opgezet, zakelijke bankrekening en aansprakelijkheidsverzekering geopend in een paar keer klikken. Je hebt je gegevens kunnen hergebruiken waardoor je x velden niet zelf hebt hoeven invullen.",
+        "savedTime": "Met myPass.ID, slaagde je erin om universitaire graad en eerdere werkgelegenheidsgegevens te delen en in zeer weinig klikken op een nieuwe baan te solliciteren. Uw gegevens waren herbruikbaar en dit bespaarde u x velden met formuliervelden om in te vullen.",
         "sovereignityText": "Je hebt de volledige controle over je eigen gegevens. En jij hebt zelf gekozen met wie je die gegevens hebt gedeeld. Wist je dat je je referenties ook handmatig via een QR-code kunt delen met anderen? Probeer het in de Selv app!",
         "moreTrust": "Meer vertrouwen",
         "trustText": "De gegevens die je hebt gedeeld met de KvK en ede SNS Bank zijn geverifieerde referenties. Dat betekend dat de KvK en SNS Bank er vanuit kunnen gaan dat de gegevens kloppen. Hierdoor konden de processen direct afgerond worden en was er geen handmatig werk meer nodig.",
-        "returnCompanyHouse": "Terug naar de Kamer van Koophandel",
+        "returnUniversity": "Terug naar de universiteit",
         "returnHome": "Terug naar de homepage"
       }
     },

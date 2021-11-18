@@ -155,18 +155,18 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
             payload = JSON.parse(payload);
             if (payload?.status === 'success') {
                 switch (schemaName) {
-                    case 'Insurance':
-                        await localStorage.setItem('insurance', 'completed');
-                        await localStorage.setItem('insuranceDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                    case 'JobOffer':
+                        await localStorage.setItem('jobOffer', 'completed');
+                        await localStorage.setItem('jobOfferDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         await updateCompanyStatus();
                         break;
-                    case 'BankAccount':
-                        await localStorage.setItem('bank', 'completed');
-                        await localStorage.setItem('bankDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                    case 'EmploymentHistory':
+                        await localStorage.setItem('employmentHistory', 'completed');
+                        await localStorage.setItem('employmentHistoryDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
-                    case 'Company':
-                        await localStorage.setItem('applicationDetails', 'completed');
-                        await localStorage.setItem('applicationDetails', JSON.stringify({ ...data, ...payload?.payload }));
+                    case 'CollegeDegree':
+                        await localStorage.setItem('collegeDegree', 'completed');
+                        await localStorage.setItem('collegeDegreeDetails', JSON.stringify({ ...data, ...payload?.payload }));
                         break;
                     default:
                         break;

@@ -40,24 +40,23 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
 
     useEffect(() => {
         async function setQR() {
-            const companyHouseStatus = await localStorage.getItem('companyHouse');
-            const bankStatus = await localStorage.getItem('bank');
+            const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
+            const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
             const requestedCredentials = ['Address', 'PersonalData', 'ContactDetails'];
-            let shareWith = 'company';
+            let shareWith = 'university';
 
-            // if (companyHouseStatus && companyHouseStatus === 'completed') {
-            //     if (bankStatus && bankStatus === 'completed') {
-            //         await localStorage.setItem('insurance', 'pending');
-            //         requestedCredentials.push('Company', 'BankAccount');
-            //         shareWith = 'insurance';
-            //     } else {
-            //         await localStorage.setItem('bank', 'pending');
-            //         requestedCredentials.push('Company');
-            //         shareWith = 'bank';
-            //     }
-            // } else {
-            //     await localStorage.setItem('companyHouse', 'pending');
-            // }
+            if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
+                if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
+                    requestedCredentials.push('CollegeDegree', 'EmploymentHistory');
+                    shareWith = 'newEmployer';
+                } else {
+                    await localStorage.setItem('employmentHistory', 'pending');
+                    requestedCredentials.push('CollegeDegree');
+                    shareWith = 'previousEmployer';
+                }
+            } else {
+                await localStorage.setItem('collegeDegree', 'pending');
+            }
 
             const channelId = randomstring.generate(7);
             const challenge = randomstring.generate(10);
