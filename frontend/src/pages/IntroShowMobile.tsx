@@ -7,7 +7,7 @@ import { Disclaimer, RandomGraphicElement } from '../components';
 import DropSelector from '../components/DropSelector';
 import dots from '../assets/backgrounds/dots.png';
 import ellipse from '../assets/backgrounds/ellipse1.svg';
-import logo from '../assets/landing/logoHeader.svg';
+import logo from '../assets/mypass_logo.svg';
 import { useTranslation, Trans } from 'react-i18next';
 /**
  * Component which will display a IntroShowTodos.
@@ -29,7 +29,7 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
         <RandomGraphicElement elements={7}>
             <div className='theme-demo'>
                 <Link to={'/'} className="logo demo-page">
-                    <img src={logo} alt="Selv logo" />
+                    <img src={logo} alt="myPass logo"/>
                 </Link>
                 <div className="demo-drop-selector">
                     <DropSelector/>

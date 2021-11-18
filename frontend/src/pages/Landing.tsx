@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
     App,
     ControlIdentity,
-    FAQ,
     Footer,
     Header,
     HowItWorks,
@@ -32,7 +31,6 @@ const Landing: React.FC = ({ location }: any) => {
                 <HowItWorks />
                 <Benefits />
                 <App />
-                <FAQ />
                 <Footer />
             </div>
         </div>
