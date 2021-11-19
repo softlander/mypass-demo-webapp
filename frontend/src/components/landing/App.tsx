@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { RandomGraphicElement } from '../';
-import selv from '../../assets/selv.svg';
+import mypass from '../../assets/mypass_logo.svg';
 import app from '../../assets/landing/app.png';
 import appMobile from '../../assets/landing/app-mobile.png';
 import circle from '../../assets/backgrounds/circleFrame2.svg';
@@ -26,21 +26,21 @@ export default () => (
                             <div className='content-list'>
                                 <div className='content-item' data-aos='fade-left' data-aos-duration='1000'>
                                     <span className='content-header-wrapper'>
-                                        <img src={selv} alt='' className='logo' />
+                                        <img src={mypass} alt='' className='logo' />
                                         <h5>{t("landing.app.selfSovereignIdentity")}</h5>
                                     </span>
                                     <p>{t("landing.app.whatItIs")}</p>
                                 </div>
                                 <div className='content-item' data-aos='fade-left' data-aos-duration='1000'>
                                     <span className='content-header-wrapper'>
-                                        <img src={selv} alt='' className='logo' />
+                                        <img src={mypass} alt='' className='logo' />
                                         <h5>{t("landing.app.oneAppOneProtocol")}</h5>
                                     </span>
                                     <p>{t("landing.app.easyGDPRcompliance")}</p>
                                 </div>
                                 <div className='content-item' data-aos='fade-left' data-aos-duration='1000'>
                                     <span className='content-header-wrapper'>
-                                        <img src={selv} alt='' className='logo' />
+                                        <img src={mypass} alt='' className='logo' />
                                         <h5>{t("landing.app.unifiedIdentity")}</h5>
                                     </span>
                                     <p>{t("landing.app.protocolEnablesDevices")}</p>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Sidenav } from 'rsuite';
 import { Link } from 'react-router-dom';
 import poweredByIota from '../assets/poweredByIota.svg';
-import logo from '../assets/landing/logoHeader.svg';
+import logo from '../assets/mypass_logo.svg';
 import frame from '../assets/backgrounds/circleFrame5.svg';
 import DropSelector from '../components/DropSelector';
 import { useTranslation } from 'react-i18next';

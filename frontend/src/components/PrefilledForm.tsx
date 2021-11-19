@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Form, Input } from 'antd';
-import icon from '../assets/selv.svg';
+import icon from '../assets/mypass_logo.svg';
 import { useTranslation } from 'react-i18next';
 
 const shortFields: string[] = ['Date', 'Nationality'];
 
-const Icon = () => <img src={icon} alt='' width={18} />;
+const Icon = () => <img src={icon} alt='' width={38} />;
 
 const PrefilledForm = ({ form, dataFields }: {
     form: any;

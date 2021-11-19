@@ -1,6 +1,6 @@
 import React from 'react';
 import { RandomGraphicElement } from '../';
-import selv from '../../assets/selv.svg';
+import mypass from '../../assets/mypass_logo.svg';
 import howItWorks1 from '../../assets/landing/howItWorks1.png';
 import howItWorks1Mobile from '../../assets/landing/howItWorks1-mobile.png';
 import howItWorks2 from '../../assets/landing/howItWorks2.png';
@@ -52,7 +52,7 @@ const Create = () => (
             (t) =>
                 <div className='info' data-aos='fade-left' data-aos-duration='1000'>
                     <span className='content-header-wrapper'>
-                        <img src={selv} alt='' className='logo' />
+                        <img src={mypass} alt='' className='logo' />
                         <h5>{t("landing.howItWorks.create")}</h5>
                     </span>
                     <p>{t("landing.howItWorks.createText")}</p>
@@ -67,7 +67,7 @@ const Share = () => (
             (t) =>
                 <div className='info' data-aos='fade-left' data-aos-duration='1000'>
                     <span className='content-header-wrapper'>
-                        <img src={selv} alt='' className='logo' />
+                        <img src={mypass} alt='' className='logo' />
                         <h5>{t("landing.howItWorks.share")}</h5>
                     </span>
                     <p>{t("landing.howItWorks.shareText")}</p>
@@ -82,7 +82,7 @@ const Grow = () => (
             (t) =>
                 <div className='info' data-aos='fade-right' data-aos-duration='1000'>
                     <span className='content-header-wrapper'>
-                        <img src={selv} alt='' className='logo' />
+                        <img src={mypass} alt='' className='logo' />
                         <h5>{t("landing.howItWorks.grow")}</h5>
                     </span>
                     <p>{t("landing.howItWorks.growText")}</p>
@@ -97,7 +97,7 @@ const Accept = () => (
             (t) =>
                 <div className='info' data-aos='fade-right' data-aos-duration='1000'>
                     <span className='content-header-wrapper'>
-                        <img src={selv} alt='' className='logo' />
+                        <img src={mypass} alt='' className='logo' />
                         <h5>{t("landing.howItWorks.accept")}</h5>
                     </span>
                     <p>{t("landing.howItWorks.acceptText")}</p>
