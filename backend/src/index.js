@@ -1,20 +1,10 @@
 const express = require("express");
-const fs = require("fs");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const SocketIO = require("socket.io");
 const { Server } = require("http");
-const randomstring = require("randomstring");
 
-const { websocketPort } = require("../config");
-const {
-  createOrUpdateCompany,
-  createCommitment,
-  readData,
-  readAllData,
-  removeData,
-} = require("./database");
-
+const config = require('../config');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -41,6 +31,8 @@ const app = express();
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(bodyParser.json());
+
+const websocketPort = config.websocketPort;
 
 console.log("Websocket server starting", websocketPort);
 
@@ -205,38 +197,6 @@ try {
         desktopSocket && desktopSocket.emit("rejectCredentials", payload);
       }
     });
-
-    socket.on("createCompany", async (data) => {
-      const { payload } = data;
-      await createOrUpdateCompany(payload);
-      console.info("Company created", payload);
-    });
-
-    socket.on("commitment", async (data) => {
-      try {
-        const { commitments, type } = data;
-        const timestamp = Date.now();
-
-        for await (const commitment of commitments) {
-          const uuid = randomstring.generate({
-            length: 7,
-            charset: "numeric",
-          });
-
-          const storedCommitment = {
-            CommitmentUUID: uuid,
-            CommitmentCreationDate: timestamp,
-            CommitmentType: type,
-            ...commitment,
-          };
-
-          await createCommitment(storedCommitment);
-          console.info("Commitment stored", storedCommitment);
-        }
-      } catch (e) {
-        console.error("Socket commitment", data, e);
-      }
-    });
   });
 } catch (error) {
   console.error(error);
@@ -295,146 +255,6 @@ app.get("/api/connection-app", cors(corsOptions), async (req, res) => {
       status: "failure",
       error: JSON.stringify(e),
       mobileClient: null,
-    });
-  }
-});
-
-/*
-Get company details
-*/
-app.get("/api/company", cors(corsOptions), async (req, res) => {
-  try {
-    const companyNumber = req.query.company;
-    await removeData("company", "");
-    if (companyNumber) {
-      const data = await readData("company", companyNumber);
-      res.json({
-        status: "success",
-        data,
-      });
-    } else {
-      const data = await readAllData("company");
-      res.json({
-        status: "success",
-        data,
-      });
-    }
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
-    });
-  }
-});
-
-/*
-Get pledge details
-*/
-app.get("/api/commitments", cors(corsOptions), async (req, res) => {
-  try {
-    const data = await readAllData("commitments");
-    res.json({
-      status: "success",
-      data,
-    });
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
-    });
-  }
-});
-
-/*
-Activate company
-*/
-app.get("/api/activate", cors(corsOptions), async (req, res) => {
-  try {
-    const companyNumber = req.query.company;
-    if (companyNumber) {
-      const company = await readData("company", companyNumber);
-      await createOrUpdateCompany({ ...company, CompanyStatus: "Active" });
-      console.log("Activating company", companyNumber);
-      res.json({
-        status: "success",
-      });
-    }
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
-    });
-  }
-});
-
-app.post("/api/activate", cors(corsOptions), async (req, res) => {
-  // res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
-  // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  try {
-    const companyNumber = req.body.company;
-    if (companyNumber) {
-      const company = await readData("company", companyNumber);
-      await createOrUpdateCompany({ ...company, CompanyStatus: "Active" });
-      res.json({
-        status: "success",
-      });
-    }
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
-    });
-  }
-});
-
-/*
-Remove company
-*/
-app.get("/api/remove_company", cors(corsOptions), async (req, res) => {
-  try {
-    const companyNumber = req.query.company;
-    if (companyNumber) {
-      await removeData("company", companyNumber);
-      console.log("Removed company", companyNumber);
-    } else {
-      await removeData("company", "");
-    }
-    res.json({
-      status: "success",
-    });
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
-    });
-  }
-});
-
-/*
-Remove commitment
-*/
-app.get("/api/remove_commitment", cors(corsOptions), async (req, res) => {
-  try {
-    const commitment = req.query.commitment;
-    if (commitment) {
-      await removeData("commitments", commitment);
-      console.log("Removed commitment", commitment);
-    } else {
-      await removeData("commitments", "");
-    }
-    res.json({
-      status: "success",
-    });
-  } catch (e) {
-    console.error(e);
-    res.json({
-      status: "failure",
-      error: JSON.stringify(e),
     });
   }
 });
