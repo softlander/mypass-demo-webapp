@@ -17,25 +17,24 @@ const Confirmation: React.FC = ({ match }: any) => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        async function determineCurrentStep () {
+        async function determineCurrentStep() {
             const currentStep = localStorage.getItem('currentStep');
             switch (currentStep) {
-            case '2':
-                const collegeDegree = await localStorage.getItem('highestDegree');
-                const collegeDegreeData = collegeDegree && JSON.parse(collegeDegree);
-                setData(collegeDegreeData);
-                setTitle("pages.general.confirmation.titleCollegeDegree");
-                break;
-            case '3':
-                setTitle("pages.general.confirmation.titlePreviousEmployer");
-                break;
-            case '4':
-                setTitle("pages.general.confirmation.titleFinalApplication");
-                break;
-            default:
-                setTitle("pages.general.confirmation.titleJobApplication");
-                setData({some: "sojdsj"});
-                break;
+                case '2':
+                    const collegeDegree = await localStorage.getItem('collegeDegreeDetails');
+                    const collegeDegreeData = collegeDegree && JSON.parse(collegeDegree);
+                    setData(collegeDegreeData);
+                    setTitle("pages.general.confirmation.titleCollegeDegree");
+                    break;
+                case '3':
+                    setTitle("pages.general.confirmation.titlePreviousEmployer");
+                    break;
+                case '4':
+                    setTitle("pages.general.confirmation.titleFinalApplication");
+                    break;
+                default:
+                    setTitle("pages.general.confirmation.titleJobApplication");
+                    break;
             }
         }
         determineCurrentStep();
@@ -45,7 +44,7 @@ const Confirmation: React.FC = ({ match }: any) => {
         <Layout match={match}>
             <RandomGraphicElement elements={5}>
                 <div className='confirmation-page'>
-                    <div className='selv-wrapper'>
+                    <div className='mypass-wrapper'>
                         <img src={mypass} alt='myPass.ID app logo' />
                         <h4>{t('pages.general.confirmation.myPass')}</h4>
                     </div>

@@ -4,7 +4,7 @@ import { Layout } from '../components';
 import useStep from '../utils/useStep';
 import { useTranslation } from 'react-i18next';
 import "../styles/pages/apply.scss"
-import logo from '../assets/mypass_logo.svg';
+import mypass_logo from '../assets/mypass_logo.svg';
 
 const AppSteps: React.FC = ({ history, match, ...props }: any) => {
     const { nextStep } = useStep(match);
@@ -15,11 +15,11 @@ const AppSteps: React.FC = ({ history, match, ...props }: any) => {
             <React.Fragment>
                 <div>
                     <Link to={nextStep}>
-                        <div style={{textAlign: 'center'}}>
-                            <img src={logo} alt="myPass logo" className="logo_selv"/>
+                        <div style={{ textAlign: 'center' }}>
+                            <img src={mypass_logo} alt="myPass logo" className="logo_myass" />
                             <h3 className="universityText">{t('general.universityText')}</h3>
                             <button className="universityBtn">
-                                {t('actions.goToUniversityPage')}
+                                {t('actions.loginToUniversityPortal')}
                             </button>
                         </div>
                     </Link>

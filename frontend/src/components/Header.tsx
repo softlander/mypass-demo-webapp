@@ -10,8 +10,7 @@ const Header = ({ children, theme }: {
     return (
         <div className='header-wrapper'>
             <div className='logo'>
-                {/* {theme === 'university' && <img src={university} alt='University Logo' />} */}
-                {theme === 'university' && <h3 style={{color: 'white'}}>Delhi University</h3>}
+                {theme === 'university' && <img src={university} alt='University Logo' />}
                 {theme === 'previousEmployer' && <img src={previousEmployer} alt='Previous Employer Logo' />}
                 {theme === 'newEmployer' && <img src={newEmployer} alt='New Employer Logo' />}
             </div>

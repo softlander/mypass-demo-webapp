@@ -34,7 +34,7 @@ const emptyFields = [
 ];
 
 const labels = {
-    CollegeName: 'College Name', 
+    CollegeName: 'College Name',
     RegistrationNumber: 'Registration Number',
 };
 
@@ -75,11 +75,11 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep };
 
     return (
         <Layout match={match}>
-            <div className='company-data-page-wrapper'>
+            <div className='college-data-page-wrapper'>
                 <h3 className='section-header'>{t('pages.college.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
