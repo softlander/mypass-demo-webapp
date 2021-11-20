@@ -31,19 +31,11 @@ const notify = (type: string, message: string, description: string) => {
 const emptyFields = [
     'CollegeName',
     'RegistrationNumber',
-    'ProgramEnrolled',
-    'EnrollingYear',
-    'GraduationYear',
-    'Branch'
 ];
 
 const labels = {
     CollegeName: 'College Name', 
     RegistrationNumber: 'Registration Number',
-    ProgramEnrolled: 'Program Enrolled',
-    EnrollingYear: 'Enrolling Year',
-    GraduationYear: 'Graduation Year',
-    Branch: 'Branch'
 };
 
 const CollegeData: React.FC = ({ history, match }: any) => {
@@ -84,7 +76,6 @@ const CollegeData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t('pages.college.collegeHomePageTitle')}</h2>
                 <h3 className='section-header'>{t('pages.college.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
