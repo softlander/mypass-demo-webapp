@@ -105,8 +105,8 @@
     "orScanCode": "Of scan deze QR code<1/>om te downloaden",
     "back": "Terug",
     "startJobApp": "Start Your Job Application",
-    "provideCollegeDegree": "Provide Highest College Degree",
-    "addEmploymentDetails": "Add Latest Employment Details",
+    "getCollegeDegree": "Get Digital College Degree",
+    "getPastEmploymentDetails": "Get Past Job Certificates",
     "readyForJobApp": "Ready for Job Application",
     "confirm": "Accepteren",
     "learnMore": "Leer meer",
@@ -152,8 +152,8 @@
         "myPassIDDemo": "myPass.ID Demo",
         "hereIsTodo": "Dit zijn de taken die we gaan doen:",
         "startJobApp": "Start Your Job Application",
-        "provideCollegeDegree": "Provide Highest College Degree",
-        "addEmploymentDetails": "Add Latest Employment Details",
+        "getCollegeDegree": "Get Digital College Degree",
+        "getPastEmploymentDetails": "Get Past Job Certificates",
         "readyForJobApp": "Ready for Job Application"
       },
       "introShowMobile": {

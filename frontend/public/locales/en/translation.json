@@ -105,8 +105,8 @@
     "orScanCode": "Or scan this QR code<1/>to download",
     "back": "Back",
     "startJobApp": "Start Your Job Application",
-    "provideCollegeDegree": "Provide Highest College Degree",
-    "addEmploymentDetails": "Add Previous Job Details",
+    "getCollegeDegree": "Get Digital College Degree",
+    "getPastEmploymentDetails": "Get Past Job Certificates",
     "readyForJobApp": "Ready for Job Application",
     "confirm": "Confirm",
     "learnMore": "Learn More",
@@ -153,8 +153,8 @@
         "myPassIDDemo": "myPass.ID",
         "hereIsTodo": "<0>Here is <1>your to-do list</1> for today:</0>",
         "startJobApp": "Start Your Job Application",
-        "provideCollegeDegree": "Provide Highest College Degree",
-        "addEmploymentDetails": "Add Previous Job Details",
+        "getCollegeDegree": "Get Digital College Degree",
+        "getPastEmploymentDetails": "Get Past Job Certificates",
         "readyForJobApp": "Ready for Job Application"
       },
       "introShowMobile": {

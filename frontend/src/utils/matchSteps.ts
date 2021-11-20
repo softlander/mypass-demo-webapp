@@ -13,7 +13,7 @@ interface Match {
 
 export default (path: string): MatchResult | null | undefined => {
     const match: Match | null = matchPath(path, {
-        path: '/:lng?/:theme/:page/:step?/:companyId?',
+        path: '/:lng?/:theme/:page/:step?',
         exact: true,
         strict: false
     });

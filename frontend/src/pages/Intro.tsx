@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import useStep from '../utils/useStep';
-import selv from '../assets/demos/selv.png';
 import { Disclaimer, RandomGraphicElement } from '../components';
 import DropSelector from '../components/DropSelector';
 import dots from '../assets/backgrounds/dots.png';
@@ -37,7 +36,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                 <div className='demo-selector demo-intro app' id='app'>
                     <div className='demo-select-wrapper'>
                         <div className='demo-card-wrapper'>
-                            <img src={selv} alt="Selv demo" />
+                            <img src={logo} alt="myPass demo" />
                             <div className="demo-card-content">
                                 <h3>{t("general.digitalIdentityManagement")}</h3>
                                 <p>{t("general.claimControlReuse")}</p>

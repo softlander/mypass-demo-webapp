@@ -44,16 +44,16 @@ export default () => {
 
     return (
         <div className="header-section">
-            <img src={logo} alt="myPass logo" className="logo"/>
+            <img src={logo} alt="myPass logo" className="logo" />
             <div className="menu-links">
                 {
                     links.map(link => (
                         <Link to={link.anchor} key={link.title} className="menu-link" onClick={() => onAnchorClick(link.anchor)}>
-                            { t("landing.header." + link.title)}
+                            {t("landing.header." + link.title)}
                         </Link>
                     ))
                 }
-                <Link to={'/demo/select'}>
+                <Link to={'/app/intro'}>
                     <Button className="cta">
                         {t("landing.app.tryTheDemo")}
                     </Button>
@@ -89,7 +89,7 @@ const MobileMenu = ({ onAnchorClick, menuOpenState }: { onAnchorClick: (anchor: 
                 {
                     links.map(link => (
                         <Link to={link.anchor} key={link.title} className="menu-link" onClick={() => onAnchorClick(link.anchor)}>
-                            { t("landing.header." + link.title)}
+                            {t("landing.header." + link.title)}
                         </Link>
                     ))
                 }

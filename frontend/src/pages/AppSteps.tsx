@@ -5,7 +5,7 @@ import useStep from '../utils/useStep';
 import { useTranslation } from 'react-i18next';
 import "../styles/pages/apply.scss"
 
-const Apply: React.FC = ({ history, match, ...props }: any) => {
+const AppSteps: React.FC = ({ history, match, ...props }: any) => {
     const { nextStep } = useStep(match);
     const { t } = useTranslation();
 
@@ -24,4 +24,4 @@ const Apply: React.FC = ({ history, match, ...props }: any) => {
     );
 };
 
-export default Apply;
+export default AppSteps;

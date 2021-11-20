@@ -119,7 +119,7 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
         ioClient.on('minAppVersion', async (message: any) => {
             notification.error({
                 duration: 0,
-                message: 'Outdated App detected', description: 'Please update your Selv App and try again'
+                message: 'Outdated App detected', description: 'Please update your myPass.ID wallet App and try again'
             });
         });
 
@@ -158,7 +158,6 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
                     case 'JobOffer':
                         await localStorage.setItem('jobOffer', 'completed');
                         await localStorage.setItem('jobOfferDetails', JSON.stringify({ ...data, ...payload?.payload }));
-                        await updateCompanyStatus();
                         break;
                     case 'EmploymentHistory':
                         await localStorage.setItem('employmentHistory', 'completed');
@@ -195,11 +194,6 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
         } else {
             notify('error', t("components.websocket.errorInfo"), t("components.websocket.warningDescription"));
         }
-    }
-
-    async function updateCompanyStatus() {
-        const companyId = await getCompanyId();
-        await axios.get(`${serverAPI}/activate?company=${companyId}`);
     }
 
     useInterval(async () => {

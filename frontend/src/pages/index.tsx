@@ -1,7 +1,7 @@
 import Landing from './Landing';
+import Intro from './Intro';
 import IntroShowTodos from './IntroShowTodos';
 import IntroShowMobile from './IntroShowMobile';
-import IntroDemoSelection from './IntroDemoSelection';
 import AppDownloadQR from './AppDownloadQR';
 import CompanyIntro from './CompanyIntro';
 import ProveIdentity from './ProveIdentity';
@@ -10,17 +10,17 @@ import ApplicationStart from './ApplicationStart';
 import ApplicationDetails from './ApplicationDetails';
 import Confirmation from './Confirmation';
 import CollegeData from './CollegeData';
-import EmployerData from './EmployerData';
-import Apply from './Apply';
+import EmploymentHistoryData from './EmploymentHistoryData';
+import AppSteps from './AppSteps';
 import GreatSuccess from './GreatSuccess';
 import ThankYou from './ThankYou';
 import JobApplicationData from './JobApplicationData';
 
 export {
     Landing,
+    Intro,
     IntroShowTodos,
     IntroShowMobile,
-    IntroDemoSelection,
     AppDownloadQR,
     ProveIdentity,
     SingInConfirmation,
@@ -29,8 +29,8 @@ export {
     ApplicationDetails,
     Confirmation,
     CollegeData,
-    EmployerData,
-    Apply,
+    EmploymentHistoryData,
+    AppSteps,
     GreatSuccess,
     ThankYou,
     JobApplicationData

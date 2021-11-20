@@ -33,7 +33,7 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
         <RandomGraphicElement elements={7}>
             <div className='theme-demo'>
                 <Link to={'/'} className="logo demo-page">
-                <img src={logo} alt="myPass logo" />
+                    <img src={logo} alt="myPass logo" />
                 </Link>
                 <div className="demo-drop-selector">
                     <DropSelector />
@@ -46,8 +46,8 @@ const IntroShowTodos: React.FC = ({ match }: any) => {
                         </Trans>
                         <ul className='todos'>
                             <li>{t("pages.demo.introShowTodos.startJobApp")}</li>
-                            <li>{t("pages.demo.introShowTodos.provideCollegeDegree")}</li>
-                            <li>{t("pages.demo.introShowTodos.addEmploymentDetails")}</li>
+                            <li>{t("pages.demo.introShowTodos.getCollegeDegree")}</li>
+                            <li>{t("pages.demo.introShowTodos.getPastEmploymentDetails")}</li>
                             <li>{t("pages.demo.introShowTodos.readyForJobApp")}</li>
                         </ul>
                         <Link to={nextStep}>
