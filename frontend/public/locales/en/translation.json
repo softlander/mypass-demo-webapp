@@ -114,7 +114,8 @@
     "finishDemo": "Finish Demo",
     "getInsurance": "Get Insurance",
     "openBankAccount": "Open Bank Account",
-    "applyAtNewCompany": "Apply At AwesomeTech"
+    "applyAtNewCompany": "Apply At AwesomeTech",
+    "loginToUniversityPortal": "Login To University Portal"
   },
   "general": {
     "Self Sovereign Identity": "Self-Sovereign Identity",
@@ -137,7 +138,8 @@
       "verifying": "Verifying Credentials..."
     },
     "pending": "Pending",
-    "active": "Active"
+    "active": "Active",
+    "universityText": "University is now issuing degree in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without any username and passwords."
   },
   "pages": {
     "demo": {

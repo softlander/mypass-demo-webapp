@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, PrefilledForm, WebSocket, Form } from '../components';
+import { Layout, PrefilledForm, WebSocket, Form, Loading } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 
@@ -31,19 +31,11 @@ const notify = (type: string, message: string, description: string) => {
 const emptyFields = [
     'CollegeName',
     'RegistrationNumber',
-    'ProgramEnrolled',
-    'EnrollingYear',
-    'GraduationYear',
-    'Branch'
 ];
 
 const labels = {
-    CollegeName: 'College Name', 
+    CollegeName: 'College Name',
     RegistrationNumber: 'Registration Number',
-    ProgramEnrolled: 'Program Enrolled',
-    EnrollingYear: 'Enrolling Year',
-    GraduationYear: 'Graduation Year',
-    Branch: 'Branch'
 };
 
 const CollegeData: React.FC = ({ history, match }: any) => {
@@ -78,18 +70,41 @@ const CollegeData: React.FC = ({ history, match }: any) => {
         setWebSocket(true);
     }
 
+    function setStatusMessage(message: string) {
+        setStatus(message);
+    }
+
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep };
 
     return (
         <Layout match={match}>
-            <div className='company-data-page-wrapper'>
-                <h2>{t('pages.college.collegeHomePageTitle')}</h2>
+            <div className='college-data-page-wrapper'>
                 <h3 className='section-header'>{t('pages.college.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
                 <h3 className='section-header'>{t('pages.college.degreeDetails')}</h3>
                 <Form {...emptyFormData} />
+                {
+                    status && (
+                        <div className='loading'>
+                            <p className='bold'>{t(status)}</p>
+                            {
+                                status === messages.waiting && <Loading />
+                            }
+                        </div>
+                    )
+                }
+                {
+                    webSocket && <WebSocket
+                        history={history}
+                        match={match}
+                        schemaName='CollegeDegree'
+                        setStatus={setStatusMessage}
+                        fields={fields}
+                        messages={messages}
+                    />
+                }
             </div>
         </Layout>
     );
