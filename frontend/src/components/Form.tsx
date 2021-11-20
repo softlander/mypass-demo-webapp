@@ -19,30 +19,31 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         e.preventDefault();
         validateFields((err: any, values: any) => {
             if (!err) {
-                const highestDegree = localStorage.getItem('highestDegree');
-                const previousEmployer = localStorage.getItem('previousEmployer');
+                // const highestDegree = localStorage.getItem('highestDegree');
+                // const previousEmployer = localStorage.getItem('previousEmployer');
 
-                if(highestDegree && previousEmployer){
-                    const applicationDetails = localStorage.getItem('applicationDetails');
-                    const applicationDetailsData = applicationDetails && JSON.parse(applicationDetails);
-                    applicationDetailsData.ExpectedCTC = values.ExpectedCTC;
-                    applicationDetailsData.RoleApplyingFor = values.RoleApplyingFor;
-                    applicationDetailsData.ApplicationStatus = 'active'
-                    localStorage.setItem('applicationStatus', "completed");
-                    localStorage.setItem('applicationDetails', JSON.stringify(applicationDetailsData));
-                    localStorage.setItem('currentStep', "4");
-                    window.location.href = nextStep;
-                }else if(highestDegree){
-                    localStorage.setItem('previousEmployer', JSON.stringify(values));
-                    localStorage.setItem('previousEmployerStatus', "completed");
-                    localStorage.setItem('currentStep', "3");
-                    window.location.href = nextStep;
-                }else{
-                    localStorage.setItem('highestDegree', JSON.stringify(values));
-                    localStorage.setItem('highestDegreeStatus', "completed");
-                    localStorage.setItem('currentStep', "2");
-                    window.location.href = nextStep;
-                }
+                // if(highestDegree && previousEmployer){
+                //     const applicationDetails = localStorage.getItem('applicationDetails');
+                //     const applicationDetailsData = applicationDetails && JSON.parse(applicationDetails);
+                //     applicationDetailsData.ExpectedCTC = values.ExpectedCTC;
+                //     applicationDetailsData.RoleApplyingFor = values.RoleApplyingFor;
+                //     applicationDetailsData.ApplicationStatus = 'active'
+                //     localStorage.setItem('applicationStatus', "completed");
+                //     localStorage.setItem('applicationDetails', JSON.stringify(applicationDetailsData));
+                //     localStorage.setItem('currentStep', "4");
+                //     window.location.href = nextStep;
+                // }else if(highestDegree){
+                //     localStorage.setItem('previousEmployer', JSON.stringify(values));
+                //     localStorage.setItem('previousEmployerStatus', "completed");
+                //     localStorage.setItem('currentStep', "3");
+                //     window.location.href = nextStep;
+                // }else{
+                //     localStorage.setItem('highestDegree', JSON.stringify(values));
+                //     localStorage.setItem('highestDegreeStatus', "completed");
+                //     localStorage.setItem('currentStep', "2");
+                //     window.location.href = nextStep;
+                // }
+                processValues(values)
             }
         });
     }
