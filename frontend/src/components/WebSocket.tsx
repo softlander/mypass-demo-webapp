@@ -9,6 +9,7 @@ import { getCompanyId, encrypt, decrypt } from '../utils/helper';
 import Config from "../config";
 import { useTranslation } from 'react-i18next';
 
+const backendURL = Config.backend_url;
 const serverAPI = Config.backend_api_namespace;
 const websocketURL = Config.backend_ws_namespace;
 
@@ -69,7 +70,7 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
         }
 
         connect();
-        if (schemaName) { // Case of Company/Bank/Insurance data
+        if (schemaName) { // Case of CollegeDegree/EmploymentHistory/JobApplication data
             getData();
         } else { // Case of ProveIdentity
             setChannelId(generatedChannelId || '');
@@ -95,7 +96,7 @@ const WebSocket = ({ history, match, schemaName, setStatus, setLoading, fields, 
             const payload = {
                 schemaName: schemaName,
                 data: await encrypt(password, JSON.stringify(data)),
-                url: websocketURL
+                url: backendURL
             };
             ioClient.emit('createCredential', { channelId, payload });
         }
