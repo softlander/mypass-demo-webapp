@@ -30,17 +30,11 @@ const notify = (type: string, message: string, description: string) => {
 
 const emptyFields = [
     'CompanyName',
-    'Designation',
-    'StartDate',
-    'EndDate',
     'EmployeeID'
 ];
 
 const labels = {
     CompanyName: 'Company Name', 
-    Designation: 'Designation',
-    StartDate: 'Start Date',
-    EndDate: 'End Date',
     EmployeeID: 'Employee ID'
 };
 
@@ -49,7 +43,6 @@ const EmployerData: React.FC = ({ history, match }: any) => {
     const [fields, setFields] = useState<object>();
     const [status, setStatus] = useState('');
     const [prefilledPersonalData, setPrefilledPersonalData] = useState({});
-    const [prefilledCollegeData, setPrefilledCollegeData] = useState({});
     const { nextStep } = useStep(match);
 
     const { t } = useTranslation();
@@ -68,14 +61,6 @@ const EmployerData: React.FC = ({ history, match }: any) => {
             const personalData = personalDataFields.reduce((acc: any, entry: string) =>
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
-
-            
-            const collegeDegreeString: string | null = await localStorage.getItem('highestDegree');
-            const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
-            const flattenCollegeDetails = flattenObject(collegeDegree);
-
-            setPrefilledCollegeData(flattenCollegeDetails)
-
         }
         getData();
     }, []);
@@ -86,7 +71,6 @@ const EmployerData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const prefilledCollegeFormData: any = { dataFields: prefilledCollegeData };
     const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
 
     return (
@@ -95,9 +79,6 @@ const EmployerData: React.FC = ({ history, match }: any) => {
                 <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
-
-                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
-                <PrefilledForm {...prefilledCollegeFormData} />
 
                 <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
                 <Form {...emptyFormData} />
