@@ -51,7 +51,6 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
                     shareWith = 'newEmployer';
                 } else {
                     await localStorage.setItem('employmentHistory', 'pending');
-                    requestedCredentials.push('CollegeDegree');
                     shareWith = 'previousEmployer';
                 }
             } else {
