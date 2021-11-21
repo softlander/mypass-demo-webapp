@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components';
 import useStep from '../utils/useStep';
@@ -9,6 +9,30 @@ import mypass_logo from '../assets/mypass_logo.svg';
 const AppSteps: React.FC = ({ history, match, ...props }: any) => {
     const { nextStep } = useStep(match);
     const { t } = useTranslation();
+    const [steptext, setStepText] = useState('');
+    const [btnText, setBtnText] = useState('');
+
+    useEffect(() => {
+        async function getInfo() {
+            const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
+            const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
+
+            if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
+                if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
+                    setStepText('general.jobOfferText');
+                    setBtnText('actions.loginToJobPortal');
+                } else {
+                    setStepText('general.employmentText');
+                    setBtnText('actions.loginToPreviousEmployerPortal');
+                }
+            } else {
+                setStepText('general.universityText');
+                setBtnText('actions.loginToUniversityPortal');
+            }
+        }
+
+        getInfo();
+    }, [])
 
     return (
         <Layout match={match}>
@@ -16,10 +40,10 @@ const AppSteps: React.FC = ({ history, match, ...props }: any) => {
                 <div>
                     <Link to={nextStep}>
                         <div style={{ textAlign: 'center' }}>
-                            <img src={mypass_logo} alt="myPass logo" className="logo_myass" />
-                            <h3 className="universityText">{t('general.universityText')}</h3>
-                            <button className="universityBtn">
-                                {t('actions.loginToUniversityPortal')}
+                            <img src={mypass_logo} alt="myPass logo" className="logo_mypass" />
+                            <h3 className="stepText">{t(steptext)}</h3>
+                            <button className="stepBtn">
+                                {t(btnText)}
                             </button>
                         </div>
                     </Link>
