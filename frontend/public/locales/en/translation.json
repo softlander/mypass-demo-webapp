@@ -115,7 +115,9 @@
     "getInsurance": "Get Insurance",
     "openBankAccount": "Open Bank Account",
     "applyAtNewCompany": "Apply At AwesomeTech",
-    "loginToUniversityPortal": "Login To University Portal"
+    "loginToUniversityPortal": "Login To University Portal",
+    "loginToJobPortal": "Login to Job Portal",
+    "loginToPreviousEmployerPortal": "Login to Your Previous Employer's Portal"
   },
   "general": {
     "Self Sovereign Identity": "Self-Sovereign Identity",
@@ -139,7 +141,9 @@
     },
     "pending": "Pending",
     "active": "Active",
-    "universityText": "University is now issuing degree in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without any username and passwords."
+    "universityText": "University is now issuing degree in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without any username and passwords.",
+    "employmentText": "Employers are now issuing job experience letter in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without username and passwords.",
+    "jobOfferText": "Candidates can now apply for jobs sharing details in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without username and passwords."
   },
   "pages": {
     "demo": {
