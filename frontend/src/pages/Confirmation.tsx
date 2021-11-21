@@ -16,28 +16,23 @@ const Confirmation: React.FC = ({ match }: any) => {
 
     const { t } = useTranslation();
 
-    useEffect(() => {
-        async function determineCurrentStep() {
-            const currentStep = localStorage.getItem('currentStep');
-            switch (currentStep) {
-                case '2':
-                    const collegeDegree = await localStorage.getItem('collegeDegreeDetails');
-                    const collegeDegreeData = collegeDegree && JSON.parse(collegeDegree);
-                    setData(collegeDegreeData);
-                    setTitle("pages.general.confirmation.titleCollegeDegree");
-                    break;
-                case '3':
-                    setTitle("pages.general.confirmation.titlePreviousEmployer");
-                    break;
-                case '4':
-                    setTitle("pages.general.confirmation.titleFinalApplication");
-                    break;
-                default:
-                    setTitle("pages.general.confirmation.titleJobApplication");
-                    break;
+    useEffect(() => {   
+        async function getInfo() {
+            const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
+            const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
+
+            if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
+                if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
+                    setTitle("pages.general.confirmation.titlePreviousEmployer")
+                } else {
+                    setTitle("pages.general.confirmation.titlePreviousEmployer")
+                }
+            } else {
+                setTitle("pages.general.confirmation.titleCollegeDegree")
             }
         }
-        determineCurrentStep();
+
+        getInfo();
     }, []);
 
     return (
