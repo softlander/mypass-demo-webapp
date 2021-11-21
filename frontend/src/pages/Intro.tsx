@@ -36,7 +36,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                 <div className='demo-selector demo-intro app' id='app'>
                     <div className='demo-select-wrapper'>
                         <div className='demo-card-wrapper'>
-                            <img src={logo} alt="myPass demo" />
+                            <img src={logo} alt="myPass demo" className="intro_mypass_logo"/>
                             <div className="demo-card-content">
                                 <h3>{t("general.digitalIdentityManagement")}</h3>
                                 <p>{t("general.claimControlReuse")}</p>
