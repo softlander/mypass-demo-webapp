@@ -134,7 +134,7 @@
     "receivedNewCredentials": "Received New Credentials",
     "reusedSelvCredentials": "Re-used Selv Credentials",
     "messages": {
-      "waiting": "Waiting for Selv App...",
+      "waiting": "Waiting for myPass.ID App...",
       "connectionError": "Connection Error. Please Try Again!",
       "missing": "Credentials Missing or not Trusted",
       "verifying": "Verifying Credentials..."
@@ -188,8 +188,8 @@
       }
     },
     "application": {
-      "incorporatedCompanies": {
-        "newlyIncorporatedCompanies": "Newly Incorporated Companies"
+      "jobListings": {
+        "jobListings": "Job Listings"
       },
       "signInConfirmation": {
         "signInSuccess": "You have now signed in without ever creating an account. No more need for endless account and password creations. In addition, you provided trustable information, which businesses can use without an expensive verification process. Verifying your data is nearly instant and completely free."
@@ -209,7 +209,9 @@
       "previousEmployerWebsite": "Previous Employer Website",
       "candidateDetails": "Candidate Details",
       "highestDegreeDetails": "Highest Degree Details",
-      "employerDetails": "Employer Details"
+      "employerDetails": "Employer Details",
+      "employmentHistory": "Employment History",
+      "jobApplication": "Job Application"
     },
     "general": {
       "confirmation": {
@@ -282,7 +284,7 @@
       "CompanyAddress": "Company Address",
       "CollegeName": "College Name",
       "RegistrationNumber": "Registration Number",
-      "ProgramEnrolled": "Program Enrolled",
+      "Program": "Program Enrolled",
       "EnrollingYear": "Enrolling Year",
       "GraduationYear": "Graduation Year",
       "Branch": "Branch",
@@ -290,7 +292,8 @@
       "Designation": "Designation",
       "EmployeeID": "Employee ID",
       "EndDate": "EndDate",
-      "StartDate": "StartDate"
+      "StartDate": "StartDate",
+      "LastDesignation": "Last Designation"
     },
     "sideBar": {
       "yourTodoList": "Your To-Do List"
@@ -298,7 +301,9 @@
     "table": {
       "companyName": "Company Name",
       "incorporatedOn": "Incorporated on",
-      "status": "Status"
+      "status": "Status",
+      "designation": "Designation",
+      "jobID": "Job ID"
     },
     "websocket": {
       "connectionErrorDescription": "Please try again!",

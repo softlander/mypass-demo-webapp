@@ -18,16 +18,15 @@ const Confirmation: React.FC = ({ match }: any) => {
 
     useEffect(() => {   
         async function getInfo() {
-            const collegeDegreeStatus = await localStorage.getItem('collegeDegree');
             const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
+            const jobOfferStatus = await localStorage.getItem('jobOffer');
 
-            if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
-                if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
-                    setTitle("pages.general.confirmation.titlePreviousEmployer")
-                } else {
-                    setTitle("pages.general.confirmation.titlePreviousEmployer")
-                }
-            } else {
+            if(jobOfferStatus && jobOfferStatus === 'completed'){
+                setTitle("pages.general.confirmation.titleFinalApplication")
+            }
+            else if(employmentHistoryStatus && employmentHistoryStatus === 'completed'){
+                setTitle("pages.general.confirmation.titlePreviousEmployer")
+            }else{
                 setTitle("pages.general.confirmation.titleCollegeDegree")
             }
         }

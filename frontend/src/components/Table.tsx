@@ -40,8 +40,8 @@ const StatusCell = ({ ...props }) => {
       }}
     >
       <div className="cell-content status-wrapper">
-        <p className={`status ${props.rowData.CompanyStatus.toLowerCase()}`}>
-          {i18n.t("general." + props.rowData.CompanyStatus.toLowerCase())}
+        <p>
+          {props.rowData.JobID}
         </p>
       </div>
     </Cell>
@@ -55,9 +55,8 @@ const TableInstance = ({
 }: {
   data?: {
     CompanyName: string;
-    CompanyCreationDate: string;
-    CompanyType: string;
-    CompanyStatus: string;
+    Designation: string;
+    JobID: string;
   }[];
   onRowClick: (rowData: object) => void;
   loading?: boolean;
@@ -77,12 +76,12 @@ const TableInstance = ({
     if (windowWidth) {
       if (windowWidth < 450) {
         setTableDimentions([370, 160, 120, 90, 0]);
-      } else if (windowWidth < 750) {
+      } else if (windowWidth < 850) {
         setTableDimentions([440, 190, 120, 90, 40]);
-      } else if (windowWidth < 1050 && windowWidth >= 990) {
+      } else if (windowWidth < 1150 && windowWidth >= 990) {
         setTableDimentions([640, 280, 180, 130, 50]);
       } else {
-        setTableDimentions([710, 300, 200, 130, 50]);
+        setTableDimentions([710, 300, 230, 130, 50]);
       }
     }
   }, [windowWidth]);
@@ -127,9 +126,9 @@ const TableInstance = ({
           </Column>
 
           <Column width={tableDimensions[2]} fixed>
-            <HeaderCell>{t("components.table.incorporatedOn")}</HeaderCell>
+            <HeaderCell>{t("components.table.designation")}</HeaderCell>
             <Cell
-              dataKey="CompanyCreationDate"
+              dataKey="Designation"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -139,7 +138,7 @@ const TableInstance = ({
           </Column>
 
           <Column width={tableDimensions[3]} fixed>
-            <HeaderCell>{t("components.table.status")}</HeaderCell>
+            <HeaderCell>{t("components.table.jobID")}</HeaderCell>
             <StatusCell />
           </Column>
 
@@ -156,7 +155,6 @@ const TableInstance = ({
                 top: -8,
               }}
             >
-              <div className="cell-content info">{'\u24D8'}</div>
             </Cell>
           </Column>
         </Table>

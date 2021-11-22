@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, PrefilledForm, WebSocket, Form } from '../components';
+import { Layout, PrefilledForm, WebSocket, Form, Loading } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 
@@ -29,13 +29,19 @@ const notify = (type: string, message: string, description: string) => {
 };
 
 const emptyFields = [
-    'RoleApplyingFor',
-    'ExpectedCTC'
+    'CompanyName',
+    'Designation',
+    'JobID',
+    'CTC',
+    'StartDate',
 ];
 
 const labels = {
-    RoleApplyingFor: 'Role Applying For',
-    ExpectedCTC: 'Expected CTC'
+    CompanyName: 'Company Name',
+    Designation: 'Designation',
+    JobID: 'Job ID',
+    CTC: 'Expected CTC',
+    StartDate: 'Start Date'
 };
 
 const JobApplicationData: React.FC = ({ history, match }: any) => {
@@ -65,15 +71,15 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
             setPrefilledPersonalData({ ...personalData, ...address });
 
             
-            const collegeDegreeString: string | null = await localStorage.getItem('highestDegree');
+            const collegeDegreeString: string | null = await localStorage.getItem('collegeDegreeDetails');
             const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
-            const flattenCollegeDetails = flattenObject(collegeDegree);
+            const flattenCollegeDetails = flattenObject(collegeDegree?.data);
 
             setPrefilledCollegeData(flattenCollegeDetails);
 
-            const employerString: string | null = await localStorage.getItem('previousEmployer');
+            const employerString: string | null = await localStorage.getItem('employmentHistoryDetails');
             const employerData = employerString && await JSON.parse(employerString);
-            const flattenEmployerData = flattenObject(employerData);
+            const flattenEmployerData = flattenObject(employerData?.data);
 
             setPrefilledEmployerData(flattenEmployerData);
 
@@ -82,8 +88,13 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
     }, []);
 
     async function processValues(fields: object) {
+        console.log(fields)
         setFields(fields);
         setWebSocket(true);
+    }
+
+    function setStatusMessage(message: string) {
+        setStatus(message);
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
@@ -94,18 +105,38 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
+                <h2>{t('pages.employerData.jobApplication')}</h2>
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
                 <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
                 <PrefilledForm {...prefilledCollegeFormData} />
 
-                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
+                <h3 className='section-header'>{t('pages.employerData.employmentHistory')}</h3>
                 <PrefilledForm {...prefilledEmployerFormData} />
 
                 <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
                 <Form {...emptyFormData} />
+                {
+                    status && (
+                        <div className='loading'>
+                            <p className='bold'>{t(status)}</p>
+                            {
+                                status === messages.waiting && <Loading />
+                            }
+                        </div>
+                    )
+                }
+                {
+                    webSocket && <WebSocket
+                        history={history}
+                        match={match}
+                        schemaName='JobOffer'
+                        setStatus={setStatusMessage}
+                        fields={fields}
+                        messages={messages}
+                    />
+                }
             </div>
         </Layout>
     );
