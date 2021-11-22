@@ -10,21 +10,29 @@ import { useTranslation } from 'react-i18next';
  */
 const JobListings: React.FC = ({ history, match, ...props }: any) => {
     const { nextStep } = useStep(match);
-    const response = [{
-        CompanyName: "AwesomeTech",
-        Designation: "SDE 2",
-        JobID: "387823"
-    },
-{
-        CompanyName: "CoolSoft",
-        Designation: "SDE 2",
-        JobID: "387823"
-    }]
+    const response = [
+        {
+            CompanyName: "AwesomeTech",
+            Designation: "SDE 2",
+            JobID: "387823"
+        },
+        {
+            CompanyName: "CoolSoft",
+            Designation: "SDE 2",
+            JobID: "387823"
+        }
+    ]
 
     const { t } = useTranslation();
 
     function onRowClick (data: any) {
-        console.log(data.CompanyName + data.Designation)
+        const selectedJob = {
+            CompanyName: data.CompanyName,
+            Designation: data.Designation,
+            JobID: data.JobID
+        };
+
+        localStorage.setItem('selectedJob', JSON.stringify(selectedJob));
         window.location.href = nextStep;
     }
     const drawer = props?.location?.state?.nextStep ? 'drawer' : '';
