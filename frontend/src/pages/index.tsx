@@ -15,6 +15,7 @@ import AppSteps from './AppSteps';
 import GreatSuccess from './GreatSuccess';
 import ThankYou from './ThankYou';
 import JobApplicationData from './JobApplicationData';
+import JobListings from './JobListings';
 
 export {
     Landing,
@@ -33,5 +34,6 @@ export {
     AppSteps,
     GreatSuccess,
     ThankYou,
-    JobApplicationData
+    JobApplicationData,
+    JobListings
 };
