@@ -47,6 +47,7 @@ const ProveIdentity: React.FC = ({ history, match }: any) => {
 
             if (collegeDegreeStatus && collegeDegreeStatus === 'completed') {
                 if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
+                    await localStorage.setItem('jobOffer', 'pending');
                     requestedCredentials.push('CollegeDegree', 'EmploymentHistory');
                     shareWith = 'newEmployer';
                 } else {

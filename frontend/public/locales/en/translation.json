@@ -283,7 +283,7 @@
       "CompanyAddress": "Company Address",
       "CollegeName": "College Name",
       "RegistrationNumber": "Registration Number",
-      "ProgramEnrolled": "Program Enrolled",
+      "Program": "Program Enrolled",
       "EnrollingYear": "Enrolling Year",
       "GraduationYear": "Graduation Year",
       "Branch": "Branch",
@@ -291,7 +291,8 @@
       "Designation": "Designation",
       "EmployeeID": "Employee ID",
       "EndDate": "EndDate",
-      "StartDate": "StartDate"
+      "StartDate": "StartDate",
+      "LastDesignation": "Last Designation"
     },
     "sideBar": {
       "yourTodoList": "Your To-Do List"

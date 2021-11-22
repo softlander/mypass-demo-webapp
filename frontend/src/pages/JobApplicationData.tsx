@@ -32,7 +32,7 @@ const emptyFields = [
     'CompanyName',
     'Designation',
     'JobID',
-    'ExpectedCTC',
+    'CTC',
     'StartDate',
 ];
 
@@ -40,7 +40,7 @@ const labels = {
     CompanyName: 'Company Name',
     Designation: 'Designation',
     JobID: 'Job ID',
-    ExpectedCTC: 'Expected CTC',
+    CTC: 'Expected CTC',
     StartDate: 'Start Date'
 };
 
@@ -88,6 +88,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
     }, []);
 
     async function processValues(fields: object) {
+        console.log(fields)
         setFields(fields);
         setWebSocket(true);
     }

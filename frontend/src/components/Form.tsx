@@ -19,6 +19,24 @@ const EmptyForm = ({ form, dataFields, labels, processValues, status, messages, 
         e.preventDefault();
         validateFields((err: any, values: any) => {
             if (!err) {
+                const universityStatus = localStorage.getItem('collegeDegree')
+                const employmentHistoryStatus = localStorage.getItem('employmentHistory');
+                
+                if(universityStatus && universityStatus === "pending"){
+                    values['Program'] = "BTech";
+                    values['Branch'] = "Computer Science";
+                    values['EnrollingYear'] = "2014";
+                    values['GraduationYear'] = "2018";
+                }else if(employmentHistoryStatus && employmentHistoryStatus === "pending"){
+                    values['CompanyAddress'] = "327 Timber Oak Drive, Amherst, TX, Texas";
+                    values['LastDesignation'] = "Software Engineer 1";
+                    values['StartDate'] = "21st October 2018";
+                    values['EndDate'] = "16st December 2020";
+                }else{
+                    values['CompanyAddress'] = "3206 Buck Drive, Roy, UT, Utah";
+                    delete values['JobID'];
+                }
+                
                 processValues(values)
             }
         });
