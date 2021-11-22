@@ -33,7 +33,6 @@ export const routes = [
     { path: '/:lng?/job/prove/2', page: ProveIdentity },
     { path: '/:lng?/job/data/2', page: JobApplicationData },
     { path: '/:lng?/job/confirm/2', page: Confirmation },
-    { path: '/:lng?/app/step/3', page: AppSteps },
     { path: '/:lng?/app/thankyou', page: ThankYou }
 ];
 
