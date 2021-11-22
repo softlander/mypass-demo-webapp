@@ -14,12 +14,17 @@ const JobListings: React.FC = ({ history, match, ...props }: any) => {
         {
             CompanyName: "AwesomeTech",
             Designation: "SDE 2",
-            JobID: "387823"
+            JobID: "882744"
         },
         {
             CompanyName: "CoolSoft",
-            Designation: "SDE 2",
+            Designation: "SDE 1",
             JobID: "387823"
+        },
+        {
+            CompanyName: "Amazon",
+            Designation: "SDE 3",
+            JobID: "987874"
         }
     ]
 

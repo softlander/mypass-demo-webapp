@@ -134,7 +134,7 @@
     "receivedNewCredentials": "Received New Credentials",
     "reusedSelvCredentials": "Re-used Selv Credentials",
     "messages": {
-      "waiting": "Waiting for Selv App...",
+      "waiting": "Waiting for myPass.ID App...",
       "connectionError": "Connection Error. Please Try Again!",
       "missing": "Credentials Missing or not Trusted",
       "verifying": "Verifying Credentials..."
