@@ -29,13 +29,19 @@ const notify = (type: string, message: string, description: string) => {
 };
 
 const emptyFields = [
-    'RoleApplyingFor',
-    'ExpectedCTC'
+    'CompanyName',
+    'Designation',
+    'JobID',
+    'ExpectedCTC',
+    'StartDate',
 ];
 
 const labels = {
-    RoleApplyingFor: 'Role Applying For',
-    ExpectedCTC: 'Expected CTC'
+    CompanyName: 'Company Name',
+    Designation: 'Designation',
+    JobID: 'Job ID',
+    ExpectedCTC: 'Expected CTC',
+    StartDate: 'Start Date'
 };
 
 const JobApplicationData: React.FC = ({ history, match }: any) => {
@@ -65,15 +71,15 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
             setPrefilledPersonalData({ ...personalData, ...address });
 
             
-            const collegeDegreeString: string | null = await localStorage.getItem('highestDegree');
+            const collegeDegreeString: string | null = await localStorage.getItem('collegeDegreeDetails');
             const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
-            const flattenCollegeDetails = flattenObject(collegeDegree);
+            const flattenCollegeDetails = flattenObject(collegeDegree?.data);
 
             setPrefilledCollegeData(flattenCollegeDetails);
 
-            const employerString: string | null = await localStorage.getItem('previousEmployer');
+            const employerString: string | null = await localStorage.getItem('employmentHistoryDetails');
             const employerData = employerString && await JSON.parse(employerString);
-            const flattenEmployerData = flattenObject(employerData);
+            const flattenEmployerData = flattenObject(employerData?.data);
 
             setPrefilledEmployerData(flattenEmployerData);
 
@@ -101,7 +107,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
                 <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
                 <PrefilledForm {...prefilledCollegeFormData} />
 
-                <h3 className='section-header'>{t('pages.employerData.highestDegreeDetails')}</h3>
+                <h3 className='section-header'>{t('pages.employerData.employmentHistory')}</h3>
                 <PrefilledForm {...prefilledEmployerFormData} />
 
                 <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>

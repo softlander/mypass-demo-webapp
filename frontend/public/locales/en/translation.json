@@ -209,7 +209,8 @@
       "previousEmployerWebsite": "Previous Employer Website",
       "candidateDetails": "Candidate Details",
       "highestDegreeDetails": "Highest Degree Details",
-      "employerDetails": "Employer Details"
+      "employerDetails": "Employer Details",
+      "employmentHistory": "Employment History"
     },
     "general": {
       "confirmation": {
