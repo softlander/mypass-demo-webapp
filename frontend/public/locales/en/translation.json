@@ -210,7 +210,8 @@
       "candidateDetails": "Candidate Details",
       "highestDegreeDetails": "Highest Degree Details",
       "employerDetails": "Employer Details",
-      "employmentHistory": "Employment History"
+      "employmentHistory": "Employment History",
+      "jobApplication": "Job Application"
     },
     "general": {
       "confirmation": {

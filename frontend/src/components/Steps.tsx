@@ -8,8 +8,6 @@ const styles = {
     verticalAlign: 'top'
 };
 
-// https://rsuitejs.com/en/components/sidenav
-
 const StepsInstance = ({ steps, stepId }: {
     steps: any;
     stepId: any;

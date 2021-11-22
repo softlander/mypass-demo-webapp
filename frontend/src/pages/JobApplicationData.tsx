@@ -105,7 +105,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
     return (
         <Layout match={match}>
             <div className='company-data-page-wrapper'>
-                <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
+                <h2>{t('pages.employerData.jobApplication')}</h2>
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
