@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { notification } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, PrefilledForm, WebSocket, Form } from '../components';
+import { Layout, PrefilledForm, WebSocket, Form, Loading } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 
@@ -92,6 +92,10 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
         setWebSocket(true);
     }
 
+    function setStatusMessage(message: string) {
+        setStatus(message);
+    }
+
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
     const prefilledCollegeFormData: any = { dataFields: prefilledCollegeData };
     const prefilledEmployerFormData: any = { dataFields: prefilledEmployerData };
@@ -112,6 +116,26 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
 
                 <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
                 <Form {...emptyFormData} />
+                {
+                    status && (
+                        <div className='loading'>
+                            <p className='bold'>{t(status)}</p>
+                            {
+                                status === messages.waiting && <Loading />
+                            }
+                        </div>
+                    )
+                }
+                {
+                    webSocket && <WebSocket
+                        history={history}
+                        match={match}
+                        schemaName='JobOffer'
+                        setStatus={setStatusMessage}
+                        fields={fields}
+                        messages={messages}
+                    />
+                }
             </div>
         </Layout>
     );
