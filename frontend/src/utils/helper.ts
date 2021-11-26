@@ -33,11 +33,6 @@ export const flattenObject = (obj: { [key: string]: any; }, prefix = '') =>
         return acc;
     }, {});
 
-export const getCompanyId = async () => {
-    const companyDetailsString: string | null = await localStorage.getItem('companyDetails');
-    const companyDetails = companyDetailsString && await JSON.parse(companyDetailsString);
-    return companyDetails?.data?.CompanyNumber;
-};
 
 export const getRandomInt = (max: number) =>
     Math.abs(Math.floor(Math.random() * Math.floor(max)));

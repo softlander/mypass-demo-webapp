@@ -6,10 +6,6 @@ const { Column, HeaderCell, Cell, Pagination } = Table;
 
 // https://rsuitejs.com/en/components/table#%3CTable%3E
 
-type Company = {
-  CompanyNumber: string;
-};
-
 const CompanyCell = ({ ...props }) => {
   return (
     <Cell
@@ -29,7 +25,6 @@ const CompanyCell = ({ ...props }) => {
 };
 
 const StatusCell = ({ ...props }) => {
-  const { i18n } = useTranslation();
   return (
     <Cell
       {...props}

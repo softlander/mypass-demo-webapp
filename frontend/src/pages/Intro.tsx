@@ -6,7 +6,7 @@ import { Disclaimer, RandomGraphicElement } from '../components';
 import DropSelector from '../components/DropSelector';
 import dots from '../assets/backgrounds/dots.png';
 import ellipse from '../assets/backgrounds/ellipse1.svg';
-import logo from '../assets/mypass_logo.svg'
+import logo from '../assets/mypass.svg'
 import { useTranslation } from 'react-i18next';
 
 /**
@@ -36,7 +36,7 @@ const IntroDemoSelection: React.FC = ({ match }: any) => {
                 <div className='demo-selector demo-intro app' id='app'>
                     <div className='demo-select-wrapper'>
                         <div className='demo-card-wrapper'>
-                            <img src={logo} alt="myPass demo" className="intro_mypass_logo"/>
+                            <img src={logo} alt="myPass demo" className="intro_mypass"/>
                             <div className="demo-card-content">
                                 <h3>{t("general.digitalIdentityManagement")}</h3>
                                 <p>{t("general.claimControlReuse")}</p>

@@ -29,14 +29,14 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                             <h1 className='title'>{t("actions.downloadTheMyPassApp")}</h1>
                             <div className='app-cta-wrapper'>
                                 <a
-                                    href='https://testflight.apple.com/join/3FCosIcj'
+                                    href='https://testflight.apple.com/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
                                     <img src={appStore} alt='Apple AppStore' />
                                 </a>
                                 <a
-                                    href='https://play.google.com/apps/testing/com.iota.selv.demo'
+                                    href='https://play.google.com/apps/testing/com.mypass.id.demo'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
@@ -62,14 +62,14 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                     <img src={dots} alt='' className='dots' />
                     <img src={circle} alt='' className='circle' />
                 </div>
-                    <div className="cta-section" id='app-download'>
-                        <p className='subtitle'>{t("pages.demo.appDownloadQR.onceDownloaded")}</p>
-                        <Link to={nextStep} className='cta'>
-                            <Button className="continueBtn">
-                                {t("actions.continue")}
-                            </Button>
-                        </Link>
-                    </div>
+                <div className="cta-section" id='app-download'>
+                    <p className='subtitle'>{t("pages.demo.appDownloadQR.onceDownloaded")}</p>
+                    <Link to={nextStep} className='cta'>
+                        <Button className="continueBtn">
+                            {t("actions.continue")}
+                        </Button>
+                    </Link>
+                </div>
             </React.Fragment>
         </Layout >
     );

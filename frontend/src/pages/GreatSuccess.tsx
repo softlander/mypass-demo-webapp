@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import useStep from '../utils/useStep';
-import { getCompanyId } from '../utils/helper';
 import { Disclaimer, RandomGraphicElement } from '../components';
 import image1 from '../assets/greatSuccess/image1.png';
 import image2 from '../assets/greatSuccess/image2.png';
@@ -16,16 +15,8 @@ import { useTranslation } from 'react-i18next';
  */
 const GreatSuccess: React.FC = ({ match }: any) => {
     const { nextStep } = useStep(match);
-    const [companyId, setCompanyId] = useState('');
-
     const { t } = useTranslation();
 
-    useEffect(() => {
-        async function determineCompanyId() {
-            setCompanyId(await getCompanyId());
-        }
-        determineCompanyId();
-    }, [companyId]);
 
     return (
         <RandomGraphicElement elements={7}>
@@ -64,14 +55,14 @@ const GreatSuccess: React.FC = ({ match }: any) => {
                             <div className='great-success-text-wrapper'>
                                 <span>
                                     <img src={checkmark} alt='' />
-                                    <h3>{t("general.reusedSelvCredentials")}</h3>
+                                    <h3>{t("general.reusedCredentials")}</h3>
                                 </span>
-                                <p>{t("pages.demo.greatSuccess.reusedSelvCredentialsText")}</p>
+                                <p>{t("pages.demo.greatSuccess.reusedCredentialsText")}</p>
                             </div>
                         </div>
                     </div>
                     <div className='cta-wrapper'>
-                        <Link to={nextStep.replace(':companyId', companyId)}>
+                        <Link to={nextStep}>
                             <Button className='cta'>
                                 {t("actions.continue")}
                             </Button>

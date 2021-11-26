@@ -5,7 +5,7 @@ import { notification } from 'antd';
 import useStep from '../utils/useStep';
 import useInterval from '../utils/useInterval';
 import evaluateCredential from '../utils/did';
-import { getCompanyId, encrypt, decrypt } from '../utils/helper';
+import { encrypt, decrypt } from '../utils/helper';
 import Config from "../config";
 import { useTranslation } from 'react-i18next';
 

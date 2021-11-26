@@ -1,4 +1,3 @@
-import Config from '../config';
 import Address from '../schemas/Address.json';
 import CollegeDegree from '../schemas/CollegeDegree.json';
 import JobApplication from '../schemas/JobApplication.json';
@@ -7,8 +6,6 @@ import EmploymentHistory from '../schemas/EmploymentHistory.json';
 import PersonalData from '../schemas/PersonalData.json';
 
 import * as identity from '@iota/identity-wasm/web';
-
-const provider = Config.provider;
 
 const schemas: any = {
     Address,

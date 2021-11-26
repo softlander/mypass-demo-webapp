@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { RandomGraphicElement } from '../';
-import mypass from '../../assets/mypass_logo.svg';
+import mypass from '../../assets/mypass.svg';
 import app from '../../assets/landing/app.png';
 import appMobile from '../../assets/landing/app-mobile.png';
 import circle from '../../assets/backgrounds/circleFrame2.svg';
@@ -48,10 +48,10 @@ export default () => (
                             </div>
                         </div>
 
-                        <Link to='/demo/select'>
+                        <Link to='/app/intro'>
                             <Button className='cta' data-aos='fade-up' data-aos-duration='1000'>
                                 {t("landing.app.tryTheDemo")}
-                </Button>
+                            </Button>
                         </Link>
                     </div>
                 </RandomGraphicElement>

@@ -6,7 +6,7 @@ import {
     Header,
     HowItWorks,
     Main,
-    Selv,
+    MyPass,
     Benefits
 } from '../components/landing';
 
@@ -27,7 +27,7 @@ const Landing: React.FC = ({ location }: any) => {
                 <Header />
                 <Main />
                 <ControlIdentity />
-                <Selv />
+                <MyPass />
                 <HowItWorks />
                 <Benefits />
                 <App />

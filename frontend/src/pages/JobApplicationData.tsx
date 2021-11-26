@@ -70,7 +70,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
                 ({ ...acc, [entry]: flattenData[entry] }), {});
             setPrefilledPersonalData({ ...personalData, ...address });
 
-            
+
             const collegeDegreeString: string | null = await localStorage.getItem('collegeDegreeDetails');
             const collegeDegree = collegeDegreeString && await JSON.parse(collegeDegreeString);
             const flattenCollegeDetails = flattenObject(collegeDegree?.data);
@@ -85,7 +85,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
 
         }
         getData();
-    }, []);
+    }, [history, t]);
 
     async function processValues(fields: object) {
         console.log(fields)
@@ -100,11 +100,11 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
     const prefilledCollegeFormData: any = { dataFields: prefilledCollegeData };
     const prefilledEmployerFormData: any = { dataFields: prefilledEmployerData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep };
 
     return (
         <Layout match={match}>
-            <div className='company-data-page-wrapper'>
+            <div className='form-data-page-wrapper'>
                 <h2>{t('pages.employerData.jobApplication')}</h2>
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />

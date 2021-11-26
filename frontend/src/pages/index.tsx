@@ -3,9 +3,7 @@ import Intro from './Intro';
 import IntroShowTodos from './IntroShowTodos';
 import IntroShowMobile from './IntroShowMobile';
 import AppDownloadQR from './AppDownloadQR';
-import CompanyIntro from './CompanyIntro';
 import ProveIdentity from './ProveIdentity';
-import SingInConfirmation from './SingInConfirmation';
 import ApplicationStart from './ApplicationStart';
 import ApplicationDetails from './ApplicationDetails';
 import Confirmation from './Confirmation';
@@ -24,8 +22,6 @@ export {
     IntroShowMobile,
     AppDownloadQR,
     ProveIdentity,
-    SingInConfirmation,
-    CompanyIntro,
     ApplicationStart,
     ApplicationDetails,
     Confirmation,

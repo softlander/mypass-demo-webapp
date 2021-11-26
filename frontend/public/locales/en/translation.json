@@ -7,8 +7,8 @@
       "whatItIs": "Through Self-Sovereign Identity (SSI), people, organizations and things are empowered to collect and share their own verified data and digital identity.",
       "oneAppOneProtocol": "One App – One Protocol",
       "easyGDPRcompliance": "This solution provides an easy and cheap way to comply with GDPR and similar privacy laws.",
-      "unifiedIdentity": "A Unified IOTA Identity",
-      "protocolEnablesDevices": "IOTA Identity not only enables people and organizations to have the benefits of identity, but devices, opening up a whole new world of business models and use cases.",
+      "unifiedIdentity": "A Unified myPass.ID Identity",
+      "protocolEnablesDevices": "myPass.ID Identity not only enables people and organizations to have the benefits of identity, but devices, opening up a whole new world of business models and use cases.",
       "tryTheDemo": "Try the Demo"
     },
     "benefits": {
@@ -32,32 +32,6 @@
       "youControlYour": "You Control Your",
       "ownIdentity": "Own Identity",
       "whatItIsDetailed": "Through Self-Sovereign Identity, people, organizations and things are empowered to collect and share their own verified data and digital identity. This increased privacy and control, enabling a “Bring Your Own Identity” (BYOI) style of engagement with corporations, removing the need to perform expensive data collection."
-    },
-    "FAQ": {
-      "question1": "Does the IOTA Foundation track my data and usage?",
-      "answer1": "We can’t! This solution puts data control in your hands. We have no way of accessing the data on your phone. Whenever you share data in the demo environment, you communicate this information to our servers, but it is removed as soon as you complete the demo or close the connection. Also, only functional cookies are used on this website and during the demos. Once companies run demos or applications on their own servers, the IOTA Foundation, and other parties, will not be aware of the usage or data. Data is shared peer-to-peer making it impossible for others to listen in.",
-      "question2": "Can I restore my data if I lose my phone?",
-      "answer2": "Not yet. This is currently a demonstration application, which means it doesn’t have all the features that a full release would have. The application is using (mostly) fake data, therefore recovery is not our priority.",
-      "question3": "Does my personal data get uploaded to the Tangle?",
-      "answer3": "No. In accordance with GDPR regulaions, absolutely no personal information is uploaded to the Tangle. Not even in a (pseudo)anonymized state. Because data on the Tangle is immutable, any personal data uploaded to the Tangle would be in violation of the right to be forgotten.",
-      "question4": "How does this application benefit from IOTA and DLT in general?",
-      "answer4": "Organizations sign credentials for the users, but how do we identify the organizations? Their digital identities are uploaded to the Tangle and are signed using asymmetric encryption methods. In addition, revocation of credentials is put on the Tangle as evidence that the credential can no longer be used.",
-      "question5": "On what IOTA network does this application run?",
-      "answer5": "It runs on mainnet. Since IOTA has zero fees, it isn’t any more difficult to run a demo on the mainnet than on the devnet.",
-      "question6": "How can I learn more?",
-      "answer6": {
-        "part1": "We have released a whitepaper called ",
-        "part2": "The Case for a Unified Identity",
-        "part3": "It is a relatively easy introduction to the subject and explains benefits of IOTA Identity. For a deeper dive into the documentation visit our",
-        "part4": "Wiki",
-        "part5": "or checkout the implementation on",
-        "part6": "GitHub",
-        "part7": "."
-      },
-      "question7": "What is a DLT or Tangle?",
-      "answer7": "Distributed Ledger Technology (DLT) is the umbrella term for technologies like Blockchains. It is a decentralized database of which many copies are hosted across the world. They agree with each other on what is true and what isn't through the consensus mechanism. With Bitcoin, this process costs a lot of electricity due to its security model. The IOTA Tangle solves this, making it faster, feeless and green. The Tangle is the underlying data structure of the IOTA network, which hosts the IOTA cryptocurrency token and is developed by the IOTA Foundation.",
-      "question8": "Who developed the Selv Demos?",
-      "answer8": "Selv is developed by the IOTA Foundation in collaboration with different parties. The IOTA Foundation is a non-profit foundation guiding and contributing to the development of the core protocol and facilitating the development of the ecosystem around IOTA."
     },
     "footer": {
       "contactUs": "Contact Us",
@@ -89,10 +63,10 @@
     "main": {
       "claimControl": "A digital ID,",
       "reuseYourNew": "under your control",
-      "mainText": "myPass.ID is a demo app that showcases how IOTA Identity creates new digital processes and revolutionizes existing ones, with a focus on privacy and control of your own digital ID."
+      "mainText": "This is a demo app that showcases how myPass.ID Identity creates new digital processes and revolutionizes existing ones, with a focus on privacy and control of your own digital ID."
     },
-    "selv": {
-      "selvText": "Your data shouldn’t be locked up, but it can't be public either.<1/>myPass.ID promises a solution that <3>enables data flow</3>, completely under your <5>control</5>."
+    "mypass": {
+      "mypassText": "Your data shouldn’t be locked up, but it can't be public either.<1/>myPass.ID promises a solution that <3>enables data flow</3>, completely under your <5>control</5>."
     }
   },
   "actions": {
@@ -100,7 +74,6 @@
     "continue": "Continue",
     "letsDoIt": "Let's Do It",
     "continueNextStep": "Continue to Next Step",
-    "registerNewCompany": "Register New Company",
     "downloadTheMyPassApp": "Download the myPass.ID App",
     "orScanCode": "Or scan this QR code<1/>to download",
     "back": "Back",
@@ -112,9 +85,6 @@
     "learnMore": "Learn More",
     "dismiss": "Dismiss",
     "finishDemo": "Finish Demo",
-    "getInsurance": "Get Insurance",
-    "openBankAccount": "Open Bank Account",
-    "applyAtNewCompany": "Apply At AwesomeTech",
     "loginToUniversityPortal": "Login To University Portal",
     "loginToJobPortal": "Login to Job Portal",
     "loginToPreviousEmployerPortal": "Login to Your Previous Employer's Portal"
@@ -125,14 +95,14 @@
     "Demo": "Demo",
     "The App": "The App",
     "What it is": "Through Self-Sovereign Identity, people, organizations and things are empowered to collect and share their own verified data and digital identity.",
-    "A Unified Identity": "IOTA Identity",
+    "A Unified Identity": "myPass.ID Identity",
     "digitalIdentityManagement": "Instant Onboarding for Job Application",
-    "claimControlReuse": "Reuse a Know-Your-Customer (KYC) credential to create a new company. Proof your identity and ownership over your company to open a corporate bank account and liability insurance with the click of a button.",
+    "claimControlReuse": "Reuse a Know-Your-Customer (KYC) credential to apply for a job. Proof your identity and ownership over your college degree and past employment history to apply for a new job with click of a button.",
     "hello": "Hello!",
     "greatSuccess": "Great Success!",
     "signedInDID": "You Signed in With DID",
     "receivedNewCredentials": "Received New Credentials",
-    "reusedSelvCredentials": "Re-used Selv Credentials",
+    "reusedCredentials": "Re-used myPass.ID Credentials",
     "messages": {
       "waiting": "Waiting for myPass.ID App...",
       "connectionError": "Connection Error. Please Try Again!",
@@ -147,13 +117,6 @@
   },
   "pages": {
     "demo": {
-      "introDemoSelection": {
-        "healthStatusManagement": "COVID-19 Health Certificates",
-        "shareTrustedCredentials": "Collect your COVID-19 testing status after a negative test result. Use this to get back access to the workfloor and international travel.",
-        "longtermIdentityManagement": "Persistent Selv",
-        "LearnAboutFutures": "Plan your environmental legacy, create present and future commitments and complete a pledge.",
-        "collab": "In Collaboration With:"
-      },
       "introShowTodos": {
         "welcomeToThe": "Welcome to the",
         "myPassIDDemo": "myPass.ID",
@@ -172,17 +135,17 @@
         "onceDownloaded": "Once you’ve downloaded and installed the app, click the button below."
       },
       "greatSuccess": {
-        "signedInDIDText": "You managed to sign into a website you never signed up for. Account creation has been skipped saving you time and effort. The company house is also not burdened with saving your password.",
-        "receivedNewCredentialsText": "You became the owner of a company. From this point onwards, you would be able to prove your directorship position online, allowing you to act on behalf of the company. Overtime you can grow your Selv profile by gathering such credentials from trusted third parties.",
-        "reusedSelvCredentialsText": "By controlling your personal data, you shared verifiable data without having to type it into a form. You can use these same credentials in other processes. Imagine never having to type in your name, address, email etc..."
+        "signedInDIDText": "You managed to sign into a website you never signed up for. Account creation has been skipped saving you time and effort. This service company is also not burdened with saving your password.",
+        "receivedNewCredentialsText": "You became the owner of your data. From this point onwards, you would be able to prove your identity online. Overtime you can grow your myPass.ID profile by gathering such credentials from trusted third parties.",
+        "reusedCredentialsText": "By controlling your personal data, you shared verifiable data without having to type it into a form. You can use these same credentials in other processes. Imagine never having to type in your name, address, email etc..."
       },
       "thankYou": {
         "thanksForTryingMyPass": "Thanks for Trying myPass.ID!",
         "improvedExperience": "Improved Experience",
         "savedTime": "With myPass.ID, you managed to share college degree and previous employment details, and apply to a new job in very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
-        "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the Selv app!",
+        "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the myPass.ID app!",
         "moreTrust": "More Trust",
-        "trustText": "The data you shared with the Company House and the SNS Bank was verifiable. This allows to verify your data instantly and freely using IOTA as the trust layer.",
+        "trustText": "The data you shared with the Company was verifiable. This allows to verify your data instantly and freely using myPass.ID as the trust layer.",
         "returnUniversity": "Return to the University",
         "returnHome": "Return Home"
       }
@@ -219,8 +182,6 @@
         "titleInsurance": "Congratulations, Your Liability Insurance Is Now Set Up!",
         "titleJobApplication": "Congratulations, Your Job Application Process Has Started!",
         "credentialsToMyPassID": "Your Application Process Has Begun!",
-        "proudOwnerOfCompany": "You are now the proud owner of your new company. From now on you’ll be able to prove that you have a directorship position at your newly found company. Open up Selv in order to receive a signed credential you can use to act on behalf of your company.",
-        "returnToCompany": "Return to Company House",
         "myPass": "myPass.ID",
         "titleCollegeDegree": "Congratulations, Your College Degree Has Been Issued!",
         "titlePreviousEmployer": "Congratulations, Your Previous Employer Certificate Has Been Issued!",
@@ -310,7 +271,7 @@
       "verification": "Verification",
       "verificationResult": "Verification Result",
       "warningInfo": "Mobile App Not Connected",
-      "warningDescription": "Please return to the previous page and scan the QR code with your Selv app",
+      "warningDescription": "Please return to the previous page and scan the QR code with your myPass.ID app",
       "errorInfo": "No Connection Details",
       "didLibraryResults": {
         "Credentials could not be verified": "Credentials could not be verified",

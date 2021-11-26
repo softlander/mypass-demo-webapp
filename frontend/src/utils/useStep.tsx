@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 interface MatchResult {
     page: string | undefined;
     step: string | undefined;
-    companyId: string | undefined;
     theme: string | undefined;
 }
 
@@ -19,7 +18,7 @@ const useStep = (match: any) => {
     const { i18n } = useTranslation();
 
     useEffect(() => {
-        async function setSteps () {
+        async function setSteps() {
             const matchStepResult: MatchResult | null | undefined = matchStep(match.path);
             if (matchStepResult?.step) {
                 if (match?.params?.step) {
@@ -41,7 +40,7 @@ const useStep = (match: any) => {
             }
         }
         setSteps();
-    }, [match, routes, step]);
+    }, [match, routes, step, i18n]);
 
     return { step, nextStep, mainSteps, theme };
 };

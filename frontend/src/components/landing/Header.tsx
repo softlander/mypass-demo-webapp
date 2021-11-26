@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Button } from 'antd';
 import DropSelector from '../DropSelector';
-import logo from '../../assets/mypass_logo.svg'
+import logo from '../../assets/mypass.svg'
 import { useTranslation } from 'react-i18next';
 
 
@@ -93,7 +93,7 @@ const MobileMenu = ({ onAnchorClick, menuOpenState }: { onAnchorClick: (anchor: 
                         </Link>
                     ))
                 }
-                <Link to={'/demo/select'}>
+                <Link to={'/app/intro'}>
                     <Button className="cta">
                         {t("landing.app.tryTheDemo")}
                     </Button>

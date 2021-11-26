@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Form, Input } from 'antd';
-import icon from '../assets/mypass_logo.svg';
+import icon from '../assets/mypass.svg';
 import { useTranslation } from 'react-i18next';
 
 const shortFields: string[] = ['Date', 'Nationality'];
@@ -13,21 +13,21 @@ const PrefilledForm = ({ form, dataFields }: {
 }) => {
     useEffect(() => {
         form.setFieldsValue(dataFields);
-    }, []);
-    
+    }, [form, dataFields]);
+
     const { t } = useTranslation();
-    
+
     return (
         <div className='prefilled-form'>
             <Form layout='vertical'>
                 {
                     Object.keys(dataFields).map((field: string) => (
                         <Form.Item
-                            label={t("components.prefilledForm."+field)}
+                            label={t("components.prefilledForm." + field)}
                             key={field}
                             className={shortFields.includes(field) ? 'short-field' : ''}
                         >
-                            <Input disabled suffix={<Icon />} value={dataFields[field]}/>
+                            <Input disabled suffix={<Icon />} value={dataFields[field]} />
                         </Form.Item>
                     ))
                 }

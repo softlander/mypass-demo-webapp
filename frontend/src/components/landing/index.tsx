@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import HowItWorks from './HowItWorks';
 import Main from './Main';
-import Selv from './Selv';
+import MyPass from './MyPass';
 import Benefits from './Benefits';
 
 export {
@@ -14,6 +14,6 @@ export {
     Header,
     HowItWorks,
     Main,
-    Selv,
+    MyPass,
     Benefits
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { RandomGraphicElement } from '../';
-import mypass from '../../assets/mypass_logo.svg';
+import mypass from '../../assets/mypass.svg';
 import howItWorks1 from '../../assets/landing/howItWorks1.png';
 import howItWorks1Mobile from '../../assets/landing/howItWorks1-mobile.png';
 import howItWorks2 from '../../assets/landing/howItWorks2.png';

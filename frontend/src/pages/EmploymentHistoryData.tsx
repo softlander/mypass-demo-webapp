@@ -34,7 +34,7 @@ const emptyFields = [
 ];
 
 const labels = {
-    CompanyName: 'Company Name', 
+    CompanyName: 'Company Name',
     EmployeeID: 'Employee ID'
 };
 
@@ -63,7 +63,7 @@ const EmployerData: React.FC = ({ history, match }: any) => {
             setPrefilledPersonalData({ ...personalData, ...address });
         }
         getData();
-    }, []);
+    }, [history, t]);
 
     async function processValues(fields: object) {
         setFields(fields);
@@ -75,11 +75,11 @@ const EmployerData: React.FC = ({ history, match }: any) => {
     }
 
     const prefilledPersonalFormData: any = { dataFields: prefilledPersonalData };
-    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep};
+    const emptyFormData: any = { dataFields: emptyFields, labels, processValues, status, messages, nextStep: nextStep };
 
     return (
         <Layout match={match}>
-            <div className='company-data-page-wrapper'>
+            <div className='form-data-page-wrapper'>
                 <h2>{t('pages.employerData.previousEmployerWebsite')}</h2>
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />

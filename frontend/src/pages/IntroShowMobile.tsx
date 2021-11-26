@@ -7,7 +7,7 @@ import { Disclaimer, RandomGraphicElement } from '../components';
 import DropSelector from '../components/DropSelector';
 import dots from '../assets/backgrounds/dots.png';
 import ellipse from '../assets/backgrounds/ellipse1.svg';
-import logo from '../assets/mypass_logo.svg';
+import logo from '../assets/mypass.svg';
 import { useTranslation, Trans } from 'react-i18next';
 /**
  * Component which will display a IntroShowTodos.

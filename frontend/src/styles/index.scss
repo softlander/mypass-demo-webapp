@@ -19,10 +19,9 @@
 @import "./pages/scanQRcode";
 @import "./pages/thankYou";
 @import "./pages/confirmation";
-@import "./pages/companyData";
+@import "./pages/formData";
 @import "./pages/collegeData";
 @import "./pages/bankData";
-@import "./pages/signInPage";
 @import "./pages/greatSuccess";
 @import "./pages/demo";
 @import "./pages/applicationStart";
@@ -148,6 +147,6 @@ button {
   }
 }
 
-.intro_mypass_logo {
+.intro_mypass {
   height: 210px;
 }

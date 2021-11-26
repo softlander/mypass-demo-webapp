@@ -1,6 +1,6 @@
 import React from 'react';
 import { Disclaimer } from '..';
-import logo from '../../assets/mypass_logo.svg';
+import logo from '../../assets/mypass.svg';
 import { Translation } from 'react-i18next';
 
 export default () => (
@@ -12,24 +12,24 @@ export default () => (
                     <img src={logo} alt='myPass logo' />
                     <h1>{t("landing.footer.contactUs")}</h1>
                     <p>{t("landing.footer.contactUsLowerText1")}<br className='line-break' />{t("landing.footer.contactUsLowerText2")}</p>
-                    <p className='bold'>{t("landing.footer.contactUsAt")} <a href='mailto:selv@iota.org' className='bold'>selv@iota.org</a></p>
+                    <p className='bold'>{t("landing.footer.contactUsAt")} <a href='mailto:contact@mypass.id' className='bold'>contact@mypass.id</a></p>
                     <div className='footer-links'>
                         <a
                             className='footer-link'
                             target='_blank'
                             rel='noopener noreferrer'
-                            href='https://www.iota.org'
+                            href='https://www.mypass.id'
                         >
-                            {t("landing.footer.visit")} iota.org
+                            {t("landing.footer.visit")} mypass.id
                         </a>
                         <a
                             className='footer-link'
                             target='_blank'
                             rel='noopener noreferrer'
-                            href='https://www.iota.org/research/privacy-policy'
+                            href='https://www.mypass.id/privacy-policy'
                         >
                             {t("landing.footer.privacyPolicy")}
-            </a>
+                        </a>
                     </div>
                     <Disclaimer />
                 </div>

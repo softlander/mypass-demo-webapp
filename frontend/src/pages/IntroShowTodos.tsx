@@ -6,7 +6,7 @@ import DropSelector from '../components/DropSelector';
 import useStep from '../utils/useStep';
 import howItWorks from '../assets/landing/howItWorks1.png';
 import dots from '../assets/backgrounds/dots.png';
-import logo from '../assets/mypass_logo.svg';
+import logo from '../assets/mypass.svg';
 import { useTranslation, Trans } from 'react-i18next';
 
 /**

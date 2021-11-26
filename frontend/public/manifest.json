@@ -1,19 +1,19 @@
 {
-  "short_name": "Selv",
-  "name": "Selv",
+  "short_name": "myPass.ID",
+  "name": "myPass.ID",
   "icons": [
     {
-      "src": "selv.png",
+      "src": "mypass.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     },
     {
-      "src": "selv.svg",
+      "src": "mypass.svg",
       "type": "image/svg+xml",
       "sizes": "192x192"
     },
     {
-      "src": "selv.svg",
+      "src": "mypass.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     }

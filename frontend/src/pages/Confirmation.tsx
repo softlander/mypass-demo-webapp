@@ -3,30 +3,28 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import useStep from '../utils/useStep';
 import { Layout, RandomGraphicElement } from '../components';
-import mypass from '../assets/mypass_logo.svg';
+import mypass from '../assets/mypass.svg';
 import { useTranslation } from 'react-i18next';
 
 /**
  * Component which will display a Confirmation.
  */
 const Confirmation: React.FC = ({ match }: any) => {
-    const { nextStep, theme } = useStep(match);
+    const { nextStep } = useStep(match);
     const [title, setTitle] = useState('');
-    const [data, setData] = useState({});
-
     const { t } = useTranslation();
 
-    useEffect(() => {   
+    useEffect(() => {
         async function getInfo() {
             const employmentHistoryStatus = await localStorage.getItem('employmentHistory');
             const jobOfferStatus = await localStorage.getItem('jobOffer');
 
-            if(jobOfferStatus && jobOfferStatus === 'completed'){
+            if (jobOfferStatus && jobOfferStatus === 'completed') {
                 setTitle("pages.general.confirmation.titleFinalApplication")
             }
-            else if(employmentHistoryStatus && employmentHistoryStatus === 'completed'){
+            else if (employmentHistoryStatus && employmentHistoryStatus === 'completed') {
                 setTitle("pages.general.confirmation.titlePreviousEmployer")
-            }else{
+            } else {
                 setTitle("pages.general.confirmation.titleCollegeDegree")
             }
         }

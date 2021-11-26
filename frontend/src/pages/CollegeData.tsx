@@ -63,7 +63,7 @@ const CollegeData: React.FC = ({ history, match }: any) => {
             setPrefilledPersonalData({ ...personalData, ...address });
         }
         getData();
-    }, []);
+    }, [history, t]);
 
     async function processValues(fields: object) {
         setFields(fields);

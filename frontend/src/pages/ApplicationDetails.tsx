@@ -1,8 +1,6 @@
 import React from 'react';
 import useStep from '../utils/useStep';
-import useFetch from '../utils/useFetch';
-import { Layout, Loading, NextStepDrawer } from '../components';
-import back from '../assets/back.svg';
+import { Layout, NextStepDrawer } from '../components';
 import { useTranslation } from 'react-i18next';
 
 interface ApplicationData {

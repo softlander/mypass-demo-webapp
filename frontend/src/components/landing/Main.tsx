@@ -56,14 +56,14 @@ const Content = () => (
 const Buttons = () => (
     <div className='store-buttons'>
         <a
-            href='https://testflight.apple.com/join/3FCosIcj'
+            href='https://testflight.apple.com/'
             target='_blank'
             rel='noopener noreferrer'
         >
             <img src={appStore} alt='Apple AppStore' />
         </a>
         <a
-            href='https://play.google.com/apps/testing/com.iota.selv.demo'
+            href='https://play.google.com/apps/testing/com.mypass.id.demo'
             target='_blank'
             rel='noopener noreferrer'
         >

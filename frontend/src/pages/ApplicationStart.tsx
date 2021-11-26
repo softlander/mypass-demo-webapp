@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, notification } from 'antd';
+import { Button } from 'antd';
 import { flattenObject } from '../utils/helper';
-import { Layout, Loading, Form, PrefilledForm, WebSocket } from '../components';
+import { Layout, PrefilledForm } from '../components';
 import { useTranslation } from 'react-i18next';
 import useStep from '../utils/useStep';
 import "../styles/pages/applicationStart.scss"
@@ -17,8 +17,7 @@ const prefilledFields = [
 ];
 
 const ApplicationData: React.FC = ({ history, match }: any) => {
-    const [webSocket, setWebSocket] = useState(false);
-    const [fields, setFields] = useState<object>();
+
     const [prefilledData, setPrefilledData] = useState({});
 
     const { t } = useTranslation();
@@ -34,15 +33,11 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
                 ({ ...acc, [entry]: flattenData[entry] }), {});
 
             setPrefilledData({ ...result, ...address });
-            
+
         }
         getData();
     }, []);
 
-    async function processValues(fields: object) {
-        setFields(fields);
-        setWebSocket(true);
-    }
 
     const prefilledFormData: any = { dataFields: prefilledData };
 
@@ -55,7 +50,7 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
             ExpectedCTC: "",
             DateOfApplication: Date.now(),
             ApplicationStatus: "pending"
-            
+
         };
         localStorage.setItem('applicationDetails', JSON.stringify(applicationDetails))
         localStorage.setItem('currentStep', '1');
@@ -63,7 +58,7 @@ const ApplicationData: React.FC = ({ history, match }: any) => {
 
     return (
         <Layout match={match}>
-            <div className='company-data-page-wrapper'>
+            <div className='form-data-page-wrapper'>
                 <h2>{t("pages.application.applicationStart.applyAtNewCompany")}</h2>
                 <h3 className='section-header'>{t("pages.application.applicationStart.candidateDetails")}</h3>
                 <PrefilledForm {...prefilledFormData} />

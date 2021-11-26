@@ -3,7 +3,6 @@ import { matchPath } from 'react-router';
 interface MatchResult {
     page: string | undefined;
     step: string | undefined;
-    companyId: string | undefined;
     theme: string | undefined;
 }
 
