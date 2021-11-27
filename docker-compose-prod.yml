@@ -9,7 +9,7 @@ services:
   backend:
     # container name
     container_name: backend
-    image: dfbydx/mypass-backend:latest
+    image: mypassid/mypass-backend:latest
     restart: always
     build:
       # the context (working directory) is the current directory
@@ -25,14 +25,14 @@ services:
       - "8000:8000"
     # set the environment to production
     environment:
-      - NODE_ENV=production    
+      - NODE_ENV=production
   ##############################
   # Frontend Container
   ##############################
   frontend:
     # container name
     container_name: frontend
-    image: dfbydx/mypass-frontend:latest
+    image: mypassid/mypass-frontend:latest
     stdin_open: true
     restart: always
     build:
