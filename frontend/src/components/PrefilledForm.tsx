@@ -13,7 +13,7 @@ const PrefilledForm = ({ form, dataFields }: {
 }) => {
     useEffect(() => {
         form.setFieldsValue(dataFields);
-    }, [form, dataFields]);
+    }, []);
 
     const { t } = useTranslation();
 
