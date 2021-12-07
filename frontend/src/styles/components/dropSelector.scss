@@ -11,7 +11,7 @@ $font-family-icons: 'IOTA icons';
 }
 
 %icon-up-down {
-  content: '🔽';
+  content: '🔻';
 }
 
 .icon-up-down {
@@ -40,7 +40,7 @@ $font-family-icons: 'IOTA icons';
   
       .drop-selector-title__text {
         font-size: 12px;
-        color: #485776;
+        color: #CD5C5C;
         font-weight: bold;
         line-height: 15px;
         letter-spacing: 0.05em;
@@ -53,7 +53,7 @@ $font-family-icons: 'IOTA icons';
   
           position: relative;
           left: 5px;
-          color: #485776;
+          color: #CD5C5C;
   
           @include icon(11px);
         }
@@ -84,7 +84,7 @@ $font-family-icons: 'IOTA icons';
           padding-left: 18px;
   
           height: 100%;
-          color: #485776;
+          color: #CD5C5C;
           font-weight: bold;
           font-size: 12px;
           line-height: 3;
