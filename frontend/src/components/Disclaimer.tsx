@@ -47,7 +47,7 @@ const Disclaimer = ({ cookies }: { cookies: any; }) => {
                     target='_blank'
                     rel='noopener noreferrer'
                     href='https://www.mypass.id/privacy-policy'
-                    style={{ color: '#4140DF' }}
+                    style={{ color: '#EA4335' }}
                 >
                     {t("actions.learnMore")}
                 </a>
