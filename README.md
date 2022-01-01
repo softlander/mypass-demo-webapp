@@ -24,4 +24,4 @@ $ docker-compose -f docker-compose-prod.yml down -v --rmi local
 ```
 
 ## Credits
-We acknowledge and are grateful to **IOTA Identity** team and their [open sorce project](https://github.com/iotaledger/identity.rs). This work is adopted for our use case scenario from **IOTA Identity** team's [selv-web project](https://github.com/iotaledger/selv-web).
+We acknowledge and are grateful to **IOTA Identity** team and their [open source project](https://github.com/iotaledger/identity.rs). This work is adopted for our use case scenario from **IOTA Identity** team's [selv-web project](https://github.com/iotaledger/selv-web).
