@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { Layout, QRCode, RandomGraphicElement } from '../components';
 import useStep from '../utils/useStep';
-import appStore from '../assets/appStore.svg';
 import googlePlay from '../assets/googlePlay.svg';
 import avatar1 from '../assets/avatar1.png';
 import avatar2 from '../assets/avatar2.png';
@@ -28,13 +27,6 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                         <React.Fragment>
                             <h1 className='title'>{t("actions.downloadTheMyPassApp")}</h1>
                             <div className='app-cta-wrapper'>
-                                <a
-                                    href='https://testflight.apple.com/'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                >
-                                    <img src={appStore} alt='Apple AppStore' />
-                                </a>
                                 <a
                                     href='https://play.google.com/apps/testing/com.mypass.id.demo'
                                     target='_blank'

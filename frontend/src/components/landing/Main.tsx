@@ -1,7 +1,6 @@
 import React from 'react';
 import { RandomGraphicElement } from '../';
 import main from '../../assets/landing/main.png';
-import appStore from '../../assets/appStore.svg';
 import googlePlay from '../../assets/googlePlay.svg';
 import dots from '../../assets/backgrounds/dots.png';
 import ellipse from '../../assets/backgrounds/ellipse1.svg';
@@ -54,13 +53,12 @@ const Content = () => (
 );
 
 const Buttons = () => (
-    <div className='store-buttons'>
+    <div className=''>
         <a
             href='https://testflight.apple.com/'
             target='_blank'
             rel='noopener noreferrer'
         >
-            <img src={appStore} alt='Apple AppStore' />
         </a>
         <a
             href='https://play.google.com/apps/testing/com.mypass.id.demo'

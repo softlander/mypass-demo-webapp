@@ -68,7 +68,7 @@
 
     .store-buttons {
       > a {
-        margin-right: 20px;
+        margin-right: 0px;
       }
 
       @include breakPoint(small) {
