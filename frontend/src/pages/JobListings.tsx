@@ -13,24 +13,24 @@ const JobListings: React.FC = ({ history, match, ...props }: any) => {
     const response = [
         {
             CompanyName: "AwesomeTech",
-            Designation: "SDE 2",
+            Designation: "Project Manager",
             JobID: "882744"
         },
         {
             CompanyName: "CoolSoft",
-            Designation: "SDE 1",
+            Designation: "Engineering Lead",
             JobID: "387823"
         },
         {
-            CompanyName: "Amazon",
-            Designation: "SDE 3",
+            CompanyName: "Amazing HRs",
+            Designation: "Chief Financial Officer",
             JobID: "987874"
         }
     ]
 
     const { t } = useTranslation();
 
-    function onRowClick (data: any) {
+    function onRowClick(data: any) {
         const selectedJob = {
             CompanyName: data.CompanyName,
             Designation: data.Designation,
