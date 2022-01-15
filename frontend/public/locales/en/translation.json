@@ -45,7 +45,7 @@
       "inBrief": "In Brief",
       "howItWorks": "How It Works",
       "create": "Create",
-      "createText": "Download the myPass.ID app and create a unique identifier, representing you online. This profile remains in your control and doesn’t leave the app without your consent.",
+      "createText": "Download the myPass ID Wallet app and create a unique identifier, representing you online. This profile remains in your control and doesn’t leave the app without your consent.",
       "share": "Share",
       "shareText": "Decide who and what others get to see from your personal profile. You can share your data peer-to-peer or on request. Controlled data flow allows you to always get something in return for your data.",
       "grow": "Grow",
@@ -74,7 +74,7 @@
     "continue": "Continue",
     "letsDoIt": "Let's Do It",
     "continueNextStep": "Continue to Next Step",
-    "downloadTheMyPassApp": "Download the myPass.ID App",
+    "downloadTheMyPassApp": "Download the myPass ID Wallet App",
     "orScanCode": "Or scan this QR code<1/>to download",
     "back": "Back",
     "startJobApp": "Start Your Job Application",
@@ -95,7 +95,7 @@
     "Demo": "Demo",
     "The App": "The App",
     "What it is": "Through Self-Sovereign Identity, people, organizations and things are empowered to collect and share their own verified data and digital identity.",
-    "A Unified Identity": "myPass.ID Identity",
+    "A Unified Identity": "myPass Identity",
     "digitalIdentityManagement": "Instant Onboarding for Job Application",
     "claimControlReuse": "Reuse a Know-Your-Customer (KYC) credential to apply for a job. Proof your identity and ownership over your college degree and past employment history to apply for a new job with click of a button.",
     "hello": "Hello!",
@@ -104,22 +104,22 @@
     "receivedNewCredentials": "Received New Credentials",
     "reusedCredentials": "Re-used myPass.ID Credentials",
     "messages": {
-      "waiting": "Waiting for myPass.ID App...",
+      "waiting": "Waiting for myPass Wallet App...",
       "connectionError": "Connection Error. Please Try Again!",
       "missing": "Credentials Missing or not Trusted",
       "verifying": "Verifying Credentials..."
     },
     "pending": "Pending",
     "active": "Active",
-    "universityText": "University is now issuing degree in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without any username and passwords.",
-    "employmentText": "Employers are now issuing job experience letter in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without username and passwords.",
-    "jobOfferText": "Candidates can now apply for jobs sharing details in digital verifiable credential format, powered by myPass.id, you can login directly using myPass.ID and without username and passwords."
+    "universityText": "Universities are now issuing degree online in verifiable credential format, powered by myPass.id, you can login directly using myPass ID Wallet and without any username and passwords.",
+    "employmentText": "Employers are now issuing job experience letter online in verifiable credential format, powered by myPass.id, you can login directly using myPass ID Wallet and without username and passwords.",
+    "jobOfferText": "Candidates can now apply for jobs using verifiable credentials and certificates, powered by myPass.id, you can login directly using myPass ID Wallet and without username and passwords."
   },
   "pages": {
     "demo": {
       "introShowTodos": {
         "welcomeToThe": "Welcome to the",
-        "myPassIDDemo": "myPass.ID",
+        "myPassIDDemo": "myPass Identity",
         "hereIsTodo": "<0>Here is <1>your to-do list</1> for today:</0>",
         "startJobApp": "Start Your Job Application",
         "getCollegeDegree": "Get Digital College Degree",
@@ -128,7 +128,7 @@
       },
       "introShowMobile": {
         "looksLikeWork": "That Looks Like a Lot of Work...",
-        "advantage": "<0>But using the myPassID app, it will be <1>​quick and easy​.</1></0>",
+        "advantage": "<0>But using the myPass ID Wallet app, it will be <1>​quick and easy​.</1></0>",
         "noteDesktop": "This demo website is best experienced on a desktop computer."
       },
       "appDownloadQR": {
@@ -140,10 +140,10 @@
         "reusedCredentialsText": "By controlling your personal data, you shared verifiable data without having to type it into a form. You can use these same credentials in other processes. Imagine never having to type in your name, address, email etc..."
       },
       "thankYou": {
-        "thanksForTryingMyPass": "Thanks for Trying myPass.ID!",
+        "thanksForTryingMyPass": "Thanks for Trying myPass Identity Platform!",
         "improvedExperience": "Improved Experience",
-        "savedTime": "With myPass.ID, you managed to share college degree and previous employment details, and apply to a new job in very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
-        "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the myPass.ID app!",
+        "savedTime": "With myPass ID, you managed to share college degree and previous employment details, and apply to a new job in very few clicks. Your data was reusable and this saved you x fields of form fields to fill in.",
+        "sovereignityText": "You have taken full control of your data. You decided who you shared your data with. Did you know that you can share them with others manually via QR as well. Try so in the myPass ID Wallet app!",
         "moreTrust": "More Trust",
         "trustText": "The data you shared with the Company was verifiable. This allows to verify your data instantly and freely using myPass.ID as the trust layer.",
         "returnUniversity": "Return to the University",
@@ -158,7 +158,7 @@
         "signInSuccess": "You have now signed in without ever creating an account. No more need for endless account and password creations. In addition, you provided trustable information, which businesses can use without an expensive verification process. Verifying your data is nearly instant and completely free."
       },
       "applicationStart": {
-        "applyAtNewCompany": "Application for AwesomeTech",
+        "applyAtNewCompany": "Application for New Job",
         "candidateDetails": "Candidate Details",
         "continueButton": "Continue"
       }
@@ -166,13 +166,14 @@
     "college": {
       "collegeHomePageTitle": "Delhi University Official Website",
       "candidateDetails": "Candidate Details",
-      "degreeDetails": "Degree Details"
+      "degreeDetails": "Degree Request Form"
     },
     "employerData": {
       "previousEmployerWebsite": "Previous Employer Website",
       "candidateDetails": "Candidate Details",
       "highestDegreeDetails": "Highest Degree Details",
-      "employerDetails": "Employer Details",
+      "experienceLetterRequest": "Experience Letter Request Form",
+      "jobAppForm": "Job Application Form",
       "employmentHistory": "Employment History",
       "jobApplication": "Job Application"
     },
@@ -184,13 +185,13 @@
         "credentialsToMyPassID": "Your Application Process Has Begun!",
         "myPass": "myPass.ID",
         "titleCollegeDegree": "Congratulations, Your College Degree Has Been Issued!",
-        "titlePreviousEmployer": "Congratulations, Your Previous Employer Certificate Has Been Issued!",
+        "titlePreviousEmployer": "Congratulations, Your Job Experience Certificate Has Been Issued!",
         "titleFinalApplication": "Congratulations, Your Job Application is Completed!"
       },
       "proveIdentity": {
         "waitingForLogin": "Waiting for Login",
         "provideCredentials": "Provide Your Digital Identity Credentials",
-        "scanToContinue": "Scan this QR code with <1>myPass.ID App</1> to continue"
+        "scanToContinue": "Scan this QR code with <1>myPass ID Wallet App</1> to continue"
       },
       "applicationDetails": {
         "applicationNumber": "Application Number",
@@ -220,13 +221,13 @@
     },
     "nextStepDrawer": {
       "applicationReady": "Your Application Is Now Ready To Be Applied!",
-      "applicationApplied": "You have successfully applied at AwesomeTech. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
+      "applicationApplied": "You have successfully applied for new job. This is the end of this demo and we thank you for participating. myPass.ID will be updated with more demonstrations and will be updated with more features",
       "applicationNotComplete": "Your Application Is Not Ready Yet",
       "needPreviousEmployer": "You need to add Previous Employer Details to finish this process.",
-      "needCollegeAndEmployer": "You need to add your College Degree and First Employer Details to finish this process.",
+      "needCollegeAndEmployer": "You need to add your College Degree and Employment History to finish this process.",
       "sendApplication": "Send Application",
       "addJobApplicationDetails": "Add Job Application Details",
-      "addPreviousEmployer": "Add Previous Employer",
+      "addPreviousEmployer": "Add Employment History",
       "addCollegeDegree": "Add College Degree",
       "oneStepAway": "Just One Step Away! Enter Your Job Application Details!",
       "clickBelowToSubmit": "Click Below To Submit Your Job Application."

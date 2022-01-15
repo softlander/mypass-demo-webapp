@@ -115,7 +115,7 @@ const JobApplicationData: React.FC = ({ history, match }: any) => {
                 <h3 className='section-header'>{t('pages.employerData.employmentHistory')}</h3>
                 <PrefilledForm {...prefilledEmployerFormData} />
 
-                <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
+                <h3 className='section-header'>{t('pages.employerData.jobAppForm')}</h3>
                 <Form {...emptyFormData} />
                 {
                     status && (

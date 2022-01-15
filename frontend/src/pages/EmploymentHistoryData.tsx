@@ -84,7 +84,7 @@ const EmployerData: React.FC = ({ history, match }: any) => {
                 <h3 className='section-header'>{t('pages.employerData.candidateDetails')}</h3>
                 <PrefilledForm {...prefilledPersonalFormData} />
 
-                <h3 className='section-header'>{t('pages.employerData.employerDetails')}</h3>
+                <h3 className='section-header'>{t('pages.employerData.experienceLetterRequest')}</h3>
                 <Form {...emptyFormData} />
                 {
                     status && (
