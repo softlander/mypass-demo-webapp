@@ -119,7 +119,7 @@
     "demo": {
       "introShowTodos": {
         "welcomeToThe": "Welcome to the",
-        "myPassIDDemo": "myPass Identity",
+        "myPassIDDemo": "myPass",
         "hereIsTodo": "<0>Here is <1>your to-do list</1> for today:</0>",
         "startJobApp": "Start Your Job Application",
         "getCollegeDegree": "Get Digital College Degree",

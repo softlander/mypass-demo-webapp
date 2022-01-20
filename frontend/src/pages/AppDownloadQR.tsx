@@ -9,6 +9,7 @@ import avatar2 from '../assets/avatar2.png';
 import dots from '../assets/backgrounds/dots.png';
 import circle from '../assets/backgrounds/circleFrame6.svg';
 import { useTranslation, Trans } from 'react-i18next';
+import Config from "../config";
 
 /**
  * Component which will display a AppDownloadQR.
@@ -28,7 +29,7 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                             <h1 className='title'>{t("actions.downloadTheMyPassApp")}</h1>
                             <div className='app-cta-wrapper'>
                                 <a
-                                    href='https://play.google.com/apps/testing/com.mypass.id.demo'
+                                    href={Config.app_link_android_playstore}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
@@ -43,7 +44,7 @@ const AppDownloadQR: React.FC = ({ match }: any) => {
                                         </Trans>
                                     </p>
                                     <div className='qr-wrapper'>
-                                        <QRCode text={'sample'} size={200} />
+                                        <QRCode text={Config.app_link_android_playstore} size={200} />
                                     </div>
                                 </div>
                                 <img src={avatar1} alt='' className='avatar1' />

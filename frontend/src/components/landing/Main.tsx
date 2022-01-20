@@ -5,6 +5,7 @@ import googlePlay from '../../assets/googlePlay.svg';
 import dots from '../../assets/backgrounds/dots.png';
 import ellipse from '../../assets/backgrounds/ellipse1.svg';
 import { Translation } from 'react-i18next';
+import Config from "../../config";
 
 export default () => {
     return (
@@ -61,7 +62,7 @@ const Buttons = () => (
         >
         </a>
         <a
-            href='https://play.google.com/apps/testing/com.mypass.id.demo'
+            href={Config.app_link_android_playstore}
             target='_blank'
             rel='noopener noreferrer'
         >
